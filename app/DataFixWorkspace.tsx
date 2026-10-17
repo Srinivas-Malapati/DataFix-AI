@@ -122,14 +122,32 @@ export function DataFixWorkspace() {
   const [inspected, setInspected] = useState(false);
   const [inspectionState, setInspectionState] = useState<"idle" | "running" | "complete">("idle");
   const [uploadMessage, setUploadMessage] = useState("");
+  const [planState, setPlanState] = useState<"idle" | "generating" | "ready">("idle");
+  const [copied, setCopied] = useState(false);
   const [error, setError] = useState("");
   const profile = useMemo(() => csvText ? profileCsv(csvText) : null, [csvText]);
+  const repairActions = useMemo(() => {
+    if (!profile) return [];
+    const actions = ["Preserve the original file and schema before making changes"];
+    if (profile.duplicateRows) actions.push(`Remove ${profile.duplicateRows} exact duplicate row${profile.duplicateRows === 1 ? "" : "s"}, keeping the first occurrence`);
+    if (profile.missingCells) actions.push(`Flag ${profile.missingCells} missing value${profile.missingCells === 1 ? "" : "s"} for review instead of guessing`);
+    if (profile.whitespaceCells) actions.push("Standardize text fields by trimming invisible edge spaces");
+    if (profile.inconsistentColumns.length) actions.push(`Normalize capitalization in: ${profile.inconsistentColumns.join(", ")}`);
+    actions.push("Validate row count and schema, then export a repair report");
+    return actions;
+  }, [profile]);
+  const generatedCode = useMemo(() => {
+    const caseColumns = profile?.inconsistentColumns ?? [];
+    return `import pandas as pd\n\nINPUT_FILE = "${fileName || "input.csv"}"\nOUTPUT_FILE = "cleaned_${fileName || "output.csv"}"\n\ndf = pd.read_csv(INPUT_FILE)\noriginal_rows = len(df)\n\n# Preserve IDs and trim text safely\nfor column in df.select_dtypes(include="object").columns:\n    df[column] = df[column].apply(lambda value: value.strip() if isinstance(value, str) else value)\n\n# Remove exact duplicates only\ndf = df.drop_duplicates(keep="first")\n\n# Normalize detected case variants\nfor column in ${JSON.stringify(caseColumns)}:\n    df[column] = df[column].apply(lambda value: value.title() if isinstance(value, str) else value)\n\nassert list(df.columns) == ${JSON.stringify(profile?.headers ?? [])}\nassert len(df) <= original_rows\ndf.to_csv(OUTPUT_FILE, index=False)\nprint({"input_rows": original_rows, "output_rows": len(df), "file": OUTPUT_FILE})`;
+  }, [fileName, profile]);
 
   function acceptFile(name: string, text: string, source: "upload" | "sample" = "upload") {
     setError("");
     setUploadMessage("");
     setInspected(false);
     setInspectionState("idle");
+    setPlanState("idle");
+    setCopied(false);
     if (new Blob([text]).size > 10 * 1024 * 1024) {
       setError("That file is larger than the 10 MB demo limit.");
       return;
@@ -141,7 +159,7 @@ export function DataFixWorkspace() {
     }
     setFileName(name);
     setCsvText(text);
-    setUploadMessage(`${source === "sample" ? "Sample loaded" : "Upload successful"} · ${parsed.length - 1} rows detected · Ready to inspect`);
+    setUploadMessage(`${source === "sample" ? "Sample loaded" : "Upload successful"} · ${parsed.length - 1} data rows ready to inspect`);
   }
 
   async function onFile(event: ChangeEvent<HTMLInputElement>) {
@@ -176,6 +194,20 @@ export function DataFixWorkspace() {
         document.getElementById("inspection-results")?.scrollIntoView({ behavior: "smooth", block: "start" });
       }, 180);
     }, 700);
+  }
+
+  function generatePlan() {
+    setPlanState("generating");
+    window.setTimeout(() => {
+      setPlanState("ready");
+      window.setTimeout(() => document.getElementById("repair-plan")?.scrollIntoView({ behavior: "smooth", block: "start" }), 160);
+    }, 850);
+  }
+
+  async function copyCode() {
+    await navigator.clipboard.writeText(generatedCode);
+    setCopied(true);
+    window.setTimeout(() => setCopied(false), 1600);
   }
 
   return (
@@ -239,7 +271,6 @@ export function DataFixWorkspace() {
             <article><span>Rows</span><strong>{profile.rows.length}</strong><small>input records</small></article>
             <article><span>Duplicates</span><strong>{profile.duplicateRows}</strong><small>exact row matches</small></article>
             <article><span>Missing</span><strong>{profile.missingCells}</strong><small>empty cells</small></article>
-            <article title="Cells containing invisible spaces before or after their text"><span>Extra spaces</span><strong>{profile.whitespaceCells}</strong><small>at cell edges</small></article>
           </div>
           <div className="analysis-grid">
             <div className="preview-table-wrap">
@@ -249,16 +280,33 @@ export function DataFixWorkspace() {
               </table></div>
             </div>
             <div className="issues-panel">
-              <div className="panel-title"><span>Quality signals</span><small>{profile.duplicateRows + profile.missingCells + profile.whitespaceCells + profile.inconsistentColumns.length} signals</small></div>
+              <div className="panel-title"><span>Quality signals</span><small>{profile.duplicateRows + profile.missingCells + profile.inconsistentColumns.length} signals</small></div>
               <ul>
                 <li><b>{profile.duplicateRows ? "Review" : "Clear"}</b><span>Exact duplicate rows</span><em>{profile.duplicateRows}</em></li>
                 <li><b>{profile.missingCells ? "Review" : "Clear"}</b><span>Missing values</span><em>{profile.missingCells}</em></li>
-                <li title="Invisible spaces before or after a value, such as ' Ada ' instead of 'Ada'"><b>{profile.whitespaceCells ? "Safe fix" : "Clear"}</b><span>Extra spaces before/after text</span><em>{profile.whitespaceCells}</em></li>
                 <li><b>{profile.inconsistentColumns.length ? "Review" : "Clear"}</b><span>Case variants</span><em>{profile.inconsistentColumns.length}</em></li>
               </ul>
-              <div className="next-step"><span>Next build step</span><p>Generate a repair plan and Python script, then execute it in CreateOS—not in the browser.</p><button type="button" disabled>Connect secure executor →</button></div>
+              <div className="next-step"><span>Step 02</span><p>Generate a dataset-specific repair plan and review its Python before anything runs.</p><button type="button" onClick={generatePlan} disabled={planState === "generating"}>{planState === "generating" ? "Generating repair plan…" : planState === "ready" ? "Regenerate repair plan ↻" : "Generate repair plan →"}</button></div>
             </div>
           </div>
+        </section>
+      )}
+
+      {planState === "ready" && profile && (
+        <section className="repair-plan" id="repair-plan" aria-live="polite">
+          <div className="plan-heading"><div><p className="section-label">Step 02 · Generate</p><h2>Review the plan before it runs.</h2></div><span className="review-badge">Human approval required</span></div>
+          <div className="plan-grid">
+            <div className="plan-actions">
+              <div className="panel-title"><span>Proposed repair plan</span><small>{repairActions.length} actions</small></div>
+              <ol>{repairActions.map((action, index) => <li key={action}><b>{String(index + 1).padStart(2, "0")}</b><span>{action}</span></li>)}</ol>
+              <div className="plan-safety"><b>Safety rule</b><p>Ambiguous values are flagged for review. DataFix never invents missing information.</p></div>
+            </div>
+            <div className="code-review">
+              <div className="panel-title"><span>Generated Python</span><button type="button" onClick={copyCode}>{copied ? "Copied ✓" : "Copy code"}</button></div>
+              <pre><code>{generatedCode}</code></pre>
+            </div>
+          </div>
+          <div className="approval-bar"><div><b>Plan ready for approval</b><span>The next step will execute this exact code in the isolated CreateOS sandbox.</span></div><button type="button" disabled>Approve & run in sandbox <span>→</span></button></div>
         </section>
       )}
     </>
