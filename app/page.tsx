@@ -1,4 +1,5 @@
 import { DataFixWorkspace } from "./DataFixWorkspace";
+import { HowItWorksTour } from "./HowItWorksTour";
 
 export default function Home() {
   return (
@@ -28,7 +29,8 @@ export default function Home() {
       <DataFixWorkspace />
 
       <section className="process" id="how-it-works">
-        <div><div><p className="section-label">Built for verifiable automation</p><h2>Not another black-box cleaner.</h2></div></div>
+        <div className="process-heading"><div><p className="section-label">See DataFix in action</p><h2>A clear path from upload to verified output.</h2></div><p>Watch the workflow, then explore each stage below.</p></div>
+        <HowItWorksTour />
         <div className="process-grid">
           <article><b>01</b><h3>Profile</h3><p>Detect missing values, duplicates, type drift, and inconsistent formats.</p></article>
           <article><b>02</b><h3>Generate</h3><p>Write a repair script tailored to the uploaded schema and your goal.</p></article>

@@ -120,12 +120,14 @@ export function DataFixWorkspace() {
   const [csvText, setCsvText] = useState("");
   const [goal, setGoal] = useState("Clean this dataset, standardize inconsistent formats, remove exact duplicates, and flag anything ambiguous for review.");
   const [inspected, setInspected] = useState(false);
+  const [inspectionState, setInspectionState] = useState<"idle" | "running" | "complete">("idle");
   const [error, setError] = useState("");
   const profile = useMemo(() => csvText ? profileCsv(csvText) : null, [csvText]);
 
   function acceptFile(name: string, text: string) {
     setError("");
     setInspected(false);
+    setInspectionState("idle");
     if (new Blob([text]).size > 10 * 1024 * 1024) {
       setError("That file is larger than the 10 MB demo limit.");
       return;
@@ -159,6 +161,18 @@ export function DataFixWorkspace() {
     if (!sample) return;
     setGoal(sample.goal);
     acceptFile(sample.name, sample.csv);
+  }
+
+  function inspectDataset() {
+    if (!profile || inspectionState === "running") return;
+    setInspectionState("running");
+    window.setTimeout(() => {
+      setInspected(true);
+      setInspectionState("complete");
+      window.setTimeout(() => {
+        document.getElementById("inspection-results")?.scrollIntoView({ behavior: "smooth", block: "start" });
+      }, 180);
+    }, 700);
   }
 
   return (
@@ -195,15 +209,24 @@ export function DataFixWorkspace() {
             <label htmlFor="repair-goal">What should DataFix repair?</label>
             <textarea id="repair-goal" value={goal} onChange={(event) => setGoal(event.target.value)} />
             <div className="guardrails"><span>✓ Preserve original data</span><span>✓ Flag uncertain changes</span></div>
-            <button className="button button-dark button-wide" type="button" disabled={!profile} onClick={() => setInspected(true)}>
-              {profile ? "Inspect dataset" : "Upload a dataset to begin"} <span>→</span>
+            <button className="button button-dark button-wide" type="button" disabled={!profile || inspectionState === "running"} onClick={inspectDataset}>
+              {inspectionState === "running" ? "Inspecting dataset…" : profile ? "Inspect dataset" : "Upload a dataset to begin"} <span>{inspectionState === "running" ? "•••" : "→"}</span>
             </button>
+            {inspectionState !== "idle" && (
+              <div className={`inspection-feedback ${inspectionState}`} role="status" aria-live="assertive">
+                <span className="feedback-icon" aria-hidden="true">{inspectionState === "running" ? "" : "✓"}</span>
+                <div>
+                  <b>{inspectionState === "running" ? "Inspection in progress" : "Inspection complete"}</b>
+                  <small>{inspectionState === "running" ? `Profiling ${fileName} for quality signals…` : "Your report is ready below."}</small>
+                </div>
+              </div>
+            )}
           </div>
         </div>
       </section>
 
       {inspected && profile && (
-        <section className="analysis" aria-live="polite">
+        <section className="analysis" id="inspection-results" aria-live="polite">
           <div className="analysis-heading">
             <div><p className="section-label">Inspection complete</p><h2>We found what needs attention.</h2></div>
             <span className="verified-badge">Profiled locally</span>
