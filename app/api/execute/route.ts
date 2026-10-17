@@ -90,8 +90,11 @@ async function createOsFetch(baseUrl: string, apiKey: string, path: string, init
 
 export async function POST(request: Request) {
   let sandboxId = "";
-  const apiKey = process.env.CREATEOS_SANDBOX_API_KEY;
-  const baseUrl = process.env.CREATEOS_SANDBOX_BASE_URL || "https://api.sb.createos.sh";
+  const apiKey = process.env.CREATEOS_PROJECT_API_KEY || process.env.CREATEOS_SANDBOX_API_KEY;
+  const baseUrl =
+    process.env.CREATEOS_PROJECT_API_URL ||
+    process.env.CREATEOS_SANDBOX_BASE_URL ||
+    "https://api.sb.createos.sh";
   if (!apiKey) return Response.json({ error: "CreateOS execution is not configured." }, { status: 503 });
 
   try {

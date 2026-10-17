@@ -56,11 +56,17 @@ Open the local URL printed by the development server. Load a sample, inspect it,
 ## Required production configuration
 
 ```bash
-CREATEOS_SANDBOX_API_KEY=
-CREATEOS_SANDBOX_BASE_URL=https://api.sb.createos.sh
+# Injected by `stripe projects env --pull` after adding createos/project
+CREATEOS_PROJECT_API_KEY=
+CREATEOS_PROJECT_API_URL=
+
+# Required for dataset-specific AI planning and automatic code repair
 OPENAI_API_KEY=
 OPENAI_MODEL=
 ```
+
+For backward compatibility, `CREATEOS_SANDBOX_API_KEY` and
+`CREATEOS_SANDBOX_BASE_URL` are also accepted. Keep all credentials server-side.
 
 Do not commit `.env` files or paste secrets into issues, chat, screenshots, or demo recordings.
 
@@ -73,7 +79,7 @@ Do not commit `.env` files or paste secrets into issues, chat, screenshots, or d
 - [x] Generated code runs in CreateOS Sandbox
 - [x] Execution logs and script-authored validation report
 - [x] Independent application-owned validation and bounded repair retry
-- [ ] Stripe Projects initialized and used for the project stack
+- [x] Stripe Projects initialized and used to provision CreateOS and inject its credentials
 - [ ] Public GitHub repository and complete run instructions
 - [ ] Deployed app URL
 - [ ] Two-to-three-minute demo recording with a team member on camera

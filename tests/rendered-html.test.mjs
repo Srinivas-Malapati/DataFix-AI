@@ -70,6 +70,8 @@ test("keeps profiling local and routes AI code through real server integrations"
   assert.match(planRoute, /api\.openai\.com\/v1\/responses/);
   assert.match(planRoute, /json_schema/);
   assert.match(executeRoute, /\/v1\/sandboxes/);
+  assert.match(executeRoute, /CREATEOS_PROJECT_API_KEY/);
+  assert.match(executeRoute, /CREATEOS_PROJECT_API_URL/);
   assert.match(executeRoute, /\/workspace\/input\.csv/);
   assert.match(executeRoute, /\/workspace\/output\.csv/);
   assert.match(executeRoute, /method: "DELETE"/);
