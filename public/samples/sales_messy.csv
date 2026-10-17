@@ -1,0 +1,6 @@
+order_id,customer,product,amount,status
+1001, Ada Lovelace ,pro plan,"$1,200.00",paid
+1002,grace hopper,Starter,"$49.00",PAID
+1002,grace hopper,Starter,"$49.00",PAID
+1003,Linus Torvalds,PRO PLAN,1200,
+1004,Margaret Hamilton, starter ,"$49",Paid

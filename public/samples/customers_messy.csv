@@ -1,0 +1,6 @@
+customer_id,full_name,email,city,segment
+C-001,  Katherine Johnson ,KJ@EXAMPLE.COM,houston,Enterprise
+C-002,alan turing,alan@example.com, Manchester ,enterprise
+C-003,Grace Hopper,,New York,SMB
+C-004, Tim Berners-Lee ,tim@example.com,london,smb
+C-005,Barbara Liskov,barbara@example.com,,Enterprise

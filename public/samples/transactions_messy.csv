@@ -1,0 +1,6 @@
+transaction_id,date,amount,payment_method,note
+T-1001,2026-10-01,249.99,CARD,subscription
+T-1002,10/02/2026,-49.00,card,refund
+T-1003,03/04/2026,89.50,ACH,ambiguous date
+T-1004,2026/10/05,120.00, ach ,renewal
+T-1005,,35.25,Cash,date missing

@@ -12,7 +12,8 @@ The first vertical slice is working:
 - Count rows, columns, exact duplicate rows, missing cells, and whitespace defects
 - Detect case variants within columns
 - Reject malformed or single-column inputs with a clear message
-- Load a synthetic messy-sales sample for demonstrations
+- Load three synthetic sales, customer, and transaction samples for demonstrations
+- Download those samples directly from the public app
 
 This stage stays in the browser on purpose. Generated code must not execute in the browser or on the application server.
 

@@ -24,7 +24,11 @@ test("server-renders the DataFix product surface", async () => {
   assert.match(html, /Trusted data out\./);
   assert.match(html, /Step 01 · Inspect/);
   assert.match(html, /Choose dataset/);
-  assert.match(html, /Use sample/);
+  assert.match(html, /Try a synthetic dataset/);
+  assert.match(html, /Sales/);
+  assert.match(html, /Customers/);
+  assert.match(html, /Transactions/);
+  assert.match(html, /Download samples/);
   assert.match(html, /Powered by CreateOS Sandbox \+ Stripe Projects/);
   assert.doesNotMatch(html, /codex-preview|react-loading-skeleton|Your site is taking shape/i);
 });
@@ -43,6 +47,9 @@ test("keeps CSV profiling client-side and documents honest executor boundaries",
   assert.match(workspace, /missingCells/);
   assert.match(workspace, /whitespaceCells/);
   assert.match(workspace, /parsed only in this browser for step 1/);
+  assert.match(workspace, /sales_messy\.csv/);
+  assert.match(workspace, /customers_messy\.csv/);
+  assert.match(workspace, /transactions_messy\.csv/);
   assert.match(readme, /Never present local preview behavior as a sandbox run/);
   assert.doesNotMatch(packageJson, /react-loading-skeleton/);
 });
