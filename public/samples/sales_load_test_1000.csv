@@ -1,0 +1,1001 @@
+order_id,customer,product,amount,status,order_date,email,region
+ORD-0000001, Ada Lovelace , Starter ,$3.25,,01/01/2026,,north america
+ORD-0000002,Grace Hopper,Pro Plan,6.50,PENDING,2026-02-02,grace.hopper+1@example.com,Europe
+ORD-0000003,Katherine Johnson,Enterprise,9.75,REFUNDED,2026-03-03,katherine.johnson+2@example.com,Asia Pacific
+ORD-0000004,Alan Turing,Analytics Add-on,13.00,FAILED,2026-04-04,alan.turing+3@example.com,Latin America
+ORD-0000005,Margaret Hamilton,Starter,16.25,PAID,2026-05-05,margaret.hamilton+4@example.com,North America
+ORD-0000006,Barbara Liskov,Pro Plan,19.50,PENDING,2026-06-06,barbara.liskov+5@example.com,Europe
+ORD-0000007,Ada Lovelace,Enterprise,22.75,REFUNDED,2026-07-07,ada.lovelace+6@example.com,Asia Pacific
+ORD-0000008,Grace Hopper,Analytics Add-on,26.00,FAILED,2026-08-08,grace.hopper+7@example.com,Latin America
+ORD-0000009,Katherine Johnson,Starter,29.25,PAID,2026-09-09,katherine.johnson+8@example.com,North America
+ORD-0000010,Alan Turing,Pro Plan,32.50,PENDING,2026-10-10,alan.turing+9@example.com,Europe
+ORD-0000011,Margaret Hamilton,Enterprise,35.75,REFUNDED,2026-11-11,margaret.hamilton+10@example.com,Asia Pacific
+ORD-0000012,barbara liskov,Analytics Add-on,39.00,FAILED,2026-12-12,barbara.liskov+11@example.com,Latin America
+ORD-0000013,Ada Lovelace,Starter,42.25,PAID,2026-01-13,ada.lovelace+12@example.com,North America
+ORD-0000014,Grace Hopper,PRO PLAN,45.50,PENDING,2026-02-14,grace.hopper+13@example.com,Europe
+ORD-0000015,Katherine Johnson,Enterprise,48.75,REFUNDED,2026-03-15,katherine.johnson+14@example.com,Asia Pacific
+ORD-0000016,Alan Turing,Analytics Add-on,52.00,FAILED,2026-04-16,alan.turing+15@example.com,Latin America
+ORD-0000017,Margaret Hamilton,Starter,55.25,PAID,2026-05-17,margaret.hamilton+16@example.com,North America
+ORD-0000018,Barbara Liskov,Pro Plan,$58.50,PENDING,2026-06-18,barbara.liskov+17@example.com,Europe
+ORD-0000019,Ada Lovelace,Enterprise,61.75,REFUNDED,2026-07-19,ada.lovelace+18@example.com,Asia Pacific
+ORD-0000020,Grace Hopper,Analytics Add-on,65.00,failed,2026-08-20,grace.hopper+19@example.com,Latin America
+ORD-0000021,Katherine Johnson,Starter,68.25,PAID,2026-09-21,katherine.johnson+20@example.com,North America
+ORD-0000022,Alan Turing,Pro Plan,71.50,PENDING,2026-10-22,alan.turing+21@example.com,Europe
+ORD-0000023,margaret hamilton,Enterprise,74.75,REFUNDED,2026-11-23,margaret.hamilton+22@example.com,Asia Pacific
+ORD-0000024, Barbara Liskov ,Analytics Add-on,78.00,FAILED,2026-12-24,barbara.liskov+23@example.com,Latin America
+ORD-0000025,Ada Lovelace,Starter,81.25,PAID,2026-01-25,ada.lovelace+24@example.com,North America
+ORD-0000026,Grace Hopper,Pro Plan,84.50,PENDING,2026-02-26,grace.hopper+25@example.com,Europe
+ORD-0000027,Katherine Johnson,ENTERPRISE,87.75,REFUNDED,2026-03-27,katherine.johnson+26@example.com,Asia Pacific
+ORD-0000028,Alan Turing,Analytics Add-on,91.00,FAILED,2026-04-01,alan.turing+27@example.com,Latin America
+ORD-0000029,Margaret Hamilton,Starter,94.25,PAID,2026-05-02,margaret.hamilton+28@example.com,North America
+ORD-0000030,Barbara Liskov, Pro Plan ,97.50,PENDING,2026-06-03,barbara.liskov+29@example.com,Europe
+ORD-0000031,Ada Lovelace,Enterprise,100.75,REFUNDED,2026-07-04,ada.lovelace+30@example.com,Asia Pacific
+ORD-0000032,Grace Hopper,Analytics Add-on,104.00,FAILED,2026-08-05,grace.hopper+31@example.com,latin america
+ORD-0000033,Katherine Johnson,Starter,107.25,PAID,2026-09-06,katherine.johnson+32@example.com,North America
+ORD-0000034,alan turing,Pro Plan,110.50,PENDING,2026-10-07,alan.turing+33@example.com,Europe
+ORD-0000035,Margaret Hamilton,Enterprise,$113.75,REFUNDED,2026-11-08,margaret.hamilton+34@example.com,Asia Pacific
+ORD-0000036,Barbara Liskov,Analytics Add-on,117.00,FAILED,2026-12-09,barbara.liskov+35@example.com,Latin America
+ORD-0000037,Ada Lovelace,Starter,120.25,PAID,2026-01-10,ada.lovelace+36@example.com,North America
+ORD-0000038,Grace Hopper,Pro Plan,123.50,,2026-02-11,grace.hopper+37@example.com,Europe
+ORD-0000039,Katherine Johnson,Enterprise,126.75,refunded,2026-03-12,katherine.johnson+38@example.com,Asia Pacific
+ORD-0000040,Alan Turing,ANALYTICS ADD-ON,130.00,FAILED,2026-04-13,alan.turing+39@example.com,Latin America
+ORD-0000041,Margaret Hamilton,Starter,133.25,PAID,2026-05-14,margaret.hamilton+40@example.com,North America
+ORD-0000042,Barbara Liskov,Pro Plan,136.50,PENDING,06/15/2026,barbara.liskov+41@example.com,Europe
+ORD-0000043,Ada Lovelace,Enterprise,139.75,REFUNDED,2026-07-16,ada.lovelace+42@example.com,Asia Pacific
+ORD-0000044,Grace Hopper,Analytics Add-on,143.00,FAILED,2026-08-17,grace.hopper+43@example.com,Latin America
+ORD-0000045,katherine johnson,Starter,146.25,PAID,2026-09-18,katherine.johnson+44@example.com,North America
+ORD-0000046,Alan Turing,Pro Plan,149.50,PENDING,2026-10-19,alan.turing+45@example.com,Europe
+ORD-0000047, Margaret Hamilton ,Enterprise,152.75,REFUNDED,2026-11-20,margaret.hamilton+46@example.com,Asia Pacific
+ORD-0000048,Barbara Liskov,Analytics Add-on,156.00,FAILED,2026-12-21,barbara.liskov+47@example.com,Latin America
+ORD-0000049,Ada Lovelace,Starter,159.25,PAID,2026-01-22,ada.lovelace+48@example.com,North America
+ORD-0000050,Grace Hopper,Pro Plan,162.50,PENDING,2026-02-23,grace.hopper+49@example.com,Europe
+ORD-0000050,Grace Hopper,Pro Plan,162.50,PENDING,2026-02-23,grace.hopper+49@example.com,Europe
+ORD-0000052,Alan Turing,Analytics Add-on,$169.00,FAILED,2026-04-25,alan.turing+51@example.com,Latin America
+ORD-0000053,Margaret Hamilton,STARTER,172.25,PAID,2026-05-26,margaret.hamilton+52@example.com,North America
+ORD-0000054,Barbara Liskov,Pro Plan,175.50,PENDING,2026-06-27,barbara.liskov+53@example.com,Europe
+ORD-0000055,Ada Lovelace,Enterprise,178.75,REFUNDED,2026-07-01,ada.lovelace+54@example.com,Asia Pacific
+ORD-0000056,grace hopper,Analytics Add-on,182.00,FAILED,2026-08-02,grace.hopper+55@example.com,Latin America
+ORD-0000057,Katherine Johnson,Starter,185.25,PAID,2026-09-03,katherine.johnson+56@example.com,North America
+ORD-0000058,Alan Turing,Pro Plan,188.50,pending,2026-10-04,alan.turing+57@example.com,Europe
+ORD-0000059,Margaret Hamilton, Enterprise ,191.75,REFUNDED,2026-11-05,margaret.hamilton+58@example.com,Asia Pacific
+ORD-0000060,Barbara Liskov,Analytics Add-on,195.00,FAILED,2026-12-06,barbara.liskov+59@example.com,Latin America
+ORD-0000061,Ada Lovelace,Starter,198.25,PAID,2026-01-07,ada.lovelace+60@example.com,North America
+ORD-0000062,Grace Hopper,Pro Plan,201.50,PENDING,2026-02-08,grace.hopper+61@example.com,Europe
+ORD-0000063,Katherine Johnson,Enterprise,204.75,REFUNDED,2026-03-09,katherine.johnson+62@example.com,asia pacific
+ORD-0000064,Alan Turing,Analytics Add-on,208.00,FAILED,2026-04-10,alan.turing+63@example.com,Latin America
+ORD-0000065,Margaret Hamilton,Starter,211.25,PAID,2026-05-11,margaret.hamilton+64@example.com,North America
+ORD-0000066,Barbara Liskov,PRO PLAN,214.50,PENDING,2026-06-12,barbara.liskov+65@example.com,Europe
+ORD-0000067,ada lovelace,Enterprise,217.75,REFUNDED,2026-07-13,ada.lovelace+66@example.com,Asia Pacific
+ORD-0000068,Grace Hopper,Analytics Add-on,221.00,FAILED,2026-08-14,grace.hopper+67@example.com,Latin America
+ORD-0000069,Katherine Johnson,Starter,$224.25,PAID,2026-09-15,katherine.johnson+68@example.com,North America
+ORD-0000070, Alan Turing ,Pro Plan,227.50,PENDING,2026-10-16,alan.turing+69@example.com,Europe
+ORD-0000071,Margaret Hamilton,Enterprise,230.75,REFUNDED,2026-11-17,margaret.hamilton+70@example.com,Asia Pacific
+ORD-0000072,Barbara Liskov,Analytics Add-on,234.00,FAILED,2026-12-18,barbara.liskov+71@example.com,Latin America
+ORD-0000073,Ada Lovelace,Starter,237.25,PAID,2026-01-19,ada.lovelace+72@example.com,North America
+ORD-0000074,Grace Hopper,Pro Plan,240.50,PENDING,2026-02-20,grace.hopper+73@example.com,Europe
+ORD-0000075,Katherine Johnson,Enterprise,243.75,,2026-03-21,katherine.johnson+74@example.com,Asia Pacific
+ORD-0000076,Alan Turing,Analytics Add-on,247.00,FAILED,2026-04-22,alan.turing+75@example.com,Latin America
+ORD-0000077,Margaret Hamilton,Starter,250.25,paid,2026-05-23,margaret.hamilton+76@example.com,North America
+ORD-0000078,barbara liskov,Pro Plan,253.50,PENDING,2026-06-24,barbara.liskov+77@example.com,Europe
+ORD-0000079,Ada Lovelace,ENTERPRISE,256.75,REFUNDED,2026-07-25,ada.lovelace+78@example.com,Asia Pacific
+ORD-0000080,Grace Hopper,Analytics Add-on,260.00,FAILED,2026-08-26,grace.hopper+79@example.com,Latin America
+ORD-0000081,Katherine Johnson,Starter,263.25,PAID,2026-09-27,katherine.johnson+80@example.com,North America
+ORD-0000082,Alan Turing,Pro Plan,266.50,PENDING,2026-10-01,alan.turing+81@example.com,Europe
+ORD-0000083,Margaret Hamilton,Enterprise,269.75,REFUNDED,11/02/2026,margaret.hamilton+82@example.com,Asia Pacific
+ORD-0000084,Barbara Liskov,Analytics Add-on,273.00,FAILED,2026-12-03,barbara.liskov+83@example.com,Latin America
+ORD-0000085,Ada Lovelace,Starter,276.25,PAID,2026-01-04,ada.lovelace+84@example.com,North America
+ORD-0000086,Grace Hopper,Pro Plan,$279.50,PENDING,2026-02-05,grace.hopper+85@example.com,Europe
+ORD-0000087,Katherine Johnson,Enterprise,282.75,REFUNDED,2026-03-06,katherine.johnson+86@example.com,Asia Pacific
+ORD-0000088,Alan Turing, Analytics Add-on ,286.00,FAILED,2026-04-07,alan.turing+87@example.com,Latin America
+ORD-0000089,margaret hamilton,Starter,289.25,PAID,2026-05-08,margaret.hamilton+88@example.com,North America
+ORD-0000090,Barbara Liskov,Pro Plan,292.50,PENDING,2026-06-09,barbara.liskov+89@example.com,Europe
+ORD-0000091,Ada Lovelace,Enterprise,295.75,REFUNDED,2026-07-10,ada.lovelace+90@example.com,Asia Pacific
+ORD-0000092,Grace Hopper,ANALYTICS ADD-ON,299.00,FAILED,2026-08-11,grace.hopper+91@example.com,Latin America
+ORD-0000093, Katherine Johnson ,Starter,302.25,PAID,2026-09-12,katherine.johnson+92@example.com,North America
+ORD-0000094,Alan Turing,Pro Plan,305.50,PENDING,2026-10-13,alan.turing+93@example.com,europe
+ORD-0000095,Margaret Hamilton,Enterprise,308.75,REFUNDED,2026-11-14,margaret.hamilton+94@example.com,Asia Pacific
+ORD-0000096,Barbara Liskov,Analytics Add-on,312.00,failed,2026-12-15,barbara.liskov+95@example.com,Latin America
+ORD-0000097,Ada Lovelace,Starter,315.25,PAID,2026-01-16,ada.lovelace+96@example.com,North America
+ORD-0000098,Grace Hopper,Pro Plan,318.50,PENDING,2026-02-17,,Europe
+ORD-0000099,Katherine Johnson,Enterprise,321.75,REFUNDED,2026-03-18,katherine.johnson+98@example.com,Asia Pacific
+ORD-0000100,alan turing,Analytics Add-on,325.00,FAILED,2026-04-19,alan.turing+99@example.com,Latin America
+ORD-0000100,alan turing,Analytics Add-on,325.00,FAILED,2026-04-19,alan.turing+99@example.com,Latin America
+ORD-0000102,Barbara Liskov,Pro Plan,331.50,PENDING,2026-06-21,barbara.liskov+101@example.com,Europe
+ORD-0000103,Ada Lovelace,Enterprise,$334.75,REFUNDED,2026-07-22,ada.lovelace+102@example.com,Asia Pacific
+ORD-0000104,Grace Hopper,Analytics Add-on,338.00,FAILED,2026-08-23,grace.hopper+103@example.com,Latin America
+ORD-0000105,Katherine Johnson,STARTER,341.25,PAID,2026-09-24,katherine.johnson+104@example.com,North America
+ORD-0000106,Alan Turing,Pro Plan,344.50,PENDING,2026-10-25,alan.turing+105@example.com,Europe
+ORD-0000107,Margaret Hamilton,Enterprise,347.75,REFUNDED,2026-11-26,margaret.hamilton+106@example.com,Asia Pacific
+ORD-0000108,Barbara Liskov,Analytics Add-on,351.00,FAILED,2026-12-27,barbara.liskov+107@example.com,Latin America
+ORD-0000109,Ada Lovelace,Starter,354.25,PAID,2026-01-01,ada.lovelace+108@example.com,North America
+ORD-0000110,Grace Hopper,Pro Plan,357.50,PENDING,2026-02-02,grace.hopper+109@example.com,Europe
+ORD-0000111,katherine johnson,Enterprise,360.75,REFUNDED,2026-03-03,katherine.johnson+110@example.com,Asia Pacific
+ORD-0000112,Alan Turing,Analytics Add-on,364.00,,2026-04-04,alan.turing+111@example.com,Latin America
+ORD-0000113,Margaret Hamilton,Starter,367.25,PAID,2026-05-05,margaret.hamilton+112@example.com,North America
+ORD-0000114,Barbara Liskov,Pro Plan,370.50,PENDING,2026-06-06,barbara.liskov+113@example.com,Europe
+ORD-0000115,Ada Lovelace,Enterprise,373.75,refunded,2026-07-07,ada.lovelace+114@example.com,Asia Pacific
+ORD-0000116, Grace Hopper ,Analytics Add-on,377.00,FAILED,2026-08-08,grace.hopper+115@example.com,Latin America
+ORD-0000117,Katherine Johnson, Starter ,380.25,PAID,2026-09-09,katherine.johnson+116@example.com,North America
+ORD-0000118,Alan Turing,PRO PLAN,383.50,PENDING,2026-10-10,alan.turing+117@example.com,Europe
+ORD-0000119,Margaret Hamilton,Enterprise,386.75,REFUNDED,2026-11-11,margaret.hamilton+118@example.com,Asia Pacific
+ORD-0000120,Barbara Liskov,Analytics Add-on,$390.00,FAILED,2026-12-12,barbara.liskov+119@example.com,Latin America
+ORD-0000121,Ada Lovelace,Starter,393.25,PAID,2026-01-13,ada.lovelace+120@example.com,North America
+ORD-0000122,grace hopper,Pro Plan,396.50,PENDING,2026-02-14,grace.hopper+121@example.com,Europe
+ORD-0000123,Katherine Johnson,Enterprise,399.75,REFUNDED,2026-03-15,katherine.johnson+122@example.com,Asia Pacific
+ORD-0000124,Alan Turing,Analytics Add-on,403.00,FAILED,04/16/2026,alan.turing+123@example.com,Latin America
+ORD-0000125,Margaret Hamilton,Starter,406.25,PAID,2026-05-17,margaret.hamilton+124@example.com,north america
+ORD-0000126,Barbara Liskov,Pro Plan,409.50,PENDING,2026-06-18,barbara.liskov+125@example.com,Europe
+ORD-0000127,Ada Lovelace,Enterprise,412.75,REFUNDED,2026-07-19,ada.lovelace+126@example.com,Asia Pacific
+ORD-0000128,Grace Hopper,Analytics Add-on,416.00,FAILED,2026-08-20,grace.hopper+127@example.com,Latin America
+ORD-0000129,Katherine Johnson,Starter,419.25,PAID,2026-09-21,katherine.johnson+128@example.com,North America
+ORD-0000130,Alan Turing,Pro Plan,422.50,PENDING,2026-10-22,alan.turing+129@example.com,Europe
+ORD-0000131,Margaret Hamilton,ENTERPRISE,425.75,REFUNDED,2026-11-23,margaret.hamilton+130@example.com,Asia Pacific
+ORD-0000132,Barbara Liskov,Analytics Add-on,429.00,FAILED,2026-12-24,barbara.liskov+131@example.com,Latin America
+ORD-0000133,ada lovelace,Starter,432.25,PAID,2026-01-25,ada.lovelace+132@example.com,North America
+ORD-0000134,Grace Hopper,Pro Plan,435.50,pending,2026-02-26,grace.hopper+133@example.com,Europe
+ORD-0000135,Katherine Johnson,Enterprise,438.75,REFUNDED,2026-03-27,katherine.johnson+134@example.com,Asia Pacific
+ORD-0000136,Alan Turing,Analytics Add-on,442.00,FAILED,2026-04-01,alan.turing+135@example.com,Latin America
+ORD-0000137,Margaret Hamilton,Starter,$445.25,PAID,2026-05-02,margaret.hamilton+136@example.com,North America
+ORD-0000138,Barbara Liskov,Pro Plan,448.50,PENDING,2026-06-03,barbara.liskov+137@example.com,Europe
+ORD-0000139, Ada Lovelace ,Enterprise,451.75,REFUNDED,2026-07-04,ada.lovelace+138@example.com,Asia Pacific
+ORD-0000140,Grace Hopper,Analytics Add-on,455.00,FAILED,2026-08-05,grace.hopper+139@example.com,Latin America
+ORD-0000141,Katherine Johnson,Starter,458.25,PAID,2026-09-06,katherine.johnson+140@example.com,North America
+ORD-0000142,Alan Turing,Pro Plan,461.50,PENDING,2026-10-07,alan.turing+141@example.com,Europe
+ORD-0000143,Margaret Hamilton,Enterprise,464.75,REFUNDED,2026-11-08,margaret.hamilton+142@example.com,Asia Pacific
+ORD-0000144,barbara liskov,ANALYTICS ADD-ON,468.00,FAILED,2026-12-09,barbara.liskov+143@example.com,Latin America
+ORD-0000145,Ada Lovelace,Starter,471.25,PAID,2026-01-10,ada.lovelace+144@example.com,North America
+ORD-0000146,Grace Hopper, Pro Plan ,474.50,PENDING,2026-02-11,grace.hopper+145@example.com,Europe
+ORD-0000147,Katherine Johnson,Enterprise,477.75,REFUNDED,2026-03-12,katherine.johnson+146@example.com,Asia Pacific
+ORD-0000148,Alan Turing,Analytics Add-on,481.00,FAILED,2026-04-13,alan.turing+147@example.com,Latin America
+ORD-0000149,Margaret Hamilton,Starter,484.25,,2026-05-14,margaret.hamilton+148@example.com,North America
+ORD-0000150,Barbara Liskov,Pro Plan,487.50,PENDING,2026-06-15,barbara.liskov+149@example.com,Europe
+ORD-0000150,Barbara Liskov,Pro Plan,487.50,PENDING,2026-06-15,barbara.liskov+149@example.com,Europe
+ORD-0000152,Grace Hopper,Analytics Add-on,494.00,FAILED,2026-08-17,grace.hopper+151@example.com,Latin America
+ORD-0000153,Katherine Johnson,Starter,497.25,paid,2026-09-18,katherine.johnson+152@example.com,North America
+ORD-0000154,Alan Turing,Pro Plan,$500.50,PENDING,2026-10-19,alan.turing+153@example.com,Europe
+ORD-0000155,margaret hamilton,Enterprise,503.75,REFUNDED,2026-11-20,margaret.hamilton+154@example.com,Asia Pacific
+ORD-0000156,Barbara Liskov,Analytics Add-on,507.00,FAILED,2026-12-21,barbara.liskov+155@example.com,latin america
+ORD-0000157,Ada Lovelace,STARTER,510.25,PAID,2026-01-22,ada.lovelace+156@example.com,North America
+ORD-0000158,Grace Hopper,Pro Plan,513.50,PENDING,2026-02-23,grace.hopper+157@example.com,Europe
+ORD-0000159,Katherine Johnson,Enterprise,516.75,REFUNDED,2026-03-24,katherine.johnson+158@example.com,Asia Pacific
+ORD-0000160,Alan Turing,Analytics Add-on,520.00,FAILED,2026-04-25,alan.turing+159@example.com,Latin America
+ORD-0000161,Margaret Hamilton,Starter,523.25,PAID,2026-05-26,margaret.hamilton+160@example.com,North America
+ORD-0000162, Barbara Liskov ,Pro Plan,526.50,PENDING,2026-06-27,barbara.liskov+161@example.com,Europe
+ORD-0000163,Ada Lovelace,Enterprise,529.75,REFUNDED,2026-07-01,ada.lovelace+162@example.com,Asia Pacific
+ORD-0000164,Grace Hopper,Analytics Add-on,533.00,FAILED,2026-08-02,grace.hopper+163@example.com,Latin America
+ORD-0000165,Katherine Johnson,Starter,536.25,PAID,09/03/2026,katherine.johnson+164@example.com,North America
+ORD-0000166,alan turing,Pro Plan,539.50,PENDING,2026-10-04,alan.turing+165@example.com,Europe
+ORD-0000167,Margaret Hamilton,Enterprise,542.75,REFUNDED,2026-11-05,margaret.hamilton+166@example.com,Asia Pacific
+ORD-0000168,Barbara Liskov,Analytics Add-on,546.00,FAILED,2026-12-06,barbara.liskov+167@example.com,Latin America
+ORD-0000169,Ada Lovelace,Starter,549.25,PAID,2026-01-07,ada.lovelace+168@example.com,North America
+ORD-0000170,Grace Hopper,PRO PLAN,552.50,PENDING,2026-02-08,grace.hopper+169@example.com,Europe
+ORD-0000171,Katherine Johnson,Enterprise,$555.75,REFUNDED,2026-03-09,katherine.johnson+170@example.com,Asia Pacific
+ORD-0000172,Alan Turing,Analytics Add-on,559.00,failed,2026-04-10,alan.turing+171@example.com,Latin America
+ORD-0000173,Margaret Hamilton,Starter,562.25,PAID,2026-05-11,margaret.hamilton+172@example.com,North America
+ORD-0000174,Barbara Liskov,Pro Plan,565.50,PENDING,2026-06-12,barbara.liskov+173@example.com,Europe
+ORD-0000175,Ada Lovelace, Enterprise ,568.75,REFUNDED,2026-07-13,ada.lovelace+174@example.com,Asia Pacific
+ORD-0000176,Grace Hopper,Analytics Add-on,572.00,FAILED,2026-08-14,grace.hopper+175@example.com,Latin America
+ORD-0000177,katherine johnson,Starter,575.25,PAID,2026-09-15,katherine.johnson+176@example.com,North America
+ORD-0000178,Alan Turing,Pro Plan,578.50,PENDING,2026-10-16,alan.turing+177@example.com,Europe
+ORD-0000179,Margaret Hamilton,Enterprise,581.75,REFUNDED,2026-11-17,margaret.hamilton+178@example.com,Asia Pacific
+ORD-0000180,Barbara Liskov,Analytics Add-on,585.00,FAILED,2026-12-18,barbara.liskov+179@example.com,Latin America
+ORD-0000181,Ada Lovelace,Starter,588.25,PAID,2026-01-19,ada.lovelace+180@example.com,North America
+ORD-0000182,Grace Hopper,Pro Plan,591.50,PENDING,2026-02-20,grace.hopper+181@example.com,Europe
+ORD-0000183,Katherine Johnson,ENTERPRISE,594.75,REFUNDED,2026-03-21,katherine.johnson+182@example.com,Asia Pacific
+ORD-0000184,Alan Turing,Analytics Add-on,598.00,FAILED,2026-04-22,alan.turing+183@example.com,Latin America
+ORD-0000185, Margaret Hamilton ,Starter,601.25,PAID,2026-05-23,margaret.hamilton+184@example.com,North America
+ORD-0000186,Barbara Liskov,Pro Plan,604.50,,2026-06-24,barbara.liskov+185@example.com,Europe
+ORD-0000187,Ada Lovelace,Enterprise,607.75,REFUNDED,2026-07-25,ada.lovelace+186@example.com,asia pacific
+ORD-0000188,grace hopper,Analytics Add-on,$611.00,FAILED,2026-08-26,grace.hopper+187@example.com,Latin America
+ORD-0000189,Katherine Johnson,Starter,614.25,PAID,2026-09-27,katherine.johnson+188@example.com,North America
+ORD-0000190,Alan Turing,Pro Plan,617.50,PENDING,2026-10-01,alan.turing+189@example.com,Europe
+ORD-0000191,Margaret Hamilton,Enterprise,620.75,refunded,2026-11-02,margaret.hamilton+190@example.com,Asia Pacific
+ORD-0000192,Barbara Liskov,Analytics Add-on,624.00,FAILED,2026-12-03,barbara.liskov+191@example.com,Latin America
+ORD-0000193,Ada Lovelace,Starter,627.25,PAID,2026-01-04,ada.lovelace+192@example.com,North America
+ORD-0000194,Grace Hopper,Pro Plan,630.50,PENDING,2026-02-05,grace.hopper+193@example.com,Europe
+ORD-0000195,Katherine Johnson,Enterprise,633.75,REFUNDED,2026-03-06,,Asia Pacific
+ORD-0000196,Alan Turing,ANALYTICS ADD-ON,637.00,FAILED,2026-04-07,alan.turing+195@example.com,Latin America
+ORD-0000197,Margaret Hamilton,Starter,640.25,PAID,2026-05-08,margaret.hamilton+196@example.com,North America
+ORD-0000198,Barbara Liskov,Pro Plan,643.50,PENDING,2026-06-09,barbara.liskov+197@example.com,Europe
+ORD-0000199,ada lovelace,Enterprise,646.75,REFUNDED,2026-07-10,ada.lovelace+198@example.com,Asia Pacific
+ORD-0000200,Grace Hopper,Analytics Add-on,650.00,FAILED,2026-08-11,grace.hopper+199@example.com,Latin America
+ORD-0000200,Grace Hopper,Analytics Add-on,650.00,FAILED,2026-08-11,grace.hopper+199@example.com,Latin America
+ORD-0000202,Alan Turing,Pro Plan,656.50,PENDING,2026-10-13,alan.turing+201@example.com,Europe
+ORD-0000203,Margaret Hamilton,Enterprise,659.75,REFUNDED,2026-11-14,margaret.hamilton+202@example.com,Asia Pacific
+ORD-0000204,Barbara Liskov, Analytics Add-on ,663.00,FAILED,2026-12-15,barbara.liskov+203@example.com,Latin America
+ORD-0000205,Ada Lovelace,Starter,$666.25,PAID,2026-01-16,ada.lovelace+204@example.com,North America
+ORD-0000206,Grace Hopper,Pro Plan,669.50,PENDING,02/17/2026,grace.hopper+205@example.com,Europe
+ORD-0000207,Katherine Johnson,Enterprise,672.75,REFUNDED,2026-03-18,katherine.johnson+206@example.com,Asia Pacific
+ORD-0000208, Alan Turing ,Analytics Add-on,676.00,FAILED,2026-04-19,alan.turing+207@example.com,Latin America
+ORD-0000209,Margaret Hamilton,STARTER,679.25,PAID,2026-05-20,margaret.hamilton+208@example.com,North America
+ORD-0000210,barbara liskov,Pro Plan,682.50,pending,2026-06-21,barbara.liskov+209@example.com,Europe
+ORD-0000211,Ada Lovelace,Enterprise,685.75,REFUNDED,2026-07-22,ada.lovelace+210@example.com,Asia Pacific
+ORD-0000212,Grace Hopper,Analytics Add-on,689.00,FAILED,2026-08-23,grace.hopper+211@example.com,Latin America
+ORD-0000213,Katherine Johnson,Starter,692.25,PAID,2026-09-24,katherine.johnson+212@example.com,North America
+ORD-0000214,Alan Turing,Pro Plan,695.50,PENDING,2026-10-25,alan.turing+213@example.com,Europe
+ORD-0000215,Margaret Hamilton,Enterprise,698.75,REFUNDED,2026-11-26,margaret.hamilton+214@example.com,Asia Pacific
+ORD-0000216,Barbara Liskov,Analytics Add-on,702.00,FAILED,2026-12-27,barbara.liskov+215@example.com,Latin America
+ORD-0000217,Ada Lovelace,Starter,705.25,PAID,2026-01-01,ada.lovelace+216@example.com,North America
+ORD-0000218,Grace Hopper,Pro Plan,708.50,PENDING,2026-02-02,grace.hopper+217@example.com,europe
+ORD-0000219,Katherine Johnson,Enterprise,711.75,REFUNDED,2026-03-03,katherine.johnson+218@example.com,Asia Pacific
+ORD-0000220,Alan Turing,Analytics Add-on,715.00,FAILED,2026-04-04,alan.turing+219@example.com,Latin America
+ORD-0000221,margaret hamilton,Starter,718.25,PAID,2026-05-05,margaret.hamilton+220@example.com,North America
+ORD-0000222,Barbara Liskov,PRO PLAN,$721.50,PENDING,2026-06-06,barbara.liskov+221@example.com,Europe
+ORD-0000223,Ada Lovelace,Enterprise,724.75,,2026-07-07,ada.lovelace+222@example.com,Asia Pacific
+ORD-0000224,Grace Hopper,Analytics Add-on,728.00,FAILED,2026-08-08,grace.hopper+223@example.com,Latin America
+ORD-0000225,Katherine Johnson,Starter,731.25,PAID,2026-09-09,katherine.johnson+224@example.com,North America
+ORD-0000226,Alan Turing,Pro Plan,734.50,PENDING,2026-10-10,alan.turing+225@example.com,Europe
+ORD-0000227,Margaret Hamilton,Enterprise,737.75,REFUNDED,2026-11-11,margaret.hamilton+226@example.com,Asia Pacific
+ORD-0000228,Barbara Liskov,Analytics Add-on,741.00,FAILED,2026-12-12,barbara.liskov+227@example.com,Latin America
+ORD-0000229,Ada Lovelace,Starter,744.25,paid,2026-01-13,ada.lovelace+228@example.com,North America
+ORD-0000230,Grace Hopper,Pro Plan,747.50,PENDING,2026-02-14,grace.hopper+229@example.com,Europe
+ORD-0000231, Katherine Johnson ,Enterprise,750.75,REFUNDED,2026-03-15,katherine.johnson+230@example.com,Asia Pacific
+ORD-0000232,alan turing,Analytics Add-on,754.00,FAILED,2026-04-16,alan.turing+231@example.com,Latin America
+ORD-0000233,Margaret Hamilton, Starter ,757.25,PAID,2026-05-17,margaret.hamilton+232@example.com,North America
+ORD-0000234,Barbara Liskov,Pro Plan,760.50,PENDING,2026-06-18,barbara.liskov+233@example.com,Europe
+ORD-0000235,Ada Lovelace,ENTERPRISE,763.75,REFUNDED,2026-07-19,ada.lovelace+234@example.com,Asia Pacific
+ORD-0000236,Grace Hopper,Analytics Add-on,767.00,FAILED,2026-08-20,grace.hopper+235@example.com,Latin America
+ORD-0000237,Katherine Johnson,Starter,770.25,PAID,2026-09-21,katherine.johnson+236@example.com,North America
+ORD-0000238,Alan Turing,Pro Plan,773.50,PENDING,2026-10-22,alan.turing+237@example.com,Europe
+ORD-0000239,Margaret Hamilton,Enterprise,$776.75,REFUNDED,2026-11-23,margaret.hamilton+238@example.com,Asia Pacific
+ORD-0000240,Barbara Liskov,Analytics Add-on,780.00,FAILED,2026-12-24,barbara.liskov+239@example.com,Latin America
+ORD-0000241,Ada Lovelace,Starter,783.25,PAID,2026-01-25,ada.lovelace+240@example.com,North America
+ORD-0000242,Grace Hopper,Pro Plan,786.50,PENDING,2026-02-26,grace.hopper+241@example.com,Europe
+ORD-0000243,katherine johnson,Enterprise,789.75,REFUNDED,2026-03-27,katherine.johnson+242@example.com,Asia Pacific
+ORD-0000244,Alan Turing,Analytics Add-on,793.00,FAILED,2026-04-01,alan.turing+243@example.com,Latin America
+ORD-0000245,Margaret Hamilton,Starter,796.25,PAID,2026-05-02,margaret.hamilton+244@example.com,North America
+ORD-0000246,Barbara Liskov,Pro Plan,799.50,PENDING,2026-06-03,barbara.liskov+245@example.com,Europe
+ORD-0000247,Ada Lovelace,Enterprise,802.75,REFUNDED,07/04/2026,ada.lovelace+246@example.com,Asia Pacific
+ORD-0000248,Grace Hopper,ANALYTICS ADD-ON,806.00,failed,2026-08-05,grace.hopper+247@example.com,Latin America
+ORD-0000249,Katherine Johnson,Starter,809.25,PAID,2026-09-06,katherine.johnson+248@example.com,north america
+ORD-0000250,Alan Turing,Pro Plan,812.50,PENDING,2026-10-07,alan.turing+249@example.com,Europe
+ORD-0000250,Alan Turing,Pro Plan,812.50,PENDING,2026-10-07,alan.turing+249@example.com,Europe
+ORD-0000252,Barbara Liskov,Analytics Add-on,819.00,FAILED,2026-12-09,barbara.liskov+251@example.com,Latin America
+ORD-0000253,Ada Lovelace,Starter,822.25,PAID,2026-01-10,ada.lovelace+252@example.com,North America
+ORD-0000254, Grace Hopper ,Pro Plan,825.50,PENDING,2026-02-11,grace.hopper+253@example.com,Europe
+ORD-0000255,Katherine Johnson,Enterprise,828.75,REFUNDED,2026-03-12,katherine.johnson+254@example.com,Asia Pacific
+ORD-0000256,Alan Turing,Analytics Add-on,$832.00,FAILED,2026-04-13,alan.turing+255@example.com,Latin America
+ORD-0000257,Margaret Hamilton,Starter,835.25,PAID,2026-05-14,margaret.hamilton+256@example.com,North America
+ORD-0000258,Barbara Liskov,Pro Plan,838.50,PENDING,2026-06-15,barbara.liskov+257@example.com,Europe
+ORD-0000259,Ada Lovelace,Enterprise,841.75,REFUNDED,2026-07-16,ada.lovelace+258@example.com,Asia Pacific
+ORD-0000260,Grace Hopper,Analytics Add-on,845.00,,2026-08-17,grace.hopper+259@example.com,Latin America
+ORD-0000261,Katherine Johnson,STARTER,848.25,PAID,2026-09-18,katherine.johnson+260@example.com,North America
+ORD-0000262,Alan Turing, Pro Plan ,851.50,PENDING,2026-10-19,alan.turing+261@example.com,Europe
+ORD-0000263,Margaret Hamilton,Enterprise,854.75,REFUNDED,2026-11-20,margaret.hamilton+262@example.com,Asia Pacific
+ORD-0000264,Barbara Liskov,Analytics Add-on,858.00,FAILED,2026-12-21,barbara.liskov+263@example.com,Latin America
+ORD-0000265,ada lovelace,Starter,861.25,PAID,2026-01-22,ada.lovelace+264@example.com,North America
+ORD-0000266,Grace Hopper,Pro Plan,864.50,PENDING,2026-02-23,grace.hopper+265@example.com,Europe
+ORD-0000267,Katherine Johnson,Enterprise,867.75,refunded,2026-03-24,katherine.johnson+266@example.com,Asia Pacific
+ORD-0000268,Alan Turing,Analytics Add-on,871.00,FAILED,2026-04-25,alan.turing+267@example.com,Latin America
+ORD-0000269,Margaret Hamilton,Starter,874.25,PAID,2026-05-26,margaret.hamilton+268@example.com,North America
+ORD-0000270,Barbara Liskov,Pro Plan,877.50,PENDING,2026-06-27,barbara.liskov+269@example.com,Europe
+ORD-0000271,Ada Lovelace,Enterprise,880.75,REFUNDED,2026-07-01,ada.lovelace+270@example.com,Asia Pacific
+ORD-0000272,Grace Hopper,Analytics Add-on,884.00,FAILED,2026-08-02,grace.hopper+271@example.com,Latin America
+ORD-0000273,Katherine Johnson,Starter,$887.25,PAID,2026-09-03,katherine.johnson+272@example.com,North America
+ORD-0000274,Alan Turing,PRO PLAN,890.50,PENDING,2026-10-04,alan.turing+273@example.com,Europe
+ORD-0000275,Margaret Hamilton,Enterprise,893.75,REFUNDED,2026-11-05,margaret.hamilton+274@example.com,Asia Pacific
+ORD-0000276,barbara liskov,Analytics Add-on,897.00,FAILED,2026-12-06,barbara.liskov+275@example.com,Latin America
+ORD-0000277, Ada Lovelace ,Starter,900.25,PAID,2026-01-07,ada.lovelace+276@example.com,North America
+ORD-0000278,Grace Hopper,Pro Plan,903.50,PENDING,2026-02-08,grace.hopper+277@example.com,Europe
+ORD-0000279,Katherine Johnson,Enterprise,906.75,REFUNDED,2026-03-09,katherine.johnson+278@example.com,Asia Pacific
+ORD-0000280,Alan Turing,Analytics Add-on,910.00,FAILED,2026-04-10,alan.turing+279@example.com,latin america
+ORD-0000281,Margaret Hamilton,Starter,913.25,PAID,2026-05-11,margaret.hamilton+280@example.com,North America
+ORD-0000282,Barbara Liskov,Pro Plan,916.50,PENDING,2026-06-12,barbara.liskov+281@example.com,Europe
+ORD-0000283,Ada Lovelace,Enterprise,919.75,REFUNDED,2026-07-13,ada.lovelace+282@example.com,Asia Pacific
+ORD-0000284,Grace Hopper,Analytics Add-on,923.00,FAILED,2026-08-14,grace.hopper+283@example.com,Latin America
+ORD-0000285,Katherine Johnson,Starter,926.25,PAID,2026-09-15,katherine.johnson+284@example.com,North America
+ORD-0000286,Alan Turing,Pro Plan,929.50,pending,2026-10-16,alan.turing+285@example.com,Europe
+ORD-0000287,margaret hamilton,ENTERPRISE,932.75,REFUNDED,2026-11-17,margaret.hamilton+286@example.com,Asia Pacific
+ORD-0000288,Barbara Liskov,Analytics Add-on,936.00,FAILED,12/18/2026,barbara.liskov+287@example.com,Latin America
+ORD-0000289,Ada Lovelace,Starter,939.25,PAID,2026-01-19,ada.lovelace+288@example.com,North America
+ORD-0000290,Grace Hopper,Pro Plan,$942.50,PENDING,2026-02-20,grace.hopper+289@example.com,Europe
+ORD-0000291,Katherine Johnson, Enterprise ,945.75,REFUNDED,2026-03-21,katherine.johnson+290@example.com,Asia Pacific
+ORD-0000292,Alan Turing,Analytics Add-on,949.00,FAILED,2026-04-22,,Latin America
+ORD-0000293,Margaret Hamilton,Starter,952.25,PAID,2026-05-23,margaret.hamilton+292@example.com,North America
+ORD-0000294,Barbara Liskov,Pro Plan,955.50,PENDING,2026-06-24,barbara.liskov+293@example.com,Europe
+ORD-0000295,Ada Lovelace,Enterprise,958.75,REFUNDED,2026-07-25,ada.lovelace+294@example.com,Asia Pacific
+ORD-0000296,Grace Hopper,Analytics Add-on,962.00,FAILED,2026-08-26,grace.hopper+295@example.com,Latin America
+ORD-0000297,Katherine Johnson,Starter,965.25,,2026-09-27,katherine.johnson+296@example.com,North America
+ORD-0000298,alan turing,Pro Plan,968.50,PENDING,2026-10-01,alan.turing+297@example.com,Europe
+ORD-0000299,Margaret Hamilton,Enterprise,971.75,REFUNDED,2026-11-02,margaret.hamilton+298@example.com,Asia Pacific
+ORD-0000300, Barbara Liskov ,ANALYTICS ADD-ON,975.00,FAILED,2026-12-03,barbara.liskov+299@example.com,Latin America
+ORD-0000300, Barbara Liskov ,ANALYTICS ADD-ON,975.00,FAILED,2026-12-03,barbara.liskov+299@example.com,Latin America
+ORD-0000302,Grace Hopper,Pro Plan,981.50,PENDING,2026-02-05,grace.hopper+301@example.com,Europe
+ORD-0000303,Katherine Johnson,Enterprise,984.75,REFUNDED,2026-03-06,katherine.johnson+302@example.com,Asia Pacific
+ORD-0000304,Alan Turing,Analytics Add-on,988.00,FAILED,2026-04-07,alan.turing+303@example.com,Latin America
+ORD-0000305,Margaret Hamilton,Starter,991.25,paid,2026-05-08,margaret.hamilton+304@example.com,North America
+ORD-0000306,Barbara Liskov,Pro Plan,994.50,PENDING,2026-06-09,barbara.liskov+305@example.com,Europe
+ORD-0000307,Ada Lovelace,Enterprise,$997.75,REFUNDED,2026-07-10,ada.lovelace+306@example.com,Asia Pacific
+ORD-0000308,Grace Hopper,Analytics Add-on,1001.00,FAILED,2026-08-11,grace.hopper+307@example.com,Latin America
+ORD-0000309,katherine johnson,Starter,1004.25,PAID,2026-09-12,katherine.johnson+308@example.com,North America
+ORD-0000310,Alan Turing,Pro Plan,1007.50,PENDING,2026-10-13,alan.turing+309@example.com,Europe
+ORD-0000311,Margaret Hamilton,Enterprise,1010.75,REFUNDED,2026-11-14,margaret.hamilton+310@example.com,asia pacific
+ORD-0000312,Barbara Liskov,Analytics Add-on,1014.00,FAILED,2026-12-15,barbara.liskov+311@example.com,Latin America
+ORD-0000313,Ada Lovelace,STARTER,1017.25,PAID,2026-01-16,ada.lovelace+312@example.com,North America
+ORD-0000314,Grace Hopper,Pro Plan,1020.50,PENDING,2026-02-17,grace.hopper+313@example.com,Europe
+ORD-0000315,Katherine Johnson,Enterprise,1023.75,REFUNDED,2026-03-18,katherine.johnson+314@example.com,Asia Pacific
+ORD-0000316,Alan Turing,Analytics Add-on,1027.00,FAILED,2026-04-19,alan.turing+315@example.com,Latin America
+ORD-0000317,Margaret Hamilton,Starter,1030.25,PAID,2026-05-20,margaret.hamilton+316@example.com,North America
+ORD-0000318,Barbara Liskov,Pro Plan,1033.50,PENDING,2026-06-21,barbara.liskov+317@example.com,Europe
+ORD-0000319,Ada Lovelace,Enterprise,1036.75,REFUNDED,2026-07-22,ada.lovelace+318@example.com,Asia Pacific
+ORD-0000320,grace hopper, Analytics Add-on ,1040.00,FAILED,2026-08-23,grace.hopper+319@example.com,Latin America
+ORD-0000321,Katherine Johnson,Starter,1043.25,PAID,2026-09-24,katherine.johnson+320@example.com,North America
+ORD-0000322,Alan Turing,Pro Plan,1046.50,PENDING,2026-10-25,alan.turing+321@example.com,Europe
+ORD-0000323, Margaret Hamilton ,Enterprise,1049.75,REFUNDED,2026-11-26,margaret.hamilton+322@example.com,Asia Pacific
+ORD-0000324,Barbara Liskov,Analytics Add-on,"$1,053.00",failed,2026-12-27,barbara.liskov+323@example.com,Latin America
+ORD-0000325,Ada Lovelace,Starter,1056.25,PAID,2026-01-01,ada.lovelace+324@example.com,North America
+ORD-0000326,Grace Hopper,PRO PLAN,1059.50,PENDING,2026-02-02,grace.hopper+325@example.com,Europe
+ORD-0000327,Katherine Johnson,Enterprise,1062.75,REFUNDED,2026-03-03,katherine.johnson+326@example.com,Asia Pacific
+ORD-0000328,Alan Turing,Analytics Add-on,1066.00,FAILED,2026-04-04,alan.turing+327@example.com,Latin America
+ORD-0000329,Margaret Hamilton,Starter,1069.25,PAID,05/05/2026,margaret.hamilton+328@example.com,North America
+ORD-0000330,Barbara Liskov,Pro Plan,1072.50,PENDING,2026-06-06,barbara.liskov+329@example.com,Europe
+ORD-0000331,ada lovelace,Enterprise,1075.75,REFUNDED,2026-07-07,ada.lovelace+330@example.com,Asia Pacific
+ORD-0000332,Grace Hopper,Analytics Add-on,1079.00,FAILED,2026-08-08,grace.hopper+331@example.com,Latin America
+ORD-0000333,Katherine Johnson,Starter,1082.25,PAID,2026-09-09,katherine.johnson+332@example.com,North America
+ORD-0000334,Alan Turing,Pro Plan,1085.50,,2026-10-10,alan.turing+333@example.com,Europe
+ORD-0000335,Margaret Hamilton,Enterprise,1088.75,REFUNDED,2026-11-11,margaret.hamilton+334@example.com,Asia Pacific
+ORD-0000336,Barbara Liskov,Analytics Add-on,1092.00,FAILED,2026-12-12,barbara.liskov+335@example.com,Latin America
+ORD-0000337,Ada Lovelace,Starter,1095.25,PAID,2026-01-13,ada.lovelace+336@example.com,North America
+ORD-0000338,Grace Hopper,Pro Plan,1098.50,PENDING,2026-02-14,grace.hopper+337@example.com,Europe
+ORD-0000339,Katherine Johnson,ENTERPRISE,1101.75,REFUNDED,2026-03-15,katherine.johnson+338@example.com,Asia Pacific
+ORD-0000340,Alan Turing,Analytics Add-on,1105.00,FAILED,2026-04-16,alan.turing+339@example.com,Latin America
+ORD-0000341,Margaret Hamilton,Starter,"$1,108.25",PAID,2026-05-17,margaret.hamilton+340@example.com,North America
+ORD-0000342,barbara liskov,Pro Plan,1111.50,PENDING,2026-06-18,barbara.liskov+341@example.com,europe
+ORD-0000343,Ada Lovelace,Enterprise,1114.75,refunded,2026-07-19,ada.lovelace+342@example.com,Asia Pacific
+ORD-0000344,Grace Hopper,Analytics Add-on,1118.00,FAILED,2026-08-20,grace.hopper+343@example.com,Latin America
+ORD-0000345,Katherine Johnson,Starter,1121.25,PAID,2026-09-21,katherine.johnson+344@example.com,North America
+ORD-0000346, Alan Turing ,Pro Plan,1124.50,PENDING,2026-10-22,alan.turing+345@example.com,Europe
+ORD-0000347,Margaret Hamilton,Enterprise,1127.75,REFUNDED,2026-11-23,margaret.hamilton+346@example.com,Asia Pacific
+ORD-0000348,Barbara Liskov,Analytics Add-on,1131.00,FAILED,2026-12-24,barbara.liskov+347@example.com,Latin America
+ORD-0000349,Ada Lovelace, Starter ,1134.25,PAID,2026-01-25,ada.lovelace+348@example.com,North America
+ORD-0000350,Grace Hopper,Pro Plan,1137.50,PENDING,2026-02-26,grace.hopper+349@example.com,Europe
+ORD-0000350,Grace Hopper,Pro Plan,1137.50,PENDING,2026-02-26,grace.hopper+349@example.com,Europe
+ORD-0000352,Alan Turing,ANALYTICS ADD-ON,1144.00,FAILED,2026-04-01,alan.turing+351@example.com,Latin America
+ORD-0000353,margaret hamilton,Starter,1147.25,PAID,2026-05-02,margaret.hamilton+352@example.com,North America
+ORD-0000354,Barbara Liskov,Pro Plan,1150.50,PENDING,2026-06-03,barbara.liskov+353@example.com,Europe
+ORD-0000355,Ada Lovelace,Enterprise,1153.75,REFUNDED,2026-07-04,ada.lovelace+354@example.com,Asia Pacific
+ORD-0000356,Grace Hopper,Analytics Add-on,1157.00,FAILED,2026-08-05,grace.hopper+355@example.com,Latin America
+ORD-0000357,Katherine Johnson,Starter,1160.25,PAID,2026-09-06,katherine.johnson+356@example.com,North America
+ORD-0000358,Alan Turing,Pro Plan,"$1,163.50",PENDING,2026-10-07,alan.turing+357@example.com,Europe
+ORD-0000359,Margaret Hamilton,Enterprise,1166.75,REFUNDED,2026-11-08,margaret.hamilton+358@example.com,Asia Pacific
+ORD-0000360,Barbara Liskov,Analytics Add-on,1170.00,FAILED,2026-12-09,barbara.liskov+359@example.com,Latin America
+ORD-0000361,Ada Lovelace,Starter,1173.25,PAID,2026-01-10,ada.lovelace+360@example.com,North America
+ORD-0000362,Grace Hopper,Pro Plan,1176.50,pending,2026-02-11,grace.hopper+361@example.com,Europe
+ORD-0000363,Katherine Johnson,Enterprise,1179.75,REFUNDED,2026-03-12,katherine.johnson+362@example.com,Asia Pacific
+ORD-0000364,alan turing,Analytics Add-on,1183.00,FAILED,2026-04-13,alan.turing+363@example.com,Latin America
+ORD-0000365,Margaret Hamilton,STARTER,1186.25,PAID,2026-05-14,margaret.hamilton+364@example.com,North America
+ORD-0000366,Barbara Liskov,Pro Plan,1189.50,PENDING,2026-06-15,barbara.liskov+365@example.com,Europe
+ORD-0000367,Ada Lovelace,Enterprise,1192.75,REFUNDED,2026-07-16,ada.lovelace+366@example.com,Asia Pacific
+ORD-0000368,Grace Hopper,Analytics Add-on,1196.00,FAILED,2026-08-17,grace.hopper+367@example.com,Latin America
+ORD-0000369, Katherine Johnson ,Starter,1199.25,PAID,2026-09-18,katherine.johnson+368@example.com,North America
+ORD-0000370,Alan Turing,Pro Plan,1202.50,PENDING,10/19/2026,alan.turing+369@example.com,Europe
+ORD-0000371,Margaret Hamilton,Enterprise,1205.75,,2026-11-20,margaret.hamilton+370@example.com,Asia Pacific
+ORD-0000372,Barbara Liskov,Analytics Add-on,1209.00,FAILED,2026-12-21,barbara.liskov+371@example.com,Latin America
+ORD-0000373,Ada Lovelace,Starter,1212.25,PAID,2026-01-22,ada.lovelace+372@example.com,north america
+ORD-0000374,Grace Hopper,Pro Plan,1215.50,PENDING,2026-02-23,grace.hopper+373@example.com,Europe
+ORD-0000375,katherine johnson,Enterprise,"$1,218.75",REFUNDED,2026-03-24,katherine.johnson+374@example.com,Asia Pacific
+ORD-0000376,Alan Turing,Analytics Add-on,1222.00,FAILED,2026-04-25,alan.turing+375@example.com,Latin America
+ORD-0000377,Margaret Hamilton,Starter,1225.25,PAID,2026-05-26,margaret.hamilton+376@example.com,North America
+ORD-0000378,Barbara Liskov, Pro Plan ,1228.50,PENDING,2026-06-27,barbara.liskov+377@example.com,Europe
+ORD-0000379,Ada Lovelace,Enterprise,1231.75,REFUNDED,2026-07-01,ada.lovelace+378@example.com,Asia Pacific
+ORD-0000380,Grace Hopper,Analytics Add-on,1235.00,FAILED,2026-08-02,grace.hopper+379@example.com,Latin America
+ORD-0000381,Katherine Johnson,Starter,1238.25,paid,2026-09-03,katherine.johnson+380@example.com,North America
+ORD-0000382,Alan Turing,Pro Plan,1241.50,PENDING,2026-10-04,alan.turing+381@example.com,Europe
+ORD-0000383,Margaret Hamilton,Enterprise,1244.75,REFUNDED,2026-11-05,margaret.hamilton+382@example.com,Asia Pacific
+ORD-0000384,Barbara Liskov,Analytics Add-on,1248.00,FAILED,2026-12-06,barbara.liskov+383@example.com,Latin America
+ORD-0000385,Ada Lovelace,Starter,1251.25,PAID,2026-01-07,ada.lovelace+384@example.com,North America
+ORD-0000386,grace hopper,Pro Plan,1254.50,PENDING,2026-02-08,grace.hopper+385@example.com,Europe
+ORD-0000387,Katherine Johnson,Enterprise,1257.75,REFUNDED,2026-03-09,katherine.johnson+386@example.com,Asia Pacific
+ORD-0000388,Alan Turing,Analytics Add-on,1261.00,FAILED,2026-04-10,alan.turing+387@example.com,Latin America
+ORD-0000389,Margaret Hamilton,Starter,1264.25,PAID,2026-05-11,,North America
+ORD-0000390,Barbara Liskov,Pro Plan,1267.50,PENDING,2026-06-12,barbara.liskov+389@example.com,Europe
+ORD-0000391,Ada Lovelace,ENTERPRISE,1270.75,REFUNDED,2026-07-13,ada.lovelace+390@example.com,Asia Pacific
+ORD-0000392, Grace Hopper ,Analytics Add-on,"$1,274.00",FAILED,2026-08-14,grace.hopper+391@example.com,Latin America
+ORD-0000393,Katherine Johnson,Starter,1277.25,PAID,2026-09-15,katherine.johnson+392@example.com,North America
+ORD-0000394,Alan Turing,Pro Plan,1280.50,PENDING,2026-10-16,alan.turing+393@example.com,Europe
+ORD-0000395,Margaret Hamilton,Enterprise,1283.75,REFUNDED,2026-11-17,margaret.hamilton+394@example.com,Asia Pacific
+ORD-0000396,Barbara Liskov,Analytics Add-on,1287.00,FAILED,2026-12-18,barbara.liskov+395@example.com,Latin America
+ORD-0000397,ada lovelace,Starter,1290.25,PAID,2026-01-19,ada.lovelace+396@example.com,North America
+ORD-0000398,Grace Hopper,Pro Plan,1293.50,PENDING,2026-02-20,grace.hopper+397@example.com,Europe
+ORD-0000399,Katherine Johnson,Enterprise,1296.75,REFUNDED,2026-03-21,katherine.johnson+398@example.com,Asia Pacific
+ORD-0000400,Alan Turing,Analytics Add-on,1300.00,failed,2026-04-22,alan.turing+399@example.com,Latin America
+ORD-0000400,Alan Turing,Analytics Add-on,1300.00,failed,2026-04-22,alan.turing+399@example.com,Latin America
+ORD-0000402,Barbara Liskov,Pro Plan,6.50,PENDING,2026-06-24,barbara.liskov+401@example.com,Europe
+ORD-0000403,Ada Lovelace,Enterprise,9.75,REFUNDED,2026-07-25,ada.lovelace+402@example.com,Asia Pacific
+ORD-0000404,Grace Hopper,ANALYTICS ADD-ON,13.00,FAILED,2026-08-26,grace.hopper+403@example.com,latin america
+ORD-0000405,Katherine Johnson,Starter,16.25,PAID,2026-09-27,katherine.johnson+404@example.com,North America
+ORD-0000406,Alan Turing,Pro Plan,19.50,PENDING,2026-10-01,alan.turing+405@example.com,Europe
+ORD-0000407,Margaret Hamilton, Enterprise ,22.75,REFUNDED,2026-11-02,margaret.hamilton+406@example.com,Asia Pacific
+ORD-0000408,barbara liskov,Analytics Add-on,26.00,,2026-12-03,barbara.liskov+407@example.com,Latin America
+ORD-0000409,Ada Lovelace,Starter,$29.25,PAID,2026-01-04,ada.lovelace+408@example.com,North America
+ORD-0000410,Grace Hopper,Pro Plan,32.50,PENDING,2026-02-05,grace.hopper+409@example.com,Europe
+ORD-0000411,Katherine Johnson,Enterprise,35.75,REFUNDED,03/06/2026,katherine.johnson+410@example.com,Asia Pacific
+ORD-0000412,Alan Turing,Analytics Add-on,39.00,FAILED,2026-04-07,alan.turing+411@example.com,Latin America
+ORD-0000413,Margaret Hamilton,Starter,42.25,PAID,2026-05-08,margaret.hamilton+412@example.com,North America
+ORD-0000414,Barbara Liskov,Pro Plan,45.50,PENDING,2026-06-09,barbara.liskov+413@example.com,Europe
+ORD-0000415, Ada Lovelace ,Enterprise,48.75,REFUNDED,2026-07-10,ada.lovelace+414@example.com,Asia Pacific
+ORD-0000416,Grace Hopper,Analytics Add-on,52.00,FAILED,2026-08-11,grace.hopper+415@example.com,Latin America
+ORD-0000417,Katherine Johnson,STARTER,55.25,PAID,2026-09-12,katherine.johnson+416@example.com,North America
+ORD-0000418,Alan Turing,Pro Plan,58.50,PENDING,2026-10-13,alan.turing+417@example.com,Europe
+ORD-0000419,margaret hamilton,Enterprise,61.75,refunded,2026-11-14,margaret.hamilton+418@example.com,Asia Pacific
+ORD-0000420,Barbara Liskov,Analytics Add-on,65.00,FAILED,2026-12-15,barbara.liskov+419@example.com,Latin America
+ORD-0000421,Ada Lovelace,Starter,68.25,PAID,2026-01-16,ada.lovelace+420@example.com,North America
+ORD-0000422,Grace Hopper,Pro Plan,71.50,PENDING,2026-02-17,grace.hopper+421@example.com,Europe
+ORD-0000423,Katherine Johnson,Enterprise,74.75,REFUNDED,2026-03-18,katherine.johnson+422@example.com,Asia Pacific
+ORD-0000424,Alan Turing,Analytics Add-on,78.00,FAILED,2026-04-19,alan.turing+423@example.com,Latin America
+ORD-0000425,Margaret Hamilton,Starter,81.25,PAID,2026-05-20,margaret.hamilton+424@example.com,North America
+ORD-0000426,Barbara Liskov,Pro Plan,$84.50,PENDING,2026-06-21,barbara.liskov+425@example.com,Europe
+ORD-0000427,Ada Lovelace,Enterprise,87.75,REFUNDED,2026-07-22,ada.lovelace+426@example.com,Asia Pacific
+ORD-0000428,Grace Hopper,Analytics Add-on,91.00,FAILED,2026-08-23,grace.hopper+427@example.com,Latin America
+ORD-0000429,Katherine Johnson,Starter,94.25,PAID,2026-09-24,katherine.johnson+428@example.com,North America
+ORD-0000430,alan turing,PRO PLAN,97.50,PENDING,2026-10-25,alan.turing+429@example.com,Europe
+ORD-0000431,Margaret Hamilton,Enterprise,100.75,REFUNDED,2026-11-26,margaret.hamilton+430@example.com,Asia Pacific
+ORD-0000432,Barbara Liskov,Analytics Add-on,104.00,FAILED,2026-12-27,barbara.liskov+431@example.com,Latin America
+ORD-0000433,Ada Lovelace,Starter,107.25,PAID,2026-01-01,ada.lovelace+432@example.com,North America
+ORD-0000434,Grace Hopper,Pro Plan,110.50,PENDING,2026-02-02,grace.hopper+433@example.com,Europe
+ORD-0000435,Katherine Johnson,Enterprise,113.75,REFUNDED,2026-03-03,katherine.johnson+434@example.com,asia pacific
+ORD-0000436,Alan Turing, Analytics Add-on ,117.00,FAILED,2026-04-04,alan.turing+435@example.com,Latin America
+ORD-0000437,Margaret Hamilton,Starter,120.25,PAID,2026-05-05,margaret.hamilton+436@example.com,North America
+ORD-0000438, Barbara Liskov ,Pro Plan,123.50,pending,2026-06-06,barbara.liskov+437@example.com,Europe
+ORD-0000439,Ada Lovelace,Enterprise,126.75,REFUNDED,2026-07-07,ada.lovelace+438@example.com,Asia Pacific
+ORD-0000440,Grace Hopper,Analytics Add-on,130.00,FAILED,2026-08-08,grace.hopper+439@example.com,Latin America
+ORD-0000441,katherine johnson,Starter,133.25,PAID,2026-09-09,katherine.johnson+440@example.com,North America
+ORD-0000442,Alan Turing,Pro Plan,136.50,PENDING,2026-10-10,alan.turing+441@example.com,Europe
+ORD-0000443,Margaret Hamilton,ENTERPRISE,$139.75,REFUNDED,2026-11-11,margaret.hamilton+442@example.com,Asia Pacific
+ORD-0000444,Barbara Liskov,Analytics Add-on,143.00,FAILED,2026-12-12,barbara.liskov+443@example.com,Latin America
+ORD-0000445,Ada Lovelace,Starter,146.25,,2026-01-13,ada.lovelace+444@example.com,North America
+ORD-0000446,Grace Hopper,Pro Plan,149.50,PENDING,2026-02-14,grace.hopper+445@example.com,Europe
+ORD-0000447,Katherine Johnson,Enterprise,152.75,REFUNDED,2026-03-15,katherine.johnson+446@example.com,Asia Pacific
+ORD-0000448,Alan Turing,Analytics Add-on,156.00,FAILED,2026-04-16,alan.turing+447@example.com,Latin America
+ORD-0000449,Margaret Hamilton,Starter,159.25,PAID,2026-05-17,margaret.hamilton+448@example.com,North America
+ORD-0000450,Barbara Liskov,Pro Plan,162.50,PENDING,2026-06-18,barbara.liskov+449@example.com,Europe
+ORD-0000450,Barbara Liskov,Pro Plan,162.50,PENDING,2026-06-18,barbara.liskov+449@example.com,Europe
+ORD-0000452,grace hopper,Analytics Add-on,169.00,FAILED,08/20/2026,grace.hopper+451@example.com,Latin America
+ORD-0000453,Katherine Johnson,Starter,172.25,PAID,2026-09-21,katherine.johnson+452@example.com,North America
+ORD-0000454,Alan Turing,Pro Plan,175.50,PENDING,2026-10-22,alan.turing+453@example.com,Europe
+ORD-0000455,Margaret Hamilton,Enterprise,178.75,REFUNDED,2026-11-23,margaret.hamilton+454@example.com,Asia Pacific
+ORD-0000456,Barbara Liskov,ANALYTICS ADD-ON,182.00,FAILED,2026-12-24,barbara.liskov+455@example.com,Latin America
+ORD-0000457,Ada Lovelace,Starter,185.25,paid,2026-01-25,ada.lovelace+456@example.com,North America
+ORD-0000458,Grace Hopper,Pro Plan,188.50,PENDING,2026-02-26,grace.hopper+457@example.com,Europe
+ORD-0000459,Katherine Johnson,Enterprise,191.75,REFUNDED,2026-03-27,katherine.johnson+458@example.com,Asia Pacific
+ORD-0000460,Alan Turing,Analytics Add-on,$195.00,FAILED,2026-04-01,alan.turing+459@example.com,Latin America
+ORD-0000461, Margaret Hamilton ,Starter,198.25,PAID,2026-05-02,margaret.hamilton+460@example.com,North America
+ORD-0000462,Barbara Liskov,Pro Plan,201.50,PENDING,2026-06-03,barbara.liskov+461@example.com,Europe
+ORD-0000463,ada lovelace,Enterprise,204.75,REFUNDED,2026-07-04,ada.lovelace+462@example.com,Asia Pacific
+ORD-0000464,Grace Hopper,Analytics Add-on,208.00,FAILED,2026-08-05,grace.hopper+463@example.com,Latin America
+ORD-0000465,Katherine Johnson, Starter ,211.25,PAID,2026-09-06,katherine.johnson+464@example.com,North America
+ORD-0000466,Alan Turing,Pro Plan,214.50,PENDING,2026-10-07,alan.turing+465@example.com,europe
+ORD-0000467,Margaret Hamilton,Enterprise,217.75,REFUNDED,2026-11-08,margaret.hamilton+466@example.com,Asia Pacific
+ORD-0000468,Barbara Liskov,Analytics Add-on,221.00,FAILED,2026-12-09,barbara.liskov+467@example.com,Latin America
+ORD-0000469,Ada Lovelace,STARTER,224.25,PAID,2026-01-10,ada.lovelace+468@example.com,North America
+ORD-0000470,Grace Hopper,Pro Plan,227.50,PENDING,2026-02-11,grace.hopper+469@example.com,Europe
+ORD-0000471,Katherine Johnson,Enterprise,230.75,REFUNDED,2026-03-12,katherine.johnson+470@example.com,Asia Pacific
+ORD-0000472,Alan Turing,Analytics Add-on,234.00,FAILED,2026-04-13,alan.turing+471@example.com,Latin America
+ORD-0000473,Margaret Hamilton,Starter,237.25,PAID,2026-05-14,margaret.hamilton+472@example.com,North America
+ORD-0000474,barbara liskov,Pro Plan,240.50,PENDING,2026-06-15,barbara.liskov+473@example.com,Europe
+ORD-0000475,Ada Lovelace,Enterprise,243.75,REFUNDED,2026-07-16,ada.lovelace+474@example.com,Asia Pacific
+ORD-0000476,Grace Hopper,Analytics Add-on,247.00,failed,2026-08-17,grace.hopper+475@example.com,Latin America
+ORD-0000477,Katherine Johnson,Starter,$250.25,PAID,2026-09-18,katherine.johnson+476@example.com,North America
+ORD-0000478,Alan Turing,Pro Plan,253.50,PENDING,2026-10-19,alan.turing+477@example.com,Europe
+ORD-0000479,Margaret Hamilton,Enterprise,256.75,REFUNDED,2026-11-20,margaret.hamilton+478@example.com,Asia Pacific
+ORD-0000480,Barbara Liskov,Analytics Add-on,260.00,FAILED,2026-12-21,barbara.liskov+479@example.com,Latin America
+ORD-0000481,Ada Lovelace,Starter,263.25,PAID,2026-01-22,ada.lovelace+480@example.com,North America
+ORD-0000482,Grace Hopper,PRO PLAN,266.50,,2026-02-23,grace.hopper+481@example.com,Europe
+ORD-0000483,Katherine Johnson,Enterprise,269.75,REFUNDED,2026-03-24,katherine.johnson+482@example.com,Asia Pacific
+ORD-0000484, Alan Turing ,Analytics Add-on,273.00,FAILED,2026-04-25,alan.turing+483@example.com,Latin America
+ORD-0000485,margaret hamilton,Starter,276.25,PAID,2026-05-26,margaret.hamilton+484@example.com,North America
+ORD-0000486,Barbara Liskov,Pro Plan,279.50,PENDING,2026-06-27,,Europe
+ORD-0000487,Ada Lovelace,Enterprise,282.75,REFUNDED,2026-07-01,ada.lovelace+486@example.com,Asia Pacific
+ORD-0000488,Grace Hopper,Analytics Add-on,286.00,FAILED,2026-08-02,grace.hopper+487@example.com,Latin America
+ORD-0000489,Katherine Johnson,Starter,289.25,PAID,2026-09-03,katherine.johnson+488@example.com,North America
+ORD-0000490,Alan Turing,Pro Plan,292.50,PENDING,2026-10-04,alan.turing+489@example.com,Europe
+ORD-0000491,Margaret Hamilton,Enterprise,295.75,REFUNDED,2026-11-05,margaret.hamilton+490@example.com,Asia Pacific
+ORD-0000492,Barbara Liskov,Analytics Add-on,299.00,FAILED,2026-12-06,barbara.liskov+491@example.com,Latin America
+ORD-0000493,Ada Lovelace,Starter,302.25,PAID,01/07/2026,ada.lovelace+492@example.com,North America
+ORD-0000494,Grace Hopper, Pro Plan ,$305.50,PENDING,2026-02-08,grace.hopper+493@example.com,Europe
+ORD-0000495,Katherine Johnson,ENTERPRISE,308.75,refunded,2026-03-09,katherine.johnson+494@example.com,Asia Pacific
+ORD-0000496,alan turing,Analytics Add-on,312.00,FAILED,2026-04-10,alan.turing+495@example.com,Latin America
+ORD-0000497,Margaret Hamilton,Starter,315.25,PAID,2026-05-11,margaret.hamilton+496@example.com,north america
+ORD-0000498,Barbara Liskov,Pro Plan,318.50,PENDING,2026-06-12,barbara.liskov+497@example.com,Europe
+ORD-0000499,Ada Lovelace,Enterprise,321.75,REFUNDED,2026-07-13,ada.lovelace+498@example.com,Asia Pacific
+ORD-0000500,Grace Hopper,Analytics Add-on,325.00,FAILED,2026-08-14,grace.hopper+499@example.com,Latin America
+ORD-0000500,Grace Hopper,Analytics Add-on,325.00,FAILED,2026-08-14,grace.hopper+499@example.com,Latin America
+ORD-0000502,Alan Turing,Pro Plan,331.50,PENDING,2026-10-16,alan.turing+501@example.com,Europe
+ORD-0000503,Margaret Hamilton,Enterprise,334.75,REFUNDED,2026-11-17,margaret.hamilton+502@example.com,Asia Pacific
+ORD-0000504,Barbara Liskov,Analytics Add-on,338.00,FAILED,2026-12-18,barbara.liskov+503@example.com,Latin America
+ORD-0000505,Ada Lovelace,Starter,341.25,PAID,2026-01-19,ada.lovelace+504@example.com,North America
+ORD-0000506,Grace Hopper,Pro Plan,344.50,PENDING,2026-02-20,grace.hopper+505@example.com,Europe
+ORD-0000507, Katherine Johnson ,Enterprise,347.75,REFUNDED,2026-03-21,katherine.johnson+506@example.com,Asia Pacific
+ORD-0000508,Alan Turing,ANALYTICS ADD-ON,351.00,FAILED,2026-04-22,alan.turing+507@example.com,Latin America
+ORD-0000509,Margaret Hamilton,Starter,354.25,PAID,2026-05-23,margaret.hamilton+508@example.com,North America
+ORD-0000510,Barbara Liskov,Pro Plan,357.50,PENDING,2026-06-24,barbara.liskov+509@example.com,Europe
+ORD-0000511,Ada Lovelace,Enterprise,$360.75,REFUNDED,2026-07-25,ada.lovelace+510@example.com,Asia Pacific
+ORD-0000512,Grace Hopper,Analytics Add-on,364.00,FAILED,2026-08-26,grace.hopper+511@example.com,Latin America
+ORD-0000513,Katherine Johnson,Starter,367.25,PAID,2026-09-27,katherine.johnson+512@example.com,North America
+ORD-0000514,Alan Turing,Pro Plan,370.50,pending,2026-10-01,alan.turing+513@example.com,Europe
+ORD-0000515,Margaret Hamilton,Enterprise,373.75,REFUNDED,2026-11-02,margaret.hamilton+514@example.com,Asia Pacific
+ORD-0000516,Barbara Liskov,Analytics Add-on,377.00,FAILED,2026-12-03,barbara.liskov+515@example.com,Latin America
+ORD-0000517,Ada Lovelace,Starter,380.25,PAID,2026-01-04,ada.lovelace+516@example.com,North America
+ORD-0000518,grace hopper,Pro Plan,383.50,PENDING,2026-02-05,grace.hopper+517@example.com,Europe
+ORD-0000519,Katherine Johnson,Enterprise,386.75,,2026-03-06,katherine.johnson+518@example.com,Asia Pacific
+ORD-0000520,Alan Turing,Analytics Add-on,390.00,FAILED,2026-04-07,alan.turing+519@example.com,Latin America
+ORD-0000521,Margaret Hamilton,STARTER,393.25,PAID,2026-05-08,margaret.hamilton+520@example.com,North America
+ORD-0000522,Barbara Liskov,Pro Plan,396.50,PENDING,2026-06-09,barbara.liskov+521@example.com,Europe
+ORD-0000523,Ada Lovelace, Enterprise ,399.75,REFUNDED,2026-07-10,ada.lovelace+522@example.com,Asia Pacific
+ORD-0000524,Grace Hopper,Analytics Add-on,403.00,FAILED,2026-08-11,grace.hopper+523@example.com,Latin America
+ORD-0000525,Katherine Johnson,Starter,406.25,PAID,2026-09-12,katherine.johnson+524@example.com,North America
+ORD-0000526,Alan Turing,Pro Plan,409.50,PENDING,2026-10-13,alan.turing+525@example.com,Europe
+ORD-0000527,Margaret Hamilton,Enterprise,412.75,REFUNDED,2026-11-14,margaret.hamilton+526@example.com,Asia Pacific
+ORD-0000528,Barbara Liskov,Analytics Add-on,$416.00,FAILED,2026-12-15,barbara.liskov+527@example.com,latin america
+ORD-0000529,ada lovelace,Starter,419.25,PAID,2026-01-16,ada.lovelace+528@example.com,North America
+ORD-0000530, Grace Hopper ,Pro Plan,422.50,PENDING,2026-02-17,grace.hopper+529@example.com,Europe
+ORD-0000531,Katherine Johnson,Enterprise,425.75,REFUNDED,2026-03-18,katherine.johnson+530@example.com,Asia Pacific
+ORD-0000532,Alan Turing,Analytics Add-on,429.00,FAILED,2026-04-19,alan.turing+531@example.com,Latin America
+ORD-0000533,Margaret Hamilton,Starter,432.25,paid,2026-05-20,margaret.hamilton+532@example.com,North America
+ORD-0000534,Barbara Liskov,PRO PLAN,435.50,PENDING,06/21/2026,barbara.liskov+533@example.com,Europe
+ORD-0000535,Ada Lovelace,Enterprise,438.75,REFUNDED,2026-07-22,ada.lovelace+534@example.com,Asia Pacific
+ORD-0000536,Grace Hopper,Analytics Add-on,442.00,FAILED,2026-08-23,grace.hopper+535@example.com,Latin America
+ORD-0000537,Katherine Johnson,Starter,445.25,PAID,2026-09-24,katherine.johnson+536@example.com,North America
+ORD-0000538,Alan Turing,Pro Plan,448.50,PENDING,2026-10-25,alan.turing+537@example.com,Europe
+ORD-0000539,Margaret Hamilton,Enterprise,451.75,REFUNDED,2026-11-26,margaret.hamilton+538@example.com,Asia Pacific
+ORD-0000540,barbara liskov,Analytics Add-on,455.00,FAILED,2026-12-27,barbara.liskov+539@example.com,Latin America
+ORD-0000541,Ada Lovelace,Starter,458.25,PAID,2026-01-01,ada.lovelace+540@example.com,North America
+ORD-0000542,Grace Hopper,Pro Plan,461.50,PENDING,2026-02-02,grace.hopper+541@example.com,Europe
+ORD-0000543,Katherine Johnson,Enterprise,464.75,REFUNDED,2026-03-03,katherine.johnson+542@example.com,Asia Pacific
+ORD-0000544,Alan Turing,Analytics Add-on,468.00,FAILED,2026-04-04,alan.turing+543@example.com,Latin America
+ORD-0000545,Margaret Hamilton,Starter,$471.25,PAID,2026-05-05,margaret.hamilton+544@example.com,North America
+ORD-0000546,Barbara Liskov,Pro Plan,474.50,PENDING,2026-06-06,barbara.liskov+545@example.com,Europe
+ORD-0000547,Ada Lovelace,ENTERPRISE,477.75,REFUNDED,2026-07-07,ada.lovelace+546@example.com,Asia Pacific
+ORD-0000548,Grace Hopper,Analytics Add-on,481.00,FAILED,2026-08-08,grace.hopper+547@example.com,Latin America
+ORD-0000549,Katherine Johnson,Starter,484.25,PAID,2026-09-09,katherine.johnson+548@example.com,North America
+ORD-0000550,Alan Turing,Pro Plan,487.50,PENDING,2026-10-10,alan.turing+549@example.com,Europe
+ORD-0000550,Alan Turing,Pro Plan,487.50,PENDING,2026-10-10,alan.turing+549@example.com,Europe
+ORD-0000552,Barbara Liskov, Analytics Add-on ,494.00,failed,2026-12-12,barbara.liskov+551@example.com,Latin America
+ORD-0000553, Ada Lovelace ,Starter,497.25,PAID,2026-01-13,ada.lovelace+552@example.com,North America
+ORD-0000554,Grace Hopper,Pro Plan,500.50,PENDING,2026-02-14,grace.hopper+553@example.com,Europe
+ORD-0000555,Katherine Johnson,Enterprise,503.75,REFUNDED,2026-03-15,katherine.johnson+554@example.com,Asia Pacific
+ORD-0000556,Alan Turing,Analytics Add-on,507.00,,2026-04-16,alan.turing+555@example.com,Latin America
+ORD-0000557,Margaret Hamilton,Starter,510.25,PAID,2026-05-17,margaret.hamilton+556@example.com,North America
+ORD-0000558,Barbara Liskov,Pro Plan,513.50,PENDING,2026-06-18,barbara.liskov+557@example.com,Europe
+ORD-0000559,Ada Lovelace,Enterprise,516.75,REFUNDED,2026-07-19,ada.lovelace+558@example.com,asia pacific
+ORD-0000560,Grace Hopper,ANALYTICS ADD-ON,520.00,FAILED,2026-08-20,grace.hopper+559@example.com,Latin America
+ORD-0000561,Katherine Johnson,Starter,523.25,PAID,2026-09-21,katherine.johnson+560@example.com,North America
+ORD-0000562,alan turing,Pro Plan,$526.50,PENDING,2026-10-22,alan.turing+561@example.com,Europe
+ORD-0000563,Margaret Hamilton,Enterprise,529.75,REFUNDED,2026-11-23,margaret.hamilton+562@example.com,Asia Pacific
+ORD-0000564,Barbara Liskov,Analytics Add-on,533.00,FAILED,2026-12-24,barbara.liskov+563@example.com,Latin America
+ORD-0000565,Ada Lovelace,Starter,536.25,PAID,2026-01-25,ada.lovelace+564@example.com,North America
+ORD-0000566,Grace Hopper,Pro Plan,539.50,PENDING,2026-02-26,grace.hopper+565@example.com,Europe
+ORD-0000567,Katherine Johnson,Enterprise,542.75,REFUNDED,2026-03-27,katherine.johnson+566@example.com,Asia Pacific
+ORD-0000568,Alan Turing,Analytics Add-on,546.00,FAILED,2026-04-01,alan.turing+567@example.com,Latin America
+ORD-0000569,Margaret Hamilton,Starter,549.25,PAID,2026-05-02,margaret.hamilton+568@example.com,North America
+ORD-0000570,Barbara Liskov,Pro Plan,552.50,PENDING,2026-06-03,barbara.liskov+569@example.com,Europe
+ORD-0000571,Ada Lovelace,Enterprise,555.75,refunded,2026-07-04,ada.lovelace+570@example.com,Asia Pacific
+ORD-0000572,Grace Hopper,Analytics Add-on,559.00,FAILED,2026-08-05,grace.hopper+571@example.com,Latin America
+ORD-0000573,katherine johnson,STARTER,562.25,PAID,2026-09-06,katherine.johnson+572@example.com,North America
+ORD-0000574,Alan Turing,Pro Plan,565.50,PENDING,2026-10-07,alan.turing+573@example.com,Europe
+ORD-0000575,Margaret Hamilton,Enterprise,568.75,REFUNDED,11/08/2026,margaret.hamilton+574@example.com,Asia Pacific
+ORD-0000576, Barbara Liskov ,Analytics Add-on,572.00,FAILED,2026-12-09,barbara.liskov+575@example.com,Latin America
+ORD-0000577,Ada Lovelace,Starter,575.25,PAID,2026-01-10,ada.lovelace+576@example.com,North America
+ORD-0000578,Grace Hopper,Pro Plan,578.50,PENDING,2026-02-11,grace.hopper+577@example.com,Europe
+ORD-0000579,Katherine Johnson,Enterprise,$581.75,REFUNDED,2026-03-12,katherine.johnson+578@example.com,Asia Pacific
+ORD-0000580,Alan Turing,Analytics Add-on,585.00,FAILED,2026-04-13,alan.turing+579@example.com,Latin America
+ORD-0000581,Margaret Hamilton, Starter ,588.25,PAID,2026-05-14,margaret.hamilton+580@example.com,North America
+ORD-0000582,Barbara Liskov,Pro Plan,591.50,PENDING,2026-06-15,barbara.liskov+581@example.com,Europe
+ORD-0000583,Ada Lovelace,Enterprise,594.75,REFUNDED,2026-07-16,,Asia Pacific
+ORD-0000584,grace hopper,Analytics Add-on,598.00,FAILED,2026-08-17,grace.hopper+583@example.com,Latin America
+ORD-0000585,Katherine Johnson,Starter,601.25,PAID,2026-09-18,katherine.johnson+584@example.com,North America
+ORD-0000586,Alan Turing,PRO PLAN,604.50,PENDING,2026-10-19,alan.turing+585@example.com,Europe
+ORD-0000587,Margaret Hamilton,Enterprise,607.75,REFUNDED,2026-11-20,margaret.hamilton+586@example.com,Asia Pacific
+ORD-0000588,Barbara Liskov,Analytics Add-on,611.00,FAILED,2026-12-21,barbara.liskov+587@example.com,Latin America
+ORD-0000589,Ada Lovelace,Starter,614.25,PAID,2026-01-22,ada.lovelace+588@example.com,North America
+ORD-0000590,Grace Hopper,Pro Plan,617.50,pending,2026-02-23,grace.hopper+589@example.com,europe
+ORD-0000591,Katherine Johnson,Enterprise,620.75,REFUNDED,2026-03-24,katherine.johnson+590@example.com,Asia Pacific
+ORD-0000592,Alan Turing,Analytics Add-on,624.00,FAILED,2026-04-25,alan.turing+591@example.com,Latin America
+ORD-0000593,Margaret Hamilton,Starter,627.25,,2026-05-26,margaret.hamilton+592@example.com,North America
+ORD-0000594,Barbara Liskov,Pro Plan,630.50,PENDING,2026-06-27,barbara.liskov+593@example.com,Europe
+ORD-0000595,ada lovelace,Enterprise,633.75,REFUNDED,2026-07-01,ada.lovelace+594@example.com,Asia Pacific
+ORD-0000596,Grace Hopper,Analytics Add-on,$637.00,FAILED,2026-08-02,grace.hopper+595@example.com,Latin America
+ORD-0000597,Katherine Johnson,Starter,640.25,PAID,2026-09-03,katherine.johnson+596@example.com,North America
+ORD-0000598,Alan Turing,Pro Plan,643.50,PENDING,2026-10-04,alan.turing+597@example.com,Europe
+ORD-0000599, Margaret Hamilton ,ENTERPRISE,646.75,REFUNDED,2026-11-05,margaret.hamilton+598@example.com,Asia Pacific
+ORD-0000600,Barbara Liskov,Analytics Add-on,650.00,FAILED,2026-12-06,barbara.liskov+599@example.com,Latin America
+ORD-0000600,Barbara Liskov,Analytics Add-on,650.00,FAILED,2026-12-06,barbara.liskov+599@example.com,Latin America
+ORD-0000602,Grace Hopper,Pro Plan,656.50,PENDING,2026-02-08,grace.hopper+601@example.com,Europe
+ORD-0000603,Katherine Johnson,Enterprise,659.75,REFUNDED,2026-03-09,katherine.johnson+602@example.com,Asia Pacific
+ORD-0000604,Alan Turing,Analytics Add-on,663.00,FAILED,2026-04-10,alan.turing+603@example.com,Latin America
+ORD-0000605,Margaret Hamilton,Starter,666.25,PAID,2026-05-11,margaret.hamilton+604@example.com,North America
+ORD-0000606,barbara liskov,Pro Plan,669.50,PENDING,2026-06-12,barbara.liskov+605@example.com,Europe
+ORD-0000607,Ada Lovelace,Enterprise,672.75,REFUNDED,2026-07-13,ada.lovelace+606@example.com,Asia Pacific
+ORD-0000608,Grace Hopper,Analytics Add-on,676.00,FAILED,2026-08-14,grace.hopper+607@example.com,Latin America
+ORD-0000609,Katherine Johnson,Starter,679.25,paid,2026-09-15,katherine.johnson+608@example.com,North America
+ORD-0000610,Alan Turing, Pro Plan ,682.50,PENDING,2026-10-16,alan.turing+609@example.com,Europe
+ORD-0000611,Margaret Hamilton,Enterprise,685.75,REFUNDED,2026-11-17,margaret.hamilton+610@example.com,Asia Pacific
+ORD-0000612,Barbara Liskov,ANALYTICS ADD-ON,689.00,FAILED,2026-12-18,barbara.liskov+611@example.com,Latin America
+ORD-0000613,Ada Lovelace,Starter,$692.25,PAID,2026-01-19,ada.lovelace+612@example.com,North America
+ORD-0000614,Grace Hopper,Pro Plan,695.50,PENDING,2026-02-20,grace.hopper+613@example.com,Europe
+ORD-0000615,Katherine Johnson,Enterprise,698.75,REFUNDED,2026-03-21,katherine.johnson+614@example.com,Asia Pacific
+ORD-0000616,Alan Turing,Analytics Add-on,702.00,FAILED,04/22/2026,alan.turing+615@example.com,Latin America
+ORD-0000617,margaret hamilton,Starter,705.25,PAID,2026-05-23,margaret.hamilton+616@example.com,North America
+ORD-0000618,Barbara Liskov,Pro Plan,708.50,PENDING,2026-06-24,barbara.liskov+617@example.com,Europe
+ORD-0000619,Ada Lovelace,Enterprise,711.75,REFUNDED,2026-07-25,ada.lovelace+618@example.com,Asia Pacific
+ORD-0000620,Grace Hopper,Analytics Add-on,715.00,FAILED,2026-08-26,grace.hopper+619@example.com,Latin America
+ORD-0000621,Katherine Johnson,Starter,718.25,PAID,2026-09-27,katherine.johnson+620@example.com,north america
+ORD-0000622, Alan Turing ,Pro Plan,721.50,PENDING,2026-10-01,alan.turing+621@example.com,Europe
+ORD-0000623,Margaret Hamilton,Enterprise,724.75,REFUNDED,2026-11-02,margaret.hamilton+622@example.com,Asia Pacific
+ORD-0000624,Barbara Liskov,Analytics Add-on,728.00,FAILED,2026-12-03,barbara.liskov+623@example.com,Latin America
+ORD-0000625,Ada Lovelace,STARTER,731.25,PAID,2026-01-04,ada.lovelace+624@example.com,North America
+ORD-0000626,Grace Hopper,Pro Plan,734.50,PENDING,2026-02-05,grace.hopper+625@example.com,Europe
+ORD-0000627,Katherine Johnson,Enterprise,737.75,REFUNDED,2026-03-06,katherine.johnson+626@example.com,Asia Pacific
+ORD-0000628,alan turing,Analytics Add-on,741.00,failed,2026-04-07,alan.turing+627@example.com,Latin America
+ORD-0000629,Margaret Hamilton,Starter,744.25,PAID,2026-05-08,margaret.hamilton+628@example.com,North America
+ORD-0000630,Barbara Liskov,Pro Plan,$747.50,,2026-06-09,barbara.liskov+629@example.com,Europe
+ORD-0000631,Ada Lovelace,Enterprise,750.75,REFUNDED,2026-07-10,ada.lovelace+630@example.com,Asia Pacific
+ORD-0000632,Grace Hopper,Analytics Add-on,754.00,FAILED,2026-08-11,grace.hopper+631@example.com,Latin America
+ORD-0000633,Katherine Johnson,Starter,757.25,PAID,2026-09-12,katherine.johnson+632@example.com,North America
+ORD-0000634,Alan Turing,Pro Plan,760.50,PENDING,2026-10-13,alan.turing+633@example.com,Europe
+ORD-0000635,Margaret Hamilton,Enterprise,763.75,REFUNDED,2026-11-14,margaret.hamilton+634@example.com,Asia Pacific
+ORD-0000636,Barbara Liskov,Analytics Add-on,767.00,FAILED,2026-12-15,barbara.liskov+635@example.com,Latin America
+ORD-0000637,Ada Lovelace,Starter,770.25,PAID,2026-01-16,ada.lovelace+636@example.com,North America
+ORD-0000638,Grace Hopper,PRO PLAN,773.50,PENDING,2026-02-17,grace.hopper+637@example.com,Europe
+ORD-0000639,katherine johnson, Enterprise ,776.75,REFUNDED,2026-03-18,katherine.johnson+638@example.com,Asia Pacific
+ORD-0000640,Alan Turing,Analytics Add-on,780.00,FAILED,2026-04-19,alan.turing+639@example.com,Latin America
+ORD-0000641,Margaret Hamilton,Starter,783.25,PAID,2026-05-20,margaret.hamilton+640@example.com,North America
+ORD-0000642,Barbara Liskov,Pro Plan,786.50,PENDING,2026-06-21,barbara.liskov+641@example.com,Europe
+ORD-0000643,Ada Lovelace,Enterprise,789.75,REFUNDED,2026-07-22,ada.lovelace+642@example.com,Asia Pacific
+ORD-0000644,Grace Hopper,Analytics Add-on,793.00,FAILED,2026-08-23,grace.hopper+643@example.com,Latin America
+ORD-0000645, Katherine Johnson ,Starter,796.25,PAID,2026-09-24,katherine.johnson+644@example.com,North America
+ORD-0000646,Alan Turing,Pro Plan,799.50,PENDING,2026-10-25,alan.turing+645@example.com,Europe
+ORD-0000647,Margaret Hamilton,Enterprise,$802.75,refunded,2026-11-26,margaret.hamilton+646@example.com,Asia Pacific
+ORD-0000648,Barbara Liskov,Analytics Add-on,806.00,FAILED,2026-12-27,barbara.liskov+647@example.com,Latin America
+ORD-0000649,Ada Lovelace,Starter,809.25,PAID,2026-01-01,ada.lovelace+648@example.com,North America
+ORD-0000650,grace hopper,Pro Plan,812.50,PENDING,2026-02-02,grace.hopper+649@example.com,Europe
+ORD-0000650,grace hopper,Pro Plan,812.50,PENDING,2026-02-02,grace.hopper+649@example.com,Europe
+ORD-0000652,Alan Turing,Analytics Add-on,819.00,FAILED,2026-04-04,alan.turing+651@example.com,latin america
+ORD-0000653,Margaret Hamilton,Starter,822.25,PAID,2026-05-05,margaret.hamilton+652@example.com,North America
+ORD-0000654,Barbara Liskov,Pro Plan,825.50,PENDING,2026-06-06,barbara.liskov+653@example.com,Europe
+ORD-0000655,Ada Lovelace,Enterprise,828.75,REFUNDED,2026-07-07,ada.lovelace+654@example.com,Asia Pacific
+ORD-0000656,Grace Hopper,Analytics Add-on,832.00,FAILED,2026-08-08,grace.hopper+655@example.com,Latin America
+ORD-0000657,Katherine Johnson,Starter,835.25,PAID,09/09/2026,katherine.johnson+656@example.com,North America
+ORD-0000658,Alan Turing,Pro Plan,838.50,PENDING,2026-10-10,alan.turing+657@example.com,Europe
+ORD-0000659,Margaret Hamilton,Enterprise,841.75,REFUNDED,2026-11-11,margaret.hamilton+658@example.com,Asia Pacific
+ORD-0000660,Barbara Liskov,Analytics Add-on,845.00,FAILED,2026-12-12,barbara.liskov+659@example.com,Latin America
+ORD-0000661,ada lovelace,Starter,848.25,PAID,2026-01-13,ada.lovelace+660@example.com,North America
+ORD-0000662,Grace Hopper,Pro Plan,851.50,PENDING,2026-02-14,grace.hopper+661@example.com,Europe
+ORD-0000663,Katherine Johnson,Enterprise,854.75,REFUNDED,2026-03-15,katherine.johnson+662@example.com,Asia Pacific
+ORD-0000664,Alan Turing,ANALYTICS ADD-ON,$858.00,FAILED,2026-04-16,alan.turing+663@example.com,Latin America
+ORD-0000665,Margaret Hamilton,Starter,861.25,PAID,2026-05-17,margaret.hamilton+664@example.com,North America
+ORD-0000666,Barbara Liskov,Pro Plan,864.50,pending,2026-06-18,barbara.liskov+665@example.com,Europe
+ORD-0000667,Ada Lovelace,Enterprise,867.75,,2026-07-19,ada.lovelace+666@example.com,Asia Pacific
+ORD-0000668, Grace Hopper , Analytics Add-on ,871.00,FAILED,2026-08-20,grace.hopper+667@example.com,Latin America
+ORD-0000669,Katherine Johnson,Starter,874.25,PAID,2026-09-21,katherine.johnson+668@example.com,North America
+ORD-0000670,Alan Turing,Pro Plan,877.50,PENDING,2026-10-22,alan.turing+669@example.com,Europe
+ORD-0000671,Margaret Hamilton,Enterprise,880.75,REFUNDED,2026-11-23,margaret.hamilton+670@example.com,Asia Pacific
+ORD-0000672,barbara liskov,Analytics Add-on,884.00,FAILED,2026-12-24,barbara.liskov+671@example.com,Latin America
+ORD-0000673,Ada Lovelace,Starter,887.25,PAID,2026-01-25,ada.lovelace+672@example.com,North America
+ORD-0000674,Grace Hopper,Pro Plan,890.50,PENDING,2026-02-26,grace.hopper+673@example.com,Europe
+ORD-0000675,Katherine Johnson,Enterprise,893.75,REFUNDED,2026-03-27,katherine.johnson+674@example.com,Asia Pacific
+ORD-0000676,Alan Turing,Analytics Add-on,897.00,FAILED,2026-04-01,alan.turing+675@example.com,Latin America
+ORD-0000677,Margaret Hamilton,STARTER,900.25,PAID,2026-05-02,margaret.hamilton+676@example.com,North America
+ORD-0000678,Barbara Liskov,Pro Plan,903.50,PENDING,2026-06-03,barbara.liskov+677@example.com,Europe
+ORD-0000679,Ada Lovelace,Enterprise,906.75,REFUNDED,2026-07-04,ada.lovelace+678@example.com,Asia Pacific
+ORD-0000680,Grace Hopper,Analytics Add-on,910.00,FAILED,2026-08-05,,Latin America
+ORD-0000681,Katherine Johnson,Starter,$913.25,PAID,2026-09-06,katherine.johnson+680@example.com,North America
+ORD-0000682,Alan Turing,Pro Plan,916.50,PENDING,2026-10-07,alan.turing+681@example.com,Europe
+ORD-0000683,margaret hamilton,Enterprise,919.75,REFUNDED,2026-11-08,margaret.hamilton+682@example.com,asia pacific
+ORD-0000684,Barbara Liskov,Analytics Add-on,923.00,FAILED,2026-12-09,barbara.liskov+683@example.com,Latin America
+ORD-0000685,Ada Lovelace,Starter,926.25,paid,2026-01-10,ada.lovelace+684@example.com,North America
+ORD-0000686,Grace Hopper,Pro Plan,929.50,PENDING,2026-02-11,grace.hopper+685@example.com,Europe
+ORD-0000687,Katherine Johnson,Enterprise,932.75,REFUNDED,2026-03-12,katherine.johnson+686@example.com,Asia Pacific
+ORD-0000688,Alan Turing,Analytics Add-on,936.00,FAILED,2026-04-13,alan.turing+687@example.com,Latin America
+ORD-0000689,Margaret Hamilton,Starter,939.25,PAID,2026-05-14,margaret.hamilton+688@example.com,North America
+ORD-0000690,Barbara Liskov,PRO PLAN,942.50,PENDING,2026-06-15,barbara.liskov+689@example.com,Europe
+ORD-0000691, Ada Lovelace ,Enterprise,945.75,REFUNDED,2026-07-16,ada.lovelace+690@example.com,Asia Pacific
+ORD-0000692,Grace Hopper,Analytics Add-on,949.00,FAILED,2026-08-17,grace.hopper+691@example.com,Latin America
+ORD-0000693,Katherine Johnson,Starter,952.25,PAID,2026-09-18,katherine.johnson+692@example.com,North America
+ORD-0000694,alan turing,Pro Plan,955.50,PENDING,2026-10-19,alan.turing+693@example.com,Europe
+ORD-0000695,Margaret Hamilton,Enterprise,958.75,REFUNDED,2026-11-20,margaret.hamilton+694@example.com,Asia Pacific
+ORD-0000696,Barbara Liskov,Analytics Add-on,962.00,FAILED,2026-12-21,barbara.liskov+695@example.com,Latin America
+ORD-0000697,Ada Lovelace, Starter ,965.25,PAID,2026-01-22,ada.lovelace+696@example.com,North America
+ORD-0000698,Grace Hopper,Pro Plan,$968.50,PENDING,02/23/2026,grace.hopper+697@example.com,Europe
+ORD-0000699,Katherine Johnson,Enterprise,971.75,REFUNDED,2026-03-24,katherine.johnson+698@example.com,Asia Pacific
+ORD-0000700,Alan Turing,Analytics Add-on,975.00,FAILED,2026-04-25,alan.turing+699@example.com,Latin America
+ORD-0000700,Alan Turing,Analytics Add-on,975.00,FAILED,2026-04-25,alan.turing+699@example.com,Latin America
+ORD-0000702,Barbara Liskov,Pro Plan,981.50,PENDING,2026-06-27,barbara.liskov+701@example.com,Europe
+ORD-0000703,Ada Lovelace,ENTERPRISE,984.75,REFUNDED,2026-07-01,ada.lovelace+702@example.com,Asia Pacific
+ORD-0000704,Grace Hopper,Analytics Add-on,988.00,,2026-08-02,grace.hopper+703@example.com,Latin America
+ORD-0000705,katherine johnson,Starter,991.25,PAID,2026-09-03,katherine.johnson+704@example.com,North America
+ORD-0000706,Alan Turing,Pro Plan,994.50,PENDING,2026-10-04,alan.turing+705@example.com,Europe
+ORD-0000707,Margaret Hamilton,Enterprise,997.75,REFUNDED,2026-11-05,margaret.hamilton+706@example.com,Asia Pacific
+ORD-0000708,Barbara Liskov,Analytics Add-on,1001.00,FAILED,2026-12-06,barbara.liskov+707@example.com,Latin America
+ORD-0000709,Ada Lovelace,Starter,1004.25,PAID,2026-01-07,ada.lovelace+708@example.com,North America
+ORD-0000710,Grace Hopper,Pro Plan,1007.50,PENDING,2026-02-08,grace.hopper+709@example.com,Europe
+ORD-0000711,Katherine Johnson,Enterprise,1010.75,REFUNDED,2026-03-09,katherine.johnson+710@example.com,Asia Pacific
+ORD-0000712,Alan Turing,Analytics Add-on,1014.00,FAILED,2026-04-10,alan.turing+711@example.com,Latin America
+ORD-0000713,Margaret Hamilton,Starter,1017.25,PAID,2026-05-11,margaret.hamilton+712@example.com,North America
+ORD-0000714, Barbara Liskov ,Pro Plan,1020.50,PENDING,2026-06-12,barbara.liskov+713@example.com,europe
+ORD-0000715,Ada Lovelace,Enterprise,"$1,023.75",REFUNDED,2026-07-13,ada.lovelace+714@example.com,Asia Pacific
+ORD-0000716,grace hopper,ANALYTICS ADD-ON,1027.00,FAILED,2026-08-14,grace.hopper+715@example.com,Latin America
+ORD-0000717,Katherine Johnson,Starter,1030.25,PAID,2026-09-15,katherine.johnson+716@example.com,North America
+ORD-0000718,Alan Turing,Pro Plan,1033.50,PENDING,2026-10-16,alan.turing+717@example.com,Europe
+ORD-0000719,Margaret Hamilton,Enterprise,1036.75,REFUNDED,2026-11-17,margaret.hamilton+718@example.com,Asia Pacific
+ORD-0000720,Barbara Liskov,Analytics Add-on,1040.00,FAILED,2026-12-18,barbara.liskov+719@example.com,Latin America
+ORD-0000721,Ada Lovelace,Starter,1043.25,PAID,2026-01-19,ada.lovelace+720@example.com,North America
+ORD-0000722,Grace Hopper,Pro Plan,1046.50,PENDING,2026-02-20,grace.hopper+721@example.com,Europe
+ORD-0000723,Katherine Johnson,Enterprise,1049.75,refunded,2026-03-21,katherine.johnson+722@example.com,Asia Pacific
+ORD-0000724,Alan Turing,Analytics Add-on,1053.00,FAILED,2026-04-22,alan.turing+723@example.com,Latin America
+ORD-0000725,Margaret Hamilton,Starter,1056.25,PAID,2026-05-23,margaret.hamilton+724@example.com,North America
+ORD-0000726,Barbara Liskov, Pro Plan ,1059.50,PENDING,2026-06-24,barbara.liskov+725@example.com,Europe
+ORD-0000727,ada lovelace,Enterprise,1062.75,REFUNDED,2026-07-25,ada.lovelace+726@example.com,Asia Pacific
+ORD-0000728,Grace Hopper,Analytics Add-on,1066.00,FAILED,2026-08-26,grace.hopper+727@example.com,Latin America
+ORD-0000729,Katherine Johnson,STARTER,1069.25,PAID,2026-09-27,katherine.johnson+728@example.com,North America
+ORD-0000730,Alan Turing,Pro Plan,1072.50,PENDING,2026-10-01,alan.turing+729@example.com,Europe
+ORD-0000731,Margaret Hamilton,Enterprise,1075.75,REFUNDED,2026-11-02,margaret.hamilton+730@example.com,Asia Pacific
+ORD-0000732,Barbara Liskov,Analytics Add-on,"$1,079.00",FAILED,2026-12-03,barbara.liskov+731@example.com,Latin America
+ORD-0000733,Ada Lovelace,Starter,1082.25,PAID,2026-01-04,ada.lovelace+732@example.com,North America
+ORD-0000734,Grace Hopper,Pro Plan,1085.50,PENDING,2026-02-05,grace.hopper+733@example.com,Europe
+ORD-0000735,Katherine Johnson,Enterprise,1088.75,REFUNDED,2026-03-06,katherine.johnson+734@example.com,Asia Pacific
+ORD-0000736,Alan Turing,Analytics Add-on,1092.00,FAILED,2026-04-07,alan.turing+735@example.com,Latin America
+ORD-0000737, Margaret Hamilton ,Starter,1095.25,PAID,2026-05-08,margaret.hamilton+736@example.com,North America
+ORD-0000738,barbara liskov,Pro Plan,1098.50,PENDING,2026-06-09,barbara.liskov+737@example.com,Europe
+ORD-0000739,Ada Lovelace,Enterprise,1101.75,REFUNDED,07/10/2026,ada.lovelace+738@example.com,Asia Pacific
+ORD-0000740,Grace Hopper,Analytics Add-on,1105.00,FAILED,2026-08-11,grace.hopper+739@example.com,Latin America
+ORD-0000741,Katherine Johnson,Starter,1108.25,,2026-09-12,katherine.johnson+740@example.com,North America
+ORD-0000742,Alan Turing,PRO PLAN,1111.50,pending,2026-10-13,alan.turing+741@example.com,Europe
+ORD-0000743,Margaret Hamilton,Enterprise,1114.75,REFUNDED,2026-11-14,margaret.hamilton+742@example.com,Asia Pacific
+ORD-0000744,Barbara Liskov,Analytics Add-on,1118.00,FAILED,2026-12-15,barbara.liskov+743@example.com,Latin America
+ORD-0000745,Ada Lovelace,Starter,1121.25,PAID,2026-01-16,ada.lovelace+744@example.com,north america
+ORD-0000746,Grace Hopper,Pro Plan,1124.50,PENDING,2026-02-17,grace.hopper+745@example.com,Europe
+ORD-0000747,Katherine Johnson,Enterprise,1127.75,REFUNDED,2026-03-18,katherine.johnson+746@example.com,Asia Pacific
+ORD-0000748,Alan Turing,Analytics Add-on,1131.00,FAILED,2026-04-19,alan.turing+747@example.com,Latin America
+ORD-0000749,margaret hamilton,Starter,"$1,134.25",PAID,2026-05-20,margaret.hamilton+748@example.com,North America
+ORD-0000750,Barbara Liskov,Pro Plan,1137.50,PENDING,2026-06-21,barbara.liskov+749@example.com,Europe
+ORD-0000750,Barbara Liskov,Pro Plan,1137.50,PENDING,2026-06-21,barbara.liskov+749@example.com,Europe
+ORD-0000752,Grace Hopper,Analytics Add-on,1144.00,FAILED,2026-08-23,grace.hopper+751@example.com,Latin America
+ORD-0000753,Katherine Johnson,Starter,1147.25,PAID,2026-09-24,katherine.johnson+752@example.com,North America
+ORD-0000754,Alan Turing,Pro Plan,1150.50,PENDING,2026-10-25,alan.turing+753@example.com,Europe
+ORD-0000755,Margaret Hamilton, Enterprise ,1153.75,REFUNDED,2026-11-26,margaret.hamilton+754@example.com,Asia Pacific
+ORD-0000756,Barbara Liskov,Analytics Add-on,1157.00,FAILED,2026-12-27,barbara.liskov+755@example.com,Latin America
+ORD-0000757,Ada Lovelace,Starter,1160.25,PAID,2026-01-01,ada.lovelace+756@example.com,North America
+ORD-0000758,Grace Hopper,Pro Plan,1163.50,PENDING,2026-02-02,grace.hopper+757@example.com,Europe
+ORD-0000759,Katherine Johnson,Enterprise,1166.75,REFUNDED,2026-03-03,katherine.johnson+758@example.com,Asia Pacific
+ORD-0000760, Alan Turing ,Analytics Add-on,1170.00,FAILED,2026-04-04,alan.turing+759@example.com,Latin America
+ORD-0000761,Margaret Hamilton,Starter,1173.25,paid,2026-05-05,margaret.hamilton+760@example.com,North America
+ORD-0000762,Barbara Liskov,Pro Plan,1176.50,PENDING,2026-06-06,barbara.liskov+761@example.com,Europe
+ORD-0000763,Ada Lovelace,Enterprise,1179.75,REFUNDED,2026-07-07,ada.lovelace+762@example.com,Asia Pacific
+ORD-0000764,Grace Hopper,Analytics Add-on,1183.00,FAILED,2026-08-08,grace.hopper+763@example.com,Latin America
+ORD-0000765,Katherine Johnson,Starter,1186.25,PAID,2026-09-09,katherine.johnson+764@example.com,North America
+ORD-0000766,Alan Turing,Pro Plan,"$1,189.50",PENDING,2026-10-10,alan.turing+765@example.com,Europe
+ORD-0000767,Margaret Hamilton,Enterprise,1192.75,REFUNDED,2026-11-11,margaret.hamilton+766@example.com,Asia Pacific
+ORD-0000768,Barbara Liskov,ANALYTICS ADD-ON,1196.00,FAILED,2026-12-12,barbara.liskov+767@example.com,Latin America
+ORD-0000769,Ada Lovelace,Starter,1199.25,PAID,2026-01-13,ada.lovelace+768@example.com,North America
+ORD-0000770,Grace Hopper,Pro Plan,1202.50,PENDING,2026-02-14,grace.hopper+769@example.com,Europe
+ORD-0000771,katherine johnson,Enterprise,1205.75,REFUNDED,2026-03-15,katherine.johnson+770@example.com,Asia Pacific
+ORD-0000772,Alan Turing,Analytics Add-on,1209.00,FAILED,2026-04-16,alan.turing+771@example.com,Latin America
+ORD-0000773,Margaret Hamilton,Starter,1212.25,PAID,2026-05-17,margaret.hamilton+772@example.com,North America
+ORD-0000774,Barbara Liskov,Pro Plan,1215.50,PENDING,2026-06-18,barbara.liskov+773@example.com,Europe
+ORD-0000775,Ada Lovelace,Enterprise,1218.75,REFUNDED,2026-07-19,ada.lovelace+774@example.com,Asia Pacific
+ORD-0000776,Grace Hopper,Analytics Add-on,1222.00,FAILED,2026-08-20,grace.hopper+775@example.com,latin america
+ORD-0000777,Katherine Johnson,Starter,1225.25,PAID,2026-09-21,,North America
+ORD-0000778,Alan Turing,Pro Plan,1228.50,,2026-10-22,alan.turing+777@example.com,Europe
+ORD-0000779,Margaret Hamilton,Enterprise,1231.75,REFUNDED,2026-11-23,margaret.hamilton+778@example.com,Asia Pacific
+ORD-0000780,Barbara Liskov,Analytics Add-on,1235.00,failed,12/24/2026,barbara.liskov+779@example.com,Latin America
+ORD-0000781,Ada Lovelace,STARTER,1238.25,PAID,2026-01-25,ada.lovelace+780@example.com,North America
+ORD-0000782,grace hopper,Pro Plan,1241.50,PENDING,2026-02-26,grace.hopper+781@example.com,Europe
+ORD-0000783, Katherine Johnson ,Enterprise,"$1,244.75",REFUNDED,2026-03-27,katherine.johnson+782@example.com,Asia Pacific
+ORD-0000784,Alan Turing, Analytics Add-on ,1248.00,FAILED,2026-04-01,alan.turing+783@example.com,Latin America
+ORD-0000785,Margaret Hamilton,Starter,1251.25,PAID,2026-05-02,margaret.hamilton+784@example.com,North America
+ORD-0000786,Barbara Liskov,Pro Plan,1254.50,PENDING,2026-06-03,barbara.liskov+785@example.com,Europe
+ORD-0000787,Ada Lovelace,Enterprise,1257.75,REFUNDED,2026-07-04,ada.lovelace+786@example.com,Asia Pacific
+ORD-0000788,Grace Hopper,Analytics Add-on,1261.00,FAILED,2026-08-05,grace.hopper+787@example.com,Latin America
+ORD-0000789,Katherine Johnson,Starter,1264.25,PAID,2026-09-06,katherine.johnson+788@example.com,North America
+ORD-0000790,Alan Turing,Pro Plan,1267.50,PENDING,2026-10-07,alan.turing+789@example.com,Europe
+ORD-0000791,Margaret Hamilton,Enterprise,1270.75,REFUNDED,2026-11-08,margaret.hamilton+790@example.com,Asia Pacific
+ORD-0000792,Barbara Liskov,Analytics Add-on,1274.00,FAILED,2026-12-09,barbara.liskov+791@example.com,Latin America
+ORD-0000793,ada lovelace,Starter,1277.25,PAID,2026-01-10,ada.lovelace+792@example.com,North America
+ORD-0000794,Grace Hopper,PRO PLAN,1280.50,PENDING,2026-02-11,grace.hopper+793@example.com,Europe
+ORD-0000795,Katherine Johnson,Enterprise,1283.75,REFUNDED,2026-03-12,katherine.johnson+794@example.com,Asia Pacific
+ORD-0000796,Alan Turing,Analytics Add-on,1287.00,FAILED,2026-04-13,alan.turing+795@example.com,Latin America
+ORD-0000797,Margaret Hamilton,Starter,1290.25,PAID,2026-05-14,margaret.hamilton+796@example.com,North America
+ORD-0000798,Barbara Liskov,Pro Plan,1293.50,PENDING,2026-06-15,barbara.liskov+797@example.com,Europe
+ORD-0000799,Ada Lovelace,Enterprise,1296.75,refunded,2026-07-16,ada.lovelace+798@example.com,Asia Pacific
+ORD-0000800,Grace Hopper,Analytics Add-on,"$1,300.00",FAILED,2026-08-17,grace.hopper+799@example.com,Latin America
+ORD-0000800,Grace Hopper,Analytics Add-on,"$1,300.00",FAILED,2026-08-17,grace.hopper+799@example.com,Latin America
+ORD-0000802,Alan Turing,Pro Plan,6.50,PENDING,2026-10-19,alan.turing+801@example.com,Europe
+ORD-0000803,Margaret Hamilton,Enterprise,9.75,REFUNDED,2026-11-20,margaret.hamilton+802@example.com,Asia Pacific
+ORD-0000804,barbara liskov,Analytics Add-on,13.00,FAILED,2026-12-21,barbara.liskov+803@example.com,Latin America
+ORD-0000805,Ada Lovelace,Starter,16.25,PAID,2026-01-22,ada.lovelace+804@example.com,North America
+ORD-0000806, Grace Hopper ,Pro Plan,19.50,PENDING,2026-02-23,grace.hopper+805@example.com,Europe
+ORD-0000807,Katherine Johnson,ENTERPRISE,22.75,REFUNDED,2026-03-24,katherine.johnson+806@example.com,asia pacific
+ORD-0000808,Alan Turing,Analytics Add-on,26.00,FAILED,2026-04-25,alan.turing+807@example.com,Latin America
+ORD-0000809,Margaret Hamilton,Starter,29.25,PAID,2026-05-26,margaret.hamilton+808@example.com,North America
+ORD-0000810,Barbara Liskov,Pro Plan,32.50,PENDING,2026-06-27,barbara.liskov+809@example.com,Europe
+ORD-0000811,Ada Lovelace,Enterprise,35.75,REFUNDED,2026-07-01,ada.lovelace+810@example.com,Asia Pacific
+ORD-0000812,Grace Hopper,Analytics Add-on,39.00,FAILED,2026-08-02,grace.hopper+811@example.com,Latin America
+ORD-0000813,Katherine Johnson, Starter ,42.25,PAID,2026-09-03,katherine.johnson+812@example.com,North America
+ORD-0000814,Alan Turing,Pro Plan,45.50,PENDING,2026-10-04,alan.turing+813@example.com,Europe
+ORD-0000815,margaret hamilton,Enterprise,48.75,,2026-11-05,margaret.hamilton+814@example.com,Asia Pacific
+ORD-0000816,Barbara Liskov,Analytics Add-on,52.00,FAILED,2026-12-06,barbara.liskov+815@example.com,Latin America
+ORD-0000817,Ada Lovelace,Starter,$55.25,PAID,2026-01-07,ada.lovelace+816@example.com,North America
+ORD-0000818,Grace Hopper,Pro Plan,58.50,pending,2026-02-08,grace.hopper+817@example.com,Europe
+ORD-0000819,Katherine Johnson,Enterprise,61.75,REFUNDED,2026-03-09,katherine.johnson+818@example.com,Asia Pacific
+ORD-0000820,Alan Turing,ANALYTICS ADD-ON,65.00,FAILED,2026-04-10,alan.turing+819@example.com,Latin America
+ORD-0000821,Margaret Hamilton,Starter,68.25,PAID,05/11/2026,margaret.hamilton+820@example.com,North America
+ORD-0000822,Barbara Liskov,Pro Plan,71.50,PENDING,2026-06-12,barbara.liskov+821@example.com,Europe
+ORD-0000823,Ada Lovelace,Enterprise,74.75,REFUNDED,2026-07-13,ada.lovelace+822@example.com,Asia Pacific
+ORD-0000824,Grace Hopper,Analytics Add-on,78.00,FAILED,2026-08-14,grace.hopper+823@example.com,Latin America
+ORD-0000825,Katherine Johnson,Starter,81.25,PAID,2026-09-15,katherine.johnson+824@example.com,North America
+ORD-0000826,alan turing,Pro Plan,84.50,PENDING,2026-10-16,alan.turing+825@example.com,Europe
+ORD-0000827,Margaret Hamilton,Enterprise,87.75,REFUNDED,2026-11-17,margaret.hamilton+826@example.com,Asia Pacific
+ORD-0000828,Barbara Liskov,Analytics Add-on,91.00,FAILED,2026-12-18,barbara.liskov+827@example.com,Latin America
+ORD-0000829, Ada Lovelace ,Starter,94.25,PAID,2026-01-19,ada.lovelace+828@example.com,North America
+ORD-0000830,Grace Hopper,Pro Plan,97.50,PENDING,2026-02-20,grace.hopper+829@example.com,Europe
+ORD-0000831,Katherine Johnson,Enterprise,100.75,REFUNDED,2026-03-21,katherine.johnson+830@example.com,Asia Pacific
+ORD-0000832,Alan Turing,Analytics Add-on,104.00,FAILED,2026-04-22,alan.turing+831@example.com,Latin America
+ORD-0000833,Margaret Hamilton,STARTER,107.25,PAID,2026-05-23,margaret.hamilton+832@example.com,North America
+ORD-0000834,Barbara Liskov,Pro Plan,$110.50,PENDING,2026-06-24,barbara.liskov+833@example.com,Europe
+ORD-0000835,Ada Lovelace,Enterprise,113.75,REFUNDED,2026-07-25,ada.lovelace+834@example.com,Asia Pacific
+ORD-0000836,Grace Hopper,Analytics Add-on,117.00,FAILED,2026-08-26,grace.hopper+835@example.com,Latin America
+ORD-0000837,katherine johnson,Starter,120.25,paid,2026-09-27,katherine.johnson+836@example.com,North America
+ORD-0000838,Alan Turing,Pro Plan,123.50,PENDING,2026-10-01,alan.turing+837@example.com,europe
+ORD-0000839,Margaret Hamilton,Enterprise,126.75,REFUNDED,2026-11-02,margaret.hamilton+838@example.com,Asia Pacific
+ORD-0000840,Barbara Liskov,Analytics Add-on,130.00,FAILED,2026-12-03,barbara.liskov+839@example.com,Latin America
+ORD-0000841,Ada Lovelace,Starter,133.25,PAID,2026-01-04,ada.lovelace+840@example.com,North America
+ORD-0000842,Grace Hopper, Pro Plan ,136.50,PENDING,2026-02-05,grace.hopper+841@example.com,Europe
+ORD-0000843,Katherine Johnson,Enterprise,139.75,REFUNDED,2026-03-06,katherine.johnson+842@example.com,Asia Pacific
+ORD-0000844,Alan Turing,Analytics Add-on,143.00,FAILED,2026-04-07,alan.turing+843@example.com,Latin America
+ORD-0000845,Margaret Hamilton,Starter,146.25,PAID,2026-05-08,margaret.hamilton+844@example.com,North America
+ORD-0000846,Barbara Liskov,PRO PLAN,149.50,PENDING,2026-06-09,barbara.liskov+845@example.com,Europe
+ORD-0000847,Ada Lovelace,Enterprise,152.75,REFUNDED,2026-07-10,ada.lovelace+846@example.com,Asia Pacific
+ORD-0000848,grace hopper,Analytics Add-on,156.00,FAILED,2026-08-11,grace.hopper+847@example.com,Latin America
+ORD-0000849,Katherine Johnson,Starter,159.25,PAID,2026-09-12,katherine.johnson+848@example.com,North America
+ORD-0000850,Alan Turing,Pro Plan,162.50,PENDING,2026-10-13,alan.turing+849@example.com,Europe
+ORD-0000850,Alan Turing,Pro Plan,162.50,PENDING,2026-10-13,alan.turing+849@example.com,Europe
+ORD-0000852, Barbara Liskov ,Analytics Add-on,169.00,,2026-12-15,barbara.liskov+851@example.com,Latin America
+ORD-0000853,Ada Lovelace,Starter,172.25,PAID,2026-01-16,ada.lovelace+852@example.com,North America
+ORD-0000854,Grace Hopper,Pro Plan,175.50,PENDING,2026-02-17,grace.hopper+853@example.com,Europe
+ORD-0000855,Katherine Johnson,Enterprise,178.75,REFUNDED,2026-03-18,katherine.johnson+854@example.com,Asia Pacific
+ORD-0000856,Alan Turing,Analytics Add-on,182.00,failed,2026-04-19,alan.turing+855@example.com,Latin America
+ORD-0000857,Margaret Hamilton,Starter,185.25,PAID,2026-05-20,margaret.hamilton+856@example.com,North America
+ORD-0000858,Barbara Liskov,Pro Plan,188.50,PENDING,2026-06-21,barbara.liskov+857@example.com,Europe
+ORD-0000859,ada lovelace,ENTERPRISE,191.75,REFUNDED,2026-07-22,ada.lovelace+858@example.com,Asia Pacific
+ORD-0000860,Grace Hopper,Analytics Add-on,195.00,FAILED,2026-08-23,grace.hopper+859@example.com,Latin America
+ORD-0000861,Katherine Johnson,Starter,198.25,PAID,2026-09-24,katherine.johnson+860@example.com,North America
+ORD-0000862,Alan Turing,Pro Plan,201.50,PENDING,10/25/2026,alan.turing+861@example.com,Europe
+ORD-0000863,Margaret Hamilton,Enterprise,204.75,REFUNDED,2026-11-26,margaret.hamilton+862@example.com,Asia Pacific
+ORD-0000864,Barbara Liskov,Analytics Add-on,208.00,FAILED,2026-12-27,barbara.liskov+863@example.com,Latin America
+ORD-0000865,Ada Lovelace,Starter,211.25,PAID,2026-01-01,ada.lovelace+864@example.com,North America
+ORD-0000866,Grace Hopper,Pro Plan,214.50,PENDING,2026-02-02,grace.hopper+865@example.com,Europe
+ORD-0000867,Katherine Johnson,Enterprise,217.75,REFUNDED,2026-03-03,katherine.johnson+866@example.com,Asia Pacific
+ORD-0000868,Alan Turing,Analytics Add-on,$221.00,FAILED,2026-04-04,alan.turing+867@example.com,Latin America
+ORD-0000869,Margaret Hamilton,Starter,224.25,PAID,2026-05-05,margaret.hamilton+868@example.com,north america
+ORD-0000870,barbara liskov,Pro Plan,227.50,PENDING,2026-06-06,barbara.liskov+869@example.com,Europe
+ORD-0000871,Ada Lovelace, Enterprise ,230.75,REFUNDED,2026-07-07,ada.lovelace+870@example.com,Asia Pacific
+ORD-0000872,Grace Hopper,ANALYTICS ADD-ON,234.00,FAILED,2026-08-08,grace.hopper+871@example.com,Latin America
+ORD-0000873,Katherine Johnson,Starter,237.25,PAID,2026-09-09,katherine.johnson+872@example.com,North America
+ORD-0000874,Alan Turing,Pro Plan,240.50,PENDING,2026-10-10,,Europe
+ORD-0000875, Margaret Hamilton ,Enterprise,243.75,refunded,2026-11-11,margaret.hamilton+874@example.com,Asia Pacific
+ORD-0000876,Barbara Liskov,Analytics Add-on,247.00,FAILED,2026-12-12,barbara.liskov+875@example.com,Latin America
+ORD-0000877,Ada Lovelace,Starter,250.25,PAID,2026-01-13,ada.lovelace+876@example.com,North America
+ORD-0000878,Grace Hopper,Pro Plan,253.50,PENDING,2026-02-14,grace.hopper+877@example.com,Europe
+ORD-0000879,Katherine Johnson,Enterprise,256.75,REFUNDED,2026-03-15,katherine.johnson+878@example.com,Asia Pacific
+ORD-0000880,Alan Turing,Analytics Add-on,260.00,FAILED,2026-04-16,alan.turing+879@example.com,Latin America
+ORD-0000881,margaret hamilton,Starter,263.25,PAID,2026-05-17,margaret.hamilton+880@example.com,North America
+ORD-0000882,Barbara Liskov,Pro Plan,266.50,PENDING,2026-06-18,barbara.liskov+881@example.com,Europe
+ORD-0000883,Ada Lovelace,Enterprise,269.75,REFUNDED,2026-07-19,ada.lovelace+882@example.com,Asia Pacific
+ORD-0000884,Grace Hopper,Analytics Add-on,273.00,FAILED,2026-08-20,grace.hopper+883@example.com,Latin America
+ORD-0000885,Katherine Johnson,STARTER,$276.25,PAID,2026-09-21,katherine.johnson+884@example.com,North America
+ORD-0000886,Alan Turing,Pro Plan,279.50,PENDING,2026-10-22,alan.turing+885@example.com,Europe
+ORD-0000887,Margaret Hamilton,Enterprise,282.75,REFUNDED,2026-11-23,margaret.hamilton+886@example.com,Asia Pacific
+ORD-0000888,Barbara Liskov,Analytics Add-on,286.00,FAILED,2026-12-24,barbara.liskov+887@example.com,Latin America
+ORD-0000889,Ada Lovelace,Starter,289.25,,2026-01-25,ada.lovelace+888@example.com,North America
+ORD-0000890,Grace Hopper,Pro Plan,292.50,PENDING,2026-02-26,grace.hopper+889@example.com,Europe
+ORD-0000891,Katherine Johnson,Enterprise,295.75,REFUNDED,2026-03-27,katherine.johnson+890@example.com,Asia Pacific
+ORD-0000892,alan turing,Analytics Add-on,299.00,FAILED,2026-04-01,alan.turing+891@example.com,Latin America
+ORD-0000893,Margaret Hamilton,Starter,302.25,PAID,2026-05-02,margaret.hamilton+892@example.com,North America
+ORD-0000894,Barbara Liskov,Pro Plan,305.50,pending,2026-06-03,barbara.liskov+893@example.com,Europe
+ORD-0000895,Ada Lovelace,Enterprise,308.75,REFUNDED,2026-07-04,ada.lovelace+894@example.com,Asia Pacific
+ORD-0000896,Grace Hopper,Analytics Add-on,312.00,FAILED,2026-08-05,grace.hopper+895@example.com,Latin America
+ORD-0000897,Katherine Johnson,Starter,315.25,PAID,2026-09-06,katherine.johnson+896@example.com,North America
+ORD-0000898, Alan Turing ,PRO PLAN,318.50,PENDING,2026-10-07,alan.turing+897@example.com,Europe
+ORD-0000899,Margaret Hamilton,Enterprise,321.75,REFUNDED,2026-11-08,margaret.hamilton+898@example.com,Asia Pacific
+ORD-0000900,Barbara Liskov, Analytics Add-on ,325.00,FAILED,2026-12-09,barbara.liskov+899@example.com,latin america
+ORD-0000900,Barbara Liskov, Analytics Add-on ,325.00,FAILED,2026-12-09,barbara.liskov+899@example.com,latin america
+ORD-0000902,Grace Hopper,Pro Plan,$331.50,PENDING,2026-02-11,grace.hopper+901@example.com,Europe
+ORD-0000903,katherine johnson,Enterprise,334.75,REFUNDED,03/12/2026,katherine.johnson+902@example.com,Asia Pacific
+ORD-0000904,Alan Turing,Analytics Add-on,338.00,FAILED,2026-04-13,alan.turing+903@example.com,Latin America
+ORD-0000905,Margaret Hamilton,Starter,341.25,PAID,2026-05-14,margaret.hamilton+904@example.com,North America
+ORD-0000906,Barbara Liskov,Pro Plan,344.50,PENDING,2026-06-15,barbara.liskov+905@example.com,Europe
+ORD-0000907,Ada Lovelace,Enterprise,347.75,REFUNDED,2026-07-16,ada.lovelace+906@example.com,Asia Pacific
+ORD-0000908,Grace Hopper,Analytics Add-on,351.00,FAILED,2026-08-17,grace.hopper+907@example.com,Latin America
+ORD-0000909,Katherine Johnson,Starter,354.25,PAID,2026-09-18,katherine.johnson+908@example.com,North America
+ORD-0000910,Alan Turing,Pro Plan,357.50,PENDING,2026-10-19,alan.turing+909@example.com,Europe
+ORD-0000911,Margaret Hamilton,ENTERPRISE,360.75,REFUNDED,2026-11-20,margaret.hamilton+910@example.com,Asia Pacific
+ORD-0000912,Barbara Liskov,Analytics Add-on,364.00,FAILED,2026-12-21,barbara.liskov+911@example.com,Latin America
+ORD-0000913,Ada Lovelace,Starter,367.25,paid,2026-01-22,ada.lovelace+912@example.com,North America
+ORD-0000914,grace hopper,Pro Plan,370.50,PENDING,2026-02-23,grace.hopper+913@example.com,Europe
+ORD-0000915,Katherine Johnson,Enterprise,373.75,REFUNDED,2026-03-24,katherine.johnson+914@example.com,Asia Pacific
+ORD-0000916,Alan Turing,Analytics Add-on,377.00,FAILED,2026-04-25,alan.turing+915@example.com,Latin America
+ORD-0000917,Margaret Hamilton,Starter,380.25,PAID,2026-05-26,margaret.hamilton+916@example.com,North America
+ORD-0000918,Barbara Liskov,Pro Plan,383.50,PENDING,2026-06-27,barbara.liskov+917@example.com,Europe
+ORD-0000919,Ada Lovelace,Enterprise,$386.75,REFUNDED,2026-07-01,ada.lovelace+918@example.com,Asia Pacific
+ORD-0000920,Grace Hopper,Analytics Add-on,390.00,FAILED,2026-08-02,grace.hopper+919@example.com,Latin America
+ORD-0000921, Katherine Johnson ,Starter,393.25,PAID,2026-09-03,katherine.johnson+920@example.com,North America
+ORD-0000922,Alan Turing,Pro Plan,396.50,PENDING,2026-10-04,alan.turing+921@example.com,Europe
+ORD-0000923,Margaret Hamilton,Enterprise,399.75,REFUNDED,2026-11-05,margaret.hamilton+922@example.com,Asia Pacific
+ORD-0000924,Barbara Liskov,ANALYTICS ADD-ON,403.00,FAILED,2026-12-06,barbara.liskov+923@example.com,Latin America
+ORD-0000925,ada lovelace,Starter,406.25,PAID,2026-01-07,ada.lovelace+924@example.com,North America
+ORD-0000926,Grace Hopper,Pro Plan,409.50,,2026-02-08,grace.hopper+925@example.com,Europe
+ORD-0000927,Katherine Johnson,Enterprise,412.75,REFUNDED,2026-03-09,katherine.johnson+926@example.com,Asia Pacific
+ORD-0000928,Alan Turing,Analytics Add-on,416.00,FAILED,2026-04-10,alan.turing+927@example.com,Latin America
+ORD-0000929,Margaret Hamilton, Starter ,419.25,PAID,2026-05-11,margaret.hamilton+928@example.com,North America
+ORD-0000930,Barbara Liskov,Pro Plan,422.50,PENDING,2026-06-12,barbara.liskov+929@example.com,Europe
+ORD-0000931,Ada Lovelace,Enterprise,425.75,REFUNDED,2026-07-13,ada.lovelace+930@example.com,asia pacific
+ORD-0000932,Grace Hopper,Analytics Add-on,429.00,failed,2026-08-14,grace.hopper+931@example.com,Latin America
+ORD-0000933,Katherine Johnson,Starter,432.25,PAID,2026-09-15,katherine.johnson+932@example.com,North America
+ORD-0000934,Alan Turing,Pro Plan,435.50,PENDING,2026-10-16,alan.turing+933@example.com,Europe
+ORD-0000935,Margaret Hamilton,Enterprise,438.75,REFUNDED,2026-11-17,margaret.hamilton+934@example.com,Asia Pacific
+ORD-0000936,barbara liskov,Analytics Add-on,$442.00,FAILED,2026-12-18,barbara.liskov+935@example.com,Latin America
+ORD-0000937,Ada Lovelace,STARTER,445.25,PAID,2026-01-19,ada.lovelace+936@example.com,North America
+ORD-0000938,Grace Hopper,Pro Plan,448.50,PENDING,2026-02-20,grace.hopper+937@example.com,Europe
+ORD-0000939,Katherine Johnson,Enterprise,451.75,REFUNDED,2026-03-21,katherine.johnson+938@example.com,Asia Pacific
+ORD-0000940,Alan Turing,Analytics Add-on,455.00,FAILED,2026-04-22,alan.turing+939@example.com,Latin America
+ORD-0000941,Margaret Hamilton,Starter,458.25,PAID,2026-05-23,margaret.hamilton+940@example.com,North America
+ORD-0000942,Barbara Liskov,Pro Plan,461.50,PENDING,2026-06-24,barbara.liskov+941@example.com,Europe
+ORD-0000943,Ada Lovelace,Enterprise,464.75,REFUNDED,2026-07-25,ada.lovelace+942@example.com,Asia Pacific
+ORD-0000944, Grace Hopper ,Analytics Add-on,468.00,FAILED,08/26/2026,grace.hopper+943@example.com,Latin America
+ORD-0000945,Katherine Johnson,Starter,471.25,PAID,2026-09-27,katherine.johnson+944@example.com,North America
+ORD-0000946,Alan Turing,Pro Plan,474.50,PENDING,2026-10-01,alan.turing+945@example.com,Europe
+ORD-0000947,margaret hamilton,Enterprise,477.75,REFUNDED,2026-11-02,margaret.hamilton+946@example.com,Asia Pacific
+ORD-0000948,Barbara Liskov,Analytics Add-on,481.00,FAILED,2026-12-03,barbara.liskov+947@example.com,Latin America
+ORD-0000949,Ada Lovelace,Starter,484.25,PAID,2026-01-04,ada.lovelace+948@example.com,North America
+ORD-0000950,Grace Hopper,PRO PLAN,487.50,PENDING,2026-02-05,grace.hopper+949@example.com,Europe
+ORD-0000950,Grace Hopper,PRO PLAN,487.50,PENDING,2026-02-05,grace.hopper+949@example.com,Europe
+ORD-0000952,Alan Turing,Analytics Add-on,494.00,FAILED,2026-04-07,alan.turing+951@example.com,Latin America
+ORD-0000953,Margaret Hamilton,Starter,$497.25,PAID,2026-05-08,margaret.hamilton+952@example.com,North America
+ORD-0000954,Barbara Liskov,Pro Plan,500.50,PENDING,2026-06-09,barbara.liskov+953@example.com,Europe
+ORD-0000955,Ada Lovelace,Enterprise,503.75,REFUNDED,2026-07-10,ada.lovelace+954@example.com,Asia Pacific
+ORD-0000956,Grace Hopper,Analytics Add-on,507.00,FAILED,2026-08-11,grace.hopper+955@example.com,Latin America
+ORD-0000957,Katherine Johnson,Starter,510.25,PAID,2026-09-12,katherine.johnson+956@example.com,North America
+ORD-0000958,alan turing, Pro Plan ,513.50,PENDING,2026-10-13,alan.turing+957@example.com,Europe
+ORD-0000959,Margaret Hamilton,Enterprise,516.75,REFUNDED,2026-11-14,margaret.hamilton+958@example.com,Asia Pacific
+ORD-0000960,Barbara Liskov,Analytics Add-on,520.00,FAILED,2026-12-15,barbara.liskov+959@example.com,Latin America
+ORD-0000961,Ada Lovelace,Starter,523.25,PAID,2026-01-16,ada.lovelace+960@example.com,North America
+ORD-0000962,Grace Hopper,Pro Plan,526.50,PENDING,2026-02-17,grace.hopper+961@example.com,europe
+ORD-0000963,Katherine Johnson,ENTERPRISE,529.75,,2026-03-18,katherine.johnson+962@example.com,Asia Pacific
+ORD-0000964,Alan Turing,Analytics Add-on,533.00,FAILED,2026-04-19,alan.turing+963@example.com,Latin America
+ORD-0000965,Margaret Hamilton,Starter,536.25,PAID,2026-05-20,margaret.hamilton+964@example.com,North America
+ORD-0000966,Barbara Liskov,Pro Plan,539.50,PENDING,2026-06-21,barbara.liskov+965@example.com,Europe
+ORD-0000967, Ada Lovelace ,Enterprise,542.75,REFUNDED,2026-07-22,ada.lovelace+966@example.com,Asia Pacific
+ORD-0000968,Grace Hopper,Analytics Add-on,546.00,FAILED,2026-08-23,grace.hopper+967@example.com,Latin America
+ORD-0000969,katherine johnson,Starter,549.25,PAID,2026-09-24,katherine.johnson+968@example.com,North America
+ORD-0000970,Alan Turing,Pro Plan,$552.50,pending,2026-10-25,alan.turing+969@example.com,Europe
+ORD-0000971,Margaret Hamilton,Enterprise,555.75,REFUNDED,2026-11-26,,Asia Pacific
+ORD-0000972,Barbara Liskov,Analytics Add-on,559.00,FAILED,2026-12-27,barbara.liskov+971@example.com,Latin America
+ORD-0000973,Ada Lovelace,Starter,562.25,PAID,2026-01-01,ada.lovelace+972@example.com,North America
+ORD-0000974,Grace Hopper,Pro Plan,565.50,PENDING,2026-02-02,grace.hopper+973@example.com,Europe
+ORD-0000975,Katherine Johnson,Enterprise,568.75,REFUNDED,2026-03-03,katherine.johnson+974@example.com,Asia Pacific
+ORD-0000976,Alan Turing,ANALYTICS ADD-ON,572.00,FAILED,2026-04-04,alan.turing+975@example.com,Latin America
+ORD-0000977,Margaret Hamilton,Starter,575.25,PAID,2026-05-05,margaret.hamilton+976@example.com,North America
+ORD-0000978,Barbara Liskov,Pro Plan,578.50,PENDING,2026-06-06,barbara.liskov+977@example.com,Europe
+ORD-0000979,Ada Lovelace,Enterprise,581.75,REFUNDED,2026-07-07,ada.lovelace+978@example.com,Asia Pacific
+ORD-0000980,grace hopper,Analytics Add-on,585.00,FAILED,2026-08-08,grace.hopper+979@example.com,Latin America
+ORD-0000981,Katherine Johnson,Starter,588.25,PAID,2026-09-09,katherine.johnson+980@example.com,North America
+ORD-0000982,Alan Turing,Pro Plan,591.50,PENDING,2026-10-10,alan.turing+981@example.com,Europe
+ORD-0000983,Margaret Hamilton,Enterprise,594.75,REFUNDED,2026-11-11,margaret.hamilton+982@example.com,Asia Pacific
+ORD-0000984,Barbara Liskov,Analytics Add-on,598.00,FAILED,2026-12-12,barbara.liskov+983@example.com,Latin America
+ORD-0000985,Ada Lovelace,Starter,601.25,PAID,01/13/2026,ada.lovelace+984@example.com,North America
+ORD-0000986,Grace Hopper,Pro Plan,604.50,PENDING,2026-02-14,grace.hopper+985@example.com,Europe
+ORD-0000987,Katherine Johnson, Enterprise ,$607.75,REFUNDED,2026-03-15,katherine.johnson+986@example.com,Asia Pacific
+ORD-0000988,Alan Turing,Analytics Add-on,611.00,FAILED,2026-04-16,alan.turing+987@example.com,Latin America
+ORD-0000989,Margaret Hamilton,STARTER,614.25,paid,2026-05-17,margaret.hamilton+988@example.com,North America
+ORD-0000990, Barbara Liskov ,Pro Plan,617.50,PENDING,2026-06-18,barbara.liskov+989@example.com,Europe
+ORD-0000991,ada lovelace,Enterprise,620.75,REFUNDED,2026-07-19,ada.lovelace+990@example.com,Asia Pacific
+ORD-0000992,Grace Hopper,Analytics Add-on,624.00,FAILED,2026-08-20,grace.hopper+991@example.com,Latin America
+ORD-0000993,Katherine Johnson,Starter,627.25,PAID,2026-09-21,katherine.johnson+992@example.com,north america
+ORD-0000994,Alan Turing,Pro Plan,630.50,PENDING,2026-10-22,alan.turing+993@example.com,Europe
+ORD-0000995,Margaret Hamilton,Enterprise,633.75,REFUNDED,2026-11-23,margaret.hamilton+994@example.com,Asia Pacific
+ORD-0000996,Barbara Liskov,Analytics Add-on,637.00,FAILED,2026-12-24,barbara.liskov+995@example.com,Latin America
+ORD-0000997,Ada Lovelace,Starter,640.25,PAID,2026-01-25,ada.lovelace+996@example.com,North America
+ORD-0000998,Grace Hopper,Pro Plan,643.50,PENDING,2026-02-26,grace.hopper+997@example.com,Europe
+ORD-0000999,Katherine Johnson,Enterprise,646.75,REFUNDED,2026-03-27,katherine.johnson+998@example.com,Asia Pacific
+ORD-0001000,Alan Turing,Analytics Add-on,650.00,,2026-04-01,alan.turing+999@example.com,Latin America
