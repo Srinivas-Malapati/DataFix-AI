@@ -121,11 +121,13 @@ export function DataFixWorkspace() {
   const [goal, setGoal] = useState("Clean this dataset, standardize inconsistent formats, remove exact duplicates, and flag anything ambiguous for review.");
   const [inspected, setInspected] = useState(false);
   const [inspectionState, setInspectionState] = useState<"idle" | "running" | "complete">("idle");
+  const [uploadMessage, setUploadMessage] = useState("");
   const [error, setError] = useState("");
   const profile = useMemo(() => csvText ? profileCsv(csvText) : null, [csvText]);
 
-  function acceptFile(name: string, text: string) {
+  function acceptFile(name: string, text: string, source: "upload" | "sample" = "upload") {
     setError("");
+    setUploadMessage("");
     setInspected(false);
     setInspectionState("idle");
     if (new Blob([text]).size > 10 * 1024 * 1024) {
@@ -139,6 +141,7 @@ export function DataFixWorkspace() {
     }
     setFileName(name);
     setCsvText(text);
+    setUploadMessage(`${source === "sample" ? "Sample loaded" : "Upload successful"} · ${parsed.length - 1} rows detected · Ready to inspect`);
   }
 
   async function onFile(event: ChangeEvent<HTMLInputElement>) {
@@ -160,7 +163,7 @@ export function DataFixWorkspace() {
     const sample = SAMPLE_DATASETS.find((candidate) => candidate.id === sampleId);
     if (!sample) return;
     setGoal(sample.goal);
-    acceptFile(sample.name, sample.csv);
+    acceptFile(sample.name, sample.csv, "sample");
   }
 
   function inspectDataset() {
@@ -193,6 +196,7 @@ export function DataFixWorkspace() {
             <input id="dataset-upload" type="file" accept=".csv,text/csv" onChange={onFile} />
             <small>Up to 10 MB · parsed only in this browser for step 1</small>
             {error && <p className="file-error" role="alert">{error}</p>}
+            {uploadMessage && <p className="upload-success" role="status"><b>✓</b> {uploadMessage}</p>}
             <div className="sample-library" aria-label="Synthetic test datasets">
               <span>Try a synthetic dataset</span>
               <div>
@@ -235,21 +239,21 @@ export function DataFixWorkspace() {
             <article><span>Rows</span><strong>{profile.rows.length}</strong><small>input records</small></article>
             <article><span>Duplicates</span><strong>{profile.duplicateRows}</strong><small>exact row matches</small></article>
             <article><span>Missing</span><strong>{profile.missingCells}</strong><small>empty cells</small></article>
-            <article><span>Whitespace</span><strong>{profile.whitespaceCells}</strong><small>cells to trim</small></article>
+            <article title="Cells containing invisible spaces before or after their text"><span>Extra spaces</span><strong>{profile.whitespaceCells}</strong><small>at cell edges</small></article>
           </div>
           <div className="analysis-grid">
             <div className="preview-table-wrap">
-              <div className="panel-title"><span>Dataset preview</span><small>{fileName}</small></div>
+              <div className="panel-title"><span>Dataset preview</span><div className="panel-meta"><small>{fileName}</small><small>{profile.rows.length <= 5 ? `Showing all ${profile.rows.length} rows` : `Showing first 5 of ${profile.rows.length} rows`} · all rows inspected</small></div></div>
               <div className="table-scroll"><table><thead><tr>{profile.headers.map((header) => <th key={header}>{header}</th>)}</tr></thead>
                 <tbody>{profile.rows.slice(0, 5).map((row, rowIndex) => <tr key={rowIndex}>{row.map((cell, columnIndex) => <td key={`${rowIndex}-${columnIndex}`} className={!cell.trim() ? "empty-cell" : ""}>{cell || "—"}</td>)}</tr>)}</tbody>
               </table></div>
             </div>
             <div className="issues-panel">
-              <div className="panel-title"><span>Quality signals</span><small>{profile.duplicateRows + profile.missingCells + profile.whitespaceCells} signals</small></div>
+              <div className="panel-title"><span>Quality signals</span><small>{profile.duplicateRows + profile.missingCells + profile.whitespaceCells + profile.inconsistentColumns.length} signals</small></div>
               <ul>
                 <li><b>{profile.duplicateRows ? "Review" : "Clear"}</b><span>Exact duplicate rows</span><em>{profile.duplicateRows}</em></li>
                 <li><b>{profile.missingCells ? "Review" : "Clear"}</b><span>Missing values</span><em>{profile.missingCells}</em></li>
-                <li><b>{profile.whitespaceCells ? "Safe fix" : "Clear"}</b><span>Leading/trailing whitespace</span><em>{profile.whitespaceCells}</em></li>
+                <li title="Invisible spaces before or after a value, such as ' Ada ' instead of 'Ada'"><b>{profile.whitespaceCells ? "Safe fix" : "Clear"}</b><span>Extra spaces before/after text</span><em>{profile.whitespaceCells}</em></li>
                 <li><b>{profile.inconsistentColumns.length ? "Review" : "Clear"}</b><span>Case variants</span><em>{profile.inconsistentColumns.length}</em></li>
               </ul>
               <div className="next-step"><span>Next build step</span><p>Generate a repair plan and Python script, then execute it in CreateOS—not in the browser.</p><button type="button" disabled>Connect secure executor →</button></div>

@@ -54,6 +54,10 @@ test("keeps CSV profiling client-side and documents honest executor boundaries",
   assert.match(workspace, /transactions_messy\.csv/);
   assert.match(workspace, /Inspection in progress/);
   assert.match(workspace, /scrollIntoView/);
+  assert.match(workspace, /Upload successful/);
+  assert.match(workspace, /Extra spaces before\/after text/);
+  assert.match(workspace, /Showing first 5 of/);
+  assert.match(workspace, /all rows inspected/);
   assert.match(readme, /Never present local preview behavior as a sandbox run/);
   assert.doesNotMatch(packageJson, /react-loading-skeleton/);
 });
