@@ -22,6 +22,14 @@ function duplicateCount(rows: string[][]) {
   return keys.length - new Set(keys).size;
 }
 
+function edgeWhitespaceCount(rows: string[][]) {
+  return rows.reduce((count, row) => count + row.filter((cell) => cell !== cell.trim()).length, 0);
+}
+
+function unresolvedCellCount(rows: string[][]) {
+  return rows.reduce((count, row) => count + row.filter((cell) => !cell.trim()).length, 0);
+}
+
 async function createOsFetch(baseUrl: string, apiKey: string, path: string, init: RequestInit = {}) {
   const response = await fetch(`${baseUrl.replace(/\/$/, "")}${path}`, {
     ...init,
@@ -92,16 +100,23 @@ export async function POST(request: Request) {
     const outputRows = parseCsv(outputCsv);
     const sameSchema = JSON.stringify(inputRows[0] || []) === JSON.stringify(outputRows[0] || []);
     const rowCountSafe = outputRows.length > 1 && outputRows.length <= inputRows.length;
+    const whitespaceBefore = edgeWhitespaceCount(inputRows.slice(1));
+    const whitespaceAfter = edgeWhitespaceCount(outputRows.slice(1));
+    const whitespaceResolved = whitespaceBefore === 0 || whitespaceAfter === 0;
     const verification = {
-      passed: sameSchema && rowCountSafe,
+      passed: sameSchema && rowCountSafe && whitespaceResolved,
       inputRows: Math.max(0, inputRows.length - 1),
       outputRows: Math.max(0, outputRows.length - 1),
       duplicatesBefore: duplicateCount(inputRows.slice(1)),
       duplicatesAfter: duplicateCount(outputRows.slice(1)),
+      whitespaceBefore,
+      whitespaceAfter,
+      unresolvedCells: unresolvedCellCount(outputRows.slice(1)),
       checks: [
         { name: "Column order preserved", passed: sameSchema },
         { name: "Output contains data", passed: outputRows.length > 1 },
         { name: "No unexpected row growth", passed: rowCountSafe },
+        { name: whitespaceBefore ? "Extra edge spaces removed" : "No extra edge spaces detected", passed: whitespaceResolved },
       ],
     };
     if (!verification.passed) return Response.json({ error: "Independent validation rejected the sandbox output.", logs: `${result.stdout || ""}${result.stderr || ""}`.trim(), verification }, { status: 422 });

@@ -63,7 +63,9 @@ test("keeps profiling local and routes AI code through real server integrations"
   assert.match(workspace, /Recommended transformations/);
   assert.match(workspace, /Execution script/);
   assert.match(workspace, /Review and execute/);
-  assert.match(workspace, /Download cleaned CSV/);
+  assert.match(workspace, /Download modified CSV/);
+  assert.match(workspace, /Human approval required/);
+  assert.match(workspace, /operation-toast/);
   assert.doesNotMatch(workspace, /<span>Extra spaces<\/span>/);
   assert.match(planRoute, /api\.openai\.com\/v1\/responses/);
   assert.match(planRoute, /json_schema/);

@@ -24,8 +24,10 @@ type ExecutionResult = {
   logs: string;
   execMs: number | null;
   runtime: string;
-  verification: { passed: boolean; inputRows: number; outputRows: number; duplicatesBefore: number; duplicatesAfter: number; checks: Array<{ name: string; passed: boolean }> };
+  verification: { passed: boolean; inputRows: number; outputRows: number; duplicatesBefore: number; duplicatesAfter: number; whitespaceBefore: number; whitespaceAfter: number; unresolvedCells: number; checks: Array<{ name: string; passed: boolean }> };
 };
+
+type Notification = { kind: "working" | "success" | "error"; title: string; message: string };
 
 const SAMPLE_DATASETS = [
   {
@@ -146,6 +148,7 @@ export function DataFixWorkspace() {
   const [executionError, setExecutionError] = useState("");
   const [copied, setCopied] = useState(false);
   const [error, setError] = useState("");
+  const [notification, setNotification] = useState<Notification | null>(null);
   const profile = useMemo(() => csvText ? profileCsv(csvText) : null, [csvText]);
 
   function acceptFile(name: string, text: string, source: "upload" | "sample" = "upload") {
@@ -172,6 +175,7 @@ export function DataFixWorkspace() {
     setFileName(name);
     setCsvText(text);
     setUploadMessage(`${source === "sample" ? "Sample loaded" : "Upload successful"} · ${parsed.length - 1} data rows ready to inspect`);
+    setNotification({ kind: "success", title: source === "sample" ? "Sample dataset loaded" : "Upload complete", message: `${name} contains ${parsed.length - 1} data rows and is ready to inspect.` });
   }
 
   async function onFile(event: ChangeEvent<HTMLInputElement>) {
@@ -199,9 +203,11 @@ export function DataFixWorkspace() {
   function inspectDataset() {
     if (!profile || inspectionState === "running") return;
     setInspectionState("running");
+    setNotification({ kind: "working", title: "Inspecting dataset", message: `Profiling every row in ${fileName} for quality signals.` });
     window.setTimeout(() => {
       setInspected(true);
       setInspectionState("complete");
+      setNotification({ kind: "success", title: "Inspection complete", message: `${profile.rows.length} rows inspected. Review the quality report below.` });
       window.setTimeout(() => {
         document.getElementById("inspection-results")?.scrollIntoView({ behavior: "smooth", block: "start" });
       }, 180);
@@ -214,6 +220,7 @@ export function DataFixWorkspace() {
     setPlanError("");
     setExecutionState("idle");
     setExecutionResult(null);
+    setNotification({ kind: "working", title: "Preparing a dataset-specific workflow", message: `DataFix AI is analyzing ${fileName}, its quality signals, and your cleanup instructions.` });
     try {
       const response = await fetch("/api/plan", {
         method: "POST",
@@ -230,10 +237,13 @@ export function DataFixWorkspace() {
       if (!response.ok || !payload.plan) throw new Error(payload.error || "DataFix could not prepare a workflow.");
       setAiPlan(payload.plan);
       setPlanState("ready");
+      setNotification({ kind: "success", title: "Cleanup workflow ready", message: `${payload.plan.transformations.length} transformations were created specifically for ${fileName}.` });
       window.setTimeout(() => document.getElementById("repair-plan")?.scrollIntoView({ behavior: "smooth", block: "start" }), 160);
     } catch (caught) {
       setPlanState("error");
-      setPlanError(caught instanceof Error ? caught.message : "DataFix could not prepare a workflow.");
+      const message = caught instanceof Error ? caught.message : "DataFix could not prepare a workflow.";
+      setPlanError(message);
+      setNotification({ kind: "error", title: "Workflow could not be prepared", message });
     }
   }
 
@@ -248,6 +258,7 @@ export function DataFixWorkspace() {
     if (!aiPlan) return;
     setExecutionState("running");
     setExecutionError("");
+    setNotification({ kind: "working", title: "CreateOS execution started", message: "Uploading the dataset and running the approved script in a temporary sandbox." });
     try {
       const response = await fetch("/api/execute", {
         method: "POST",
@@ -258,10 +269,13 @@ export function DataFixWorkspace() {
       if (!response.ok) throw new Error(payload.error || "CreateOS could not execute the workflow.");
       setExecutionResult(payload);
       setExecutionState("succeeded");
+      setNotification({ kind: "success", title: "Cleanup complete", message: `A modified CSV is ready. ${payload.verification.unresolvedCells} unresolved cell${payload.verification.unresolvedCells === 1 ? " was" : "s were"} preserved for human review.` });
       window.setTimeout(() => document.getElementById("execution-result")?.scrollIntoView({ behavior: "smooth", block: "start" }), 160);
     } catch (caught) {
       setExecutionState("error");
-      setExecutionError(caught instanceof Error ? caught.message : "CreateOS execution failed.");
+      const message = caught instanceof Error ? caught.message : "CreateOS execution failed.";
+      setExecutionError(message);
+      setNotification({ kind: "error", title: "Execution needs attention", message });
     }
   }
 
@@ -273,10 +287,18 @@ export function DataFixWorkspace() {
     anchor.download = `cleaned_${fileName || "dataset.csv"}`;
     anchor.click();
     URL.revokeObjectURL(url);
+    setNotification({ kind: "success", title: "Modified CSV downloaded", message: executionResult.verification.unresolvedCells ? `Automatic fixes are included. ${executionResult.verification.unresolvedCells} unresolved cell${executionResult.verification.unresolvedCells === 1 ? " remains" : "s remain"} unchanged for review.` : "All approved changes are included in the downloaded file." });
   }
 
   return (
     <>
+      {notification && (
+        <div className={`operation-toast ${notification.kind}`} role="status" aria-live="assertive">
+          <span className="toast-mark" aria-hidden="true">{notification.kind === "success" ? "✓" : notification.kind === "error" ? "!" : ""}</span>
+          <div><b>{notification.title}</b><small>{notification.message}</small></div>
+          <button type="button" onClick={() => setNotification(null)} aria-label="Dismiss notification">×</button>
+        </div>
+      )}
       <section className="workspace" id="workspace" aria-labelledby="workspace-title">
         <div className="workspace-heading">
           <div><p className="section-label">Step 01 · Inspect</p><h2 id="workspace-title">Give your dataset a clean start.</h2></div>
@@ -359,10 +381,10 @@ export function DataFixWorkspace() {
 
       {planState === "ready" && profile && aiPlan && (
         <section className="repair-plan" id="repair-plan" aria-live="polite">
-          <div className="plan-heading"><div><p className="section-label">Step 02 · AI workflow</p><h2>Review what DataFix will change.</h2><p className="plan-summary">{aiPlan.summary}</p></div><span className="review-badge">AI-generated · approval required</span></div>
+          <div className="plan-heading"><div><p className="section-label">Step 02 · AI workflow</p><h2>Review what DataFix will change.</h2><p className="plan-summary">{aiPlan.summary}</p><p className="dataset-specific-note">Built for <b>{fileName}</b> from its {profile.headers.length} columns, representative rows, detected quality signals, and your instructions.</p></div><span className="review-badge">Human approval required</span></div>
           <div className="plan-grid">
             <div className="plan-actions">
-              <div className="panel-title"><span>Recommended transformations</span><small>{aiPlan.transformations.length} actions</small></div>
+              <div className="panel-title"><span>Recommended transformations</span><small>{fileName} · {aiPlan.transformations.length} actions</small></div>
               <ol>{aiPlan.transformations.map((action, index) => <li key={`${action.title}-${index}`}><b>{String(index + 1).padStart(2, "0")}</b><span><strong>{action.title}</strong><small>{action.rationale}</small><em>{action.risk === "safe" ? "Safe change" : "Review advised"}{action.affected_columns.length ? ` · ${action.affected_columns.join(", ")}` : ""}</em></span></li>)}</ol>
               <div className="plan-safety"><b>Validation checks</b><ul>{aiPlan.validation_checks.map((check) => <li key={check}>✓ {check}</li>)}</ul></div>
             </div>
@@ -382,11 +404,12 @@ export function DataFixWorkspace() {
             <article><span>Input rows</span><strong>{executionResult.verification.inputRows}</strong></article>
             <article><span>Output rows</span><strong>{executionResult.verification.outputRows}</strong></article>
             <article><span>Duplicates removed</span><strong>{Math.max(0, executionResult.verification.duplicatesBefore - executionResult.verification.duplicatesAfter)}</strong></article>
-            <article><span>Flagged for review</span><strong>{executionResult.report.flagged_rows ?? "—"}</strong></article>
+            <article><span>Unresolved cells</span><strong>{executionResult.verification.unresolvedCells}</strong></article>
           </div>
+          {executionResult.verification.unresolvedCells > 0 && <div className="review-notice"><b>{executionResult.verification.unresolvedCells} value{executionResult.verification.unresolvedCells === 1 ? " was" : "s were"} intentionally left unchanged.</b><span>DataFix removed safe issues such as extra edge spaces and duplicates, but it will not guess missing or ambiguous information. The modified CSV is ready; these cells still need human review.</span></div>}
           <div className="result-grid">
             <div className="run-log"><div className="panel-title"><span>Execution log</span><small>{executionResult.execMs ? `${Math.round(executionResult.execMs)} ms` : executionResult.runtime}</small></div><pre>{executionResult.logs || "Script completed with no console output."}</pre></div>
-            <div className="validation-card"><span>Independent validation</span><strong>{executionResult.verification.passed ? "Passed" : "Review required"}</strong><ul>{executionResult.verification.checks.map((check) => <li key={check.name}>{check.passed ? "✓" : "×"} {check.name}</li>)}{(executionResult.report.notes || []).map((note) => <li key={note}>{note}</li>)}</ul><button type="button" onClick={downloadCleanedCsv}>Download cleaned CSV ↓</button></div>
+            <div className="validation-card"><span>Independent validation</span><strong>{executionResult.verification.passed ? "Passed" : "Review required"}</strong><ul>{executionResult.verification.checks.map((check) => <li key={check.name}>{check.passed ? "✓" : "×"} {check.name}</li>)}{(executionResult.report.notes || []).map((note) => <li key={note}>{note}</li>)}</ul><button type="button" onClick={downloadCleanedCsv}>Download modified CSV ↓</button></div>
           </div>
         </section>
       )}
