@@ -11,6 +11,22 @@ type CsvProfile = {
   inconsistentColumns: string[];
 };
 
+type AiPlan = {
+  summary: string;
+  transformations: Array<{ title: string; rationale: string; risk: "safe" | "review"; affected_columns: string[] }>;
+  validation_checks: string[];
+  python_code: string;
+};
+
+type ExecutionResult = {
+  outputCsv: string;
+  report: { input_rows?: number; output_rows?: number; duplicate_rows_removed?: number; changed_cells?: number; flagged_rows?: number; validation_passed?: boolean; notes?: string[] };
+  logs: string;
+  execMs: number | null;
+  runtime: string;
+  verification: { passed: boolean; inputRows: number; outputRows: number; duplicatesBefore: number; duplicatesAfter: number; checks: Array<{ name: string; passed: boolean }> };
+};
+
 const SAMPLE_DATASETS = [
   {
     id: "sales",
@@ -122,24 +138,15 @@ export function DataFixWorkspace() {
   const [inspected, setInspected] = useState(false);
   const [inspectionState, setInspectionState] = useState<"idle" | "running" | "complete">("idle");
   const [uploadMessage, setUploadMessage] = useState("");
-  const [planState, setPlanState] = useState<"idle" | "generating" | "ready">("idle");
+  const [planState, setPlanState] = useState<"idle" | "generating" | "ready" | "error">("idle");
+  const [aiPlan, setAiPlan] = useState<AiPlan | null>(null);
+  const [planError, setPlanError] = useState("");
+  const [executionState, setExecutionState] = useState<"idle" | "running" | "succeeded" | "error">("idle");
+  const [executionResult, setExecutionResult] = useState<ExecutionResult | null>(null);
+  const [executionError, setExecutionError] = useState("");
   const [copied, setCopied] = useState(false);
   const [error, setError] = useState("");
   const profile = useMemo(() => csvText ? profileCsv(csvText) : null, [csvText]);
-  const repairActions = useMemo(() => {
-    if (!profile) return [];
-    const actions = ["Preserve the original file and schema before making changes"];
-    if (profile.duplicateRows) actions.push(`Remove ${profile.duplicateRows} exact duplicate row${profile.duplicateRows === 1 ? "" : "s"}, keeping the first occurrence`);
-    if (profile.missingCells) actions.push(`Flag ${profile.missingCells} missing value${profile.missingCells === 1 ? "" : "s"} for review instead of guessing`);
-    if (profile.whitespaceCells) actions.push("Standardize text fields by trimming invisible edge spaces");
-    if (profile.inconsistentColumns.length) actions.push(`Normalize capitalization in: ${profile.inconsistentColumns.join(", ")}`);
-    actions.push("Validate row count and schema, then export a repair report");
-    return actions;
-  }, [profile]);
-  const generatedCode = useMemo(() => {
-    const caseColumns = profile?.inconsistentColumns ?? [];
-    return `import pandas as pd\n\nINPUT_FILE = "${fileName || "input.csv"}"\nOUTPUT_FILE = "cleaned_${fileName || "output.csv"}"\n\ndf = pd.read_csv(INPUT_FILE)\noriginal_rows = len(df)\n\n# Preserve IDs and trim text safely\nfor column in df.select_dtypes(include="object").columns:\n    df[column] = df[column].apply(lambda value: value.strip() if isinstance(value, str) else value)\n\n# Remove exact duplicates only\ndf = df.drop_duplicates(keep="first")\n\n# Normalize detected case variants\nfor column in ${JSON.stringify(caseColumns)}:\n    df[column] = df[column].apply(lambda value: value.title() if isinstance(value, str) else value)\n\nassert list(df.columns) == ${JSON.stringify(profile?.headers ?? [])}\nassert len(df) <= original_rows\ndf.to_csv(OUTPUT_FILE, index=False)\nprint({"input_rows": original_rows, "output_rows": len(df), "file": OUTPUT_FILE})`;
-  }, [fileName, profile]);
 
   function acceptFile(name: string, text: string, source: "upload" | "sample" = "upload") {
     setError("");
@@ -147,6 +154,11 @@ export function DataFixWorkspace() {
     setInspected(false);
     setInspectionState("idle");
     setPlanState("idle");
+    setAiPlan(null);
+    setPlanError("");
+    setExecutionState("idle");
+    setExecutionResult(null);
+    setExecutionError("");
     setCopied(false);
     if (new Blob([text]).size > 10 * 1024 * 1024) {
       setError("That file is larger than the 10 MB demo limit.");
@@ -196,18 +208,71 @@ export function DataFixWorkspace() {
     }, 700);
   }
 
-  function generatePlan() {
+  async function generatePlan() {
+    if (!profile) return;
     setPlanState("generating");
-    window.setTimeout(() => {
+    setPlanError("");
+    setExecutionState("idle");
+    setExecutionResult(null);
+    try {
+      const response = await fetch("/api/plan", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          fileName,
+          goal,
+          headers: profile.headers,
+          sampleRows: profile.rows.slice(0, 12),
+          profile: { rows: profile.rows.length, duplicateRows: profile.duplicateRows, missingCells: profile.missingCells, inconsistentColumns: profile.inconsistentColumns },
+        }),
+      });
+      const payload = await response.json() as { plan?: AiPlan; error?: string };
+      if (!response.ok || !payload.plan) throw new Error(payload.error || "DataFix could not prepare a workflow.");
+      setAiPlan(payload.plan);
       setPlanState("ready");
       window.setTimeout(() => document.getElementById("repair-plan")?.scrollIntoView({ behavior: "smooth", block: "start" }), 160);
-    }, 850);
+    } catch (caught) {
+      setPlanState("error");
+      setPlanError(caught instanceof Error ? caught.message : "DataFix could not prepare a workflow.");
+    }
   }
 
   async function copyCode() {
-    await navigator.clipboard.writeText(generatedCode);
+    if (!aiPlan) return;
+    await navigator.clipboard.writeText(aiPlan.python_code);
     setCopied(true);
     window.setTimeout(() => setCopied(false), 1600);
+  }
+
+  async function executeWorkflow() {
+    if (!aiPlan) return;
+    setExecutionState("running");
+    setExecutionError("");
+    try {
+      const response = await fetch("/api/execute", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ fileName, csvText, pythonCode: aiPlan.python_code }),
+      });
+      const payload = await response.json() as ExecutionResult & { error?: string };
+      if (!response.ok) throw new Error(payload.error || "CreateOS could not execute the workflow.");
+      setExecutionResult(payload);
+      setExecutionState("succeeded");
+      window.setTimeout(() => document.getElementById("execution-result")?.scrollIntoView({ behavior: "smooth", block: "start" }), 160);
+    } catch (caught) {
+      setExecutionState("error");
+      setExecutionError(caught instanceof Error ? caught.message : "CreateOS execution failed.");
+    }
+  }
+
+  function downloadCleanedCsv() {
+    if (!executionResult) return;
+    const url = URL.createObjectURL(new Blob([executionResult.outputCsv], { type: "text/csv;charset=utf-8" }));
+    const anchor = document.createElement("a");
+    anchor.href = url;
+    anchor.download = `cleaned_${fileName || "dataset.csv"}`;
+    anchor.click();
+    URL.revokeObjectURL(url);
   }
 
   return (
@@ -286,27 +351,43 @@ export function DataFixWorkspace() {
                 <li><b>{profile.missingCells ? "Review" : "Clear"}</b><span>Missing values</span><em>{profile.missingCells}</em></li>
                 <li><b>{profile.inconsistentColumns.length ? "Review" : "Clear"}</b><span>Case variants</span><em>{profile.inconsistentColumns.length}</em></li>
               </ul>
-              <div className="next-step"><span>Step 02</span><p>Generate a dataset-specific repair plan and review its Python before anything runs.</p><button type="button" onClick={generatePlan} disabled={planState === "generating"}>{planState === "generating" ? "Generating repair plan…" : planState === "ready" ? "Regenerate repair plan ↻" : "Generate repair plan →"}</button></div>
+              <div className="next-step"><span>Step 02 · AI workflow</span><p>Ask DataFix AI to design transformations and write an execution script for this dataset.</p><button type="button" onClick={generatePlan} disabled={planState === "generating"}>{planState === "generating" ? "Preparing workflow…" : planState === "ready" ? "Rebuild workflow ↻" : "Prepare cleanup workflow →"}</button>{planError && <small className="action-error" role="alert">{planError}</small>}</div>
             </div>
           </div>
         </section>
       )}
 
-      {planState === "ready" && profile && (
+      {planState === "ready" && profile && aiPlan && (
         <section className="repair-plan" id="repair-plan" aria-live="polite">
-          <div className="plan-heading"><div><p className="section-label">Step 02 · Generate</p><h2>Review the plan before it runs.</h2></div><span className="review-badge">Human approval required</span></div>
+          <div className="plan-heading"><div><p className="section-label">Step 02 · AI workflow</p><h2>Review what DataFix will change.</h2><p className="plan-summary">{aiPlan.summary}</p></div><span className="review-badge">AI-generated · approval required</span></div>
           <div className="plan-grid">
             <div className="plan-actions">
-              <div className="panel-title"><span>Proposed repair plan</span><small>{repairActions.length} actions</small></div>
-              <ol>{repairActions.map((action, index) => <li key={action}><b>{String(index + 1).padStart(2, "0")}</b><span>{action}</span></li>)}</ol>
-              <div className="plan-safety"><b>Safety rule</b><p>Ambiguous values are flagged for review. DataFix never invents missing information.</p></div>
+              <div className="panel-title"><span>Recommended transformations</span><small>{aiPlan.transformations.length} actions</small></div>
+              <ol>{aiPlan.transformations.map((action, index) => <li key={`${action.title}-${index}`}><b>{String(index + 1).padStart(2, "0")}</b><span><strong>{action.title}</strong><small>{action.rationale}</small><em>{action.risk === "safe" ? "Safe change" : "Review advised"}{action.affected_columns.length ? ` · ${action.affected_columns.join(", ")}` : ""}</em></span></li>)}</ol>
+              <div className="plan-safety"><b>Validation checks</b><ul>{aiPlan.validation_checks.map((check) => <li key={check}>✓ {check}</li>)}</ul></div>
             </div>
             <div className="code-review">
-              <div className="panel-title"><span>Generated Python</span><button type="button" onClick={copyCode}>{copied ? "Copied ✓" : "Copy code"}</button></div>
-              <pre><code>{generatedCode}</code></pre>
+              <div className="panel-title"><span>Execution script</span><button type="button" onClick={copyCode}>{copied ? "Copied ✓" : "Copy code"}</button></div>
+              <pre><code>{aiPlan.python_code}</code></pre>
             </div>
           </div>
-          <div className="approval-bar"><div><b>Plan ready for approval</b><span>The next step will execute this exact code in the isolated CreateOS sandbox.</span></div><button type="button" disabled>Approve & run in sandbox <span>→</span></button></div>
+          <div className="approval-bar"><div><b>Workflow ready for approval</b><span>DataFix will upload the CSV and execute this exact script in a temporary CreateOS sandbox.</span>{executionError && <small className="action-error" role="alert">{executionError}</small>}</div><button type="button" onClick={executeWorkflow} disabled={executionState === "running"}>{executionState === "running" ? "Running in CreateOS…" : "Review and execute"}<span>{executionState === "running" ? "•••" : "→"}</span></button></div>
+        </section>
+      )}
+
+      {executionState === "succeeded" && executionResult && (
+        <section className="execution-result" id="execution-result" aria-live="polite">
+          <div className="result-heading"><div><p className="section-label">Steps 03–04 · Execute & verify</p><h2>Cleanup completed and verified.</h2></div><span className="sandbox-badge">CreateOS Sandbox · success</span></div>
+          <div className="result-metrics">
+            <article><span>Input rows</span><strong>{executionResult.verification.inputRows}</strong></article>
+            <article><span>Output rows</span><strong>{executionResult.verification.outputRows}</strong></article>
+            <article><span>Duplicates removed</span><strong>{Math.max(0, executionResult.verification.duplicatesBefore - executionResult.verification.duplicatesAfter)}</strong></article>
+            <article><span>Flagged for review</span><strong>{executionResult.report.flagged_rows ?? "—"}</strong></article>
+          </div>
+          <div className="result-grid">
+            <div className="run-log"><div className="panel-title"><span>Execution log</span><small>{executionResult.execMs ? `${Math.round(executionResult.execMs)} ms` : executionResult.runtime}</small></div><pre>{executionResult.logs || "Script completed with no console output."}</pre></div>
+            <div className="validation-card"><span>Independent validation</span><strong>{executionResult.verification.passed ? "Passed" : "Review required"}</strong><ul>{executionResult.verification.checks.map((check) => <li key={check.name}>{check.passed ? "✓" : "×"} {check.name}</li>)}{(executionResult.report.notes || []).map((note) => <li key={note}>{note}</li>)}</ul><button type="button" onClick={downloadCleanedCsv}>Download cleaned CSV ↓</button></div>
+          </div>
         </section>
       )}
     </>

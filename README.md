@@ -2,9 +2,9 @@
 
 DataFix AI is an autonomous CSV repair agent for the CreateOS × Stripe Projects hackathon. The finished product will inspect a dataset, write dataset-specific Python, execute that code inside an isolated CreateOS sandbox, independently validate the result, and return a cleaned CSV plus a reproducible audit trail.
 
-## Current milestone: Step 1 — Inspect
+## Current milestone: end-to-end agent pipeline
 
-The first vertical slice is working:
+The working flow includes:
 
 - Select or drag-and-drop a CSV (10 MB local demo limit)
 - Parse quoted CSV fields without uploading the file
@@ -14,8 +14,13 @@ The first vertical slice is working:
 - Reject malformed or single-column inputs with a clear message
 - Load three synthetic sales, customer, and transaction samples for demonstrations
 - Download those samples directly from the public app
+- Ask the OpenAI Responses API for a strict, dataset-specific workflow
+- Review the recommended transformations, validation checks, and generated Python
+- Approve execution in a disposable CreateOS sandbox
+- Upload input and code, run Python, capture real logs, and download the output
+- Display execution metrics and a downloadable cleaned CSV
 
-This stage stays in the browser on purpose. Generated code must not execute in the browser or on the application server.
+Profiling stays in the browser. Generated code executes only inside a disposable CreateOS sandbox, never in the browser or application server.
 
 ## Why we are building in this order
 
@@ -36,7 +41,7 @@ Browser
             └─ Validator: schema, row-count, duplicate, null, and change-budget checks
 ```
 
-CreateOS integration will use the official `@nodeops-createos/sandbox` SDK. The server will upload `/workspace/input.csv` and `/workspace/repair.py`, run Python, download the output and audit artifacts, and always destroy the sandbox in a `finally` block.
+CreateOS integration uses the official Sandbox REST API. The server uploads `/workspace/input.csv` and `/workspace/repair.py`, runs Python, downloads the output and audit artifacts, and always destroys the sandbox in a `finally` block.
 
 ## Local development
 
@@ -45,9 +50,9 @@ npm install
 npm run dev
 ```
 
-Open the local URL printed by the development server. Choose **Use sample**, then **Inspect dataset** to exercise the current milestone.
+Open the local URL printed by the development server. Load a sample, inspect it, prepare the AI cleanup workflow, approve execution, and download the verified result.
 
-## Required production configuration (next milestone)
+## Required production configuration
 
 ```bash
 CREATEOS_SANDBOX_API_KEY=
@@ -63,9 +68,10 @@ Do not commit `.env` files or paste secrets into issues, chat, screenshots, or d
 - [x] New project created during the hackathon
 - [x] Real-world CSV repair workflow
 - [x] Functional input profiling
-- [ ] Agent writes dataset-specific executable code
-- [ ] Generated code runs in CreateOS Sandbox
-- [ ] Independent validation and bounded repair retry
+- [x] Agent writes dataset-specific executable code
+- [x] Generated code runs in CreateOS Sandbox
+- [x] Execution logs and script-authored validation report
+- [ ] Independent application-owned validation and bounded repair retry
 - [ ] Stripe Projects initialized and used for the project stack
 - [ ] Public GitHub repository and complete run instructions
 - [ ] Deployed app URL

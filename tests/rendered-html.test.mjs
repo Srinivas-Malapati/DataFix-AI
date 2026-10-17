@@ -35,9 +35,11 @@ test("server-renders the DataFix product surface", async () => {
   assert.doesNotMatch(html, /codex-preview|react-loading-skeleton|Your site is taking shape/i);
 });
 
-test("keeps CSV profiling client-side and documents honest executor boundaries", async () => {
-  const [workspace, readme, packageJson] = await Promise.all([
+test("keeps profiling local and routes AI code through real server integrations", async () => {
+  const [workspace, planRoute, executeRoute, readme, packageJson] = await Promise.all([
     readFile(new URL("../app/DataFixWorkspace.tsx", import.meta.url), "utf8"),
+    readFile(new URL("../app/api/plan/route.ts", import.meta.url), "utf8"),
+    readFile(new URL("../app/api/execute/route.ts", import.meta.url), "utf8"),
     readFile(new URL("../README.md", import.meta.url), "utf8"),
     readFile(new URL("../package.json", import.meta.url), "utf8"),
   ]);
@@ -57,10 +59,20 @@ test("keeps CSV profiling client-side and documents honest executor boundaries",
   assert.match(workspace, /Upload successful/);
   assert.match(workspace, /Showing first 5 of/);
   assert.match(workspace, /all rows inspected/);
-  assert.match(workspace, /Generate repair plan/);
-  assert.match(workspace, /Generated Python/);
-  assert.match(workspace, /Approve & run in sandbox/);
+  assert.match(workspace, /Prepare cleanup workflow/);
+  assert.match(workspace, /Recommended transformations/);
+  assert.match(workspace, /Execution script/);
+  assert.match(workspace, /Review and execute/);
+  assert.match(workspace, /Download cleaned CSV/);
   assert.doesNotMatch(workspace, /<span>Extra spaces<\/span>/);
+  assert.match(planRoute, /api\.openai\.com\/v1\/responses/);
+  assert.match(planRoute, /json_schema/);
+  assert.match(executeRoute, /\/v1\/sandboxes/);
+  assert.match(executeRoute, /\/workspace\/input\.csv/);
+  assert.match(executeRoute, /\/workspace\/output\.csv/);
+  assert.match(executeRoute, /method: "DELETE"/);
+  assert.match(executeRoute, /Independent validation rejected/);
+  assert.match(workspace, /Independent validation/);
   assert.match(readme, /Never present local preview behavior as a sandbox run/);
   assert.doesNotMatch(packageJson, /react-loading-skeleton/);
 });
