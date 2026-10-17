@@ -24,6 +24,9 @@ type ExecutionResult = {
   logs: string;
   execMs: number | null;
   runtime: string;
+  repaired: boolean;
+  attempts: Array<{ number: number; status: "failed" | "succeeded"; exitCode: number; logs: string; diagnosis?: string }>;
+  finalPythonCode: string;
   verification: { passed: boolean; inputRows: number; outputRows: number; duplicatesBefore: number; duplicatesAfter: number; whitespaceBefore: number; whitespaceAfter: number; unresolvedCells: number; checks: Array<{ name: string; passed: boolean }> };
 };
 
@@ -268,8 +271,9 @@ export function DataFixWorkspace() {
       const payload = await response.json() as ExecutionResult & { error?: string };
       if (!response.ok) throw new Error(payload.error || "CreateOS could not execute the workflow.");
       setExecutionResult(payload);
+      if (payload.repaired && payload.finalPythonCode) setAiPlan((current) => current ? { ...current, python_code: payload.finalPythonCode } : current);
       setExecutionState("succeeded");
-      setNotification({ kind: "success", title: "Cleanup complete", message: `A modified CSV is ready. ${payload.verification.unresolvedCells} unresolved cell${payload.verification.unresolvedCells === 1 ? " was" : "s were"} preserved for human review.` });
+      setNotification({ kind: "success", title: payload.repaired ? "Code repaired and cleanup completed" : "Cleanup complete", message: `${payload.repaired ? "DataFix corrected a failed script and reran it successfully. " : ""}A modified CSV is ready with ${payload.verification.unresolvedCells} unresolved cell${payload.verification.unresolvedCells === 1 ? "" : "s"}.` });
       window.setTimeout(() => document.getElementById("execution-result")?.scrollIntoView({ behavior: "smooth", block: "start" }), 160);
     } catch (caught) {
       setExecutionState("error");
@@ -400,6 +404,7 @@ export function DataFixWorkspace() {
       {executionState === "succeeded" && executionResult && (
         <section className="execution-result" id="execution-result" aria-live="polite">
           <div className="result-heading"><div><p className="section-label">Steps 03–04 · Execute & verify</p><h2>Cleanup completed and verified.</h2></div><span className="sandbox-badge">CreateOS Sandbox · success</span></div>
+          {executionResult.repaired && <div className="self-repair-notice"><b>Automatic code repair succeeded</b><span>Attempt 1 failed in CreateOS. DataFix analyzed the error, rewrote the Python, and passed on attempt {executionResult.attempts.length}.</span></div>}
           <div className="result-metrics">
             <article><span>Input rows</span><strong>{executionResult.verification.inputRows}</strong></article>
             <article><span>Output rows</span><strong>{executionResult.verification.outputRows}</strong></article>
@@ -408,7 +413,7 @@ export function DataFixWorkspace() {
           </div>
           {executionResult.verification.unresolvedCells > 0 && <div className="review-notice"><b>{executionResult.verification.unresolvedCells} value{executionResult.verification.unresolvedCells === 1 ? " was" : "s were"} intentionally left unchanged.</b><span>DataFix removed safe issues such as extra edge spaces and duplicates, but it will not guess missing or ambiguous information. The modified CSV is ready; these cells still need human review.</span></div>}
           <div className="result-grid">
-            <div className="run-log"><div className="panel-title"><span>Execution log</span><small>{executionResult.execMs ? `${Math.round(executionResult.execMs)} ms` : executionResult.runtime}</small></div><pre>{executionResult.logs || "Script completed with no console output."}</pre></div>
+            <details className="run-log"><summary className="panel-title"><span>CreateOS run details</span><small>{executionResult.attempts.length} attempt{executionResult.attempts.length === 1 ? "" : "s"} · {executionResult.execMs ? `${Math.round(executionResult.execMs)} ms final run` : executionResult.runtime}</small></summary><div className="attempt-list">{executionResult.attempts.map((attempt) => <article key={attempt.number}><div><b>Attempt {attempt.number}</b><em className={attempt.status}>{attempt.status}</em></div>{attempt.diagnosis && <p><strong>AI diagnosis:</strong> {attempt.diagnosis}</p>}<pre>{attempt.logs || "Script completed with no console output."}</pre></article>)}</div></details>
             <div className="validation-card"><span>Independent validation</span><strong>{executionResult.verification.passed ? "Passed" : "Review required"}</strong><ul>{executionResult.verification.checks.map((check) => <li key={check.name}>{check.passed ? "✓" : "×"} {check.name}</li>)}{(executionResult.report.notes || []).map((note) => <li key={note}>{note}</li>)}</ul><button type="button" onClick={downloadCleanedCsv}>Download modified CSV ↓</button></div>
           </div>
         </section>

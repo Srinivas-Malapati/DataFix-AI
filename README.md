@@ -18,6 +18,7 @@ The working flow includes:
 - Review the recommended transformations, validation checks, and generated Python
 - Approve execution in a disposable CreateOS sandbox
 - Upload input and code, run Python, capture real logs, and download the output
+- Diagnose a failed generated script, rewrite it, and retry once automatically
 - Display execution metrics and a downloadable cleaned CSV
 
 Profiling stays in the browser. Generated code executes only inside a disposable CreateOS sandbox, never in the browser or application server.
@@ -71,7 +72,7 @@ Do not commit `.env` files or paste secrets into issues, chat, screenshots, or d
 - [x] Agent writes dataset-specific executable code
 - [x] Generated code runs in CreateOS Sandbox
 - [x] Execution logs and script-authored validation report
-- [ ] Independent application-owned validation and bounded repair retry
+- [x] Independent application-owned validation and bounded repair retry
 - [ ] Stripe Projects initialized and used for the project stack
 - [ ] Public GitHub repository and complete run instructions
 - [ ] Deployed app URL

@@ -74,7 +74,12 @@ test("keeps profiling local and routes AI code through real server integrations"
   assert.match(executeRoute, /\/workspace\/output\.csv/);
   assert.match(executeRoute, /method: "DELETE"/);
   assert.match(executeRoute, /Independent validation rejected/);
+  assert.match(executeRoute, /repairFailedCode/);
+  assert.match(executeRoute, /attemptNumber <= 2/);
+  assert.match(executeRoute, /one automatic repair attempt/);
   assert.match(workspace, /Independent validation/);
+  assert.match(workspace, /Automatic code repair succeeded/);
+  assert.match(workspace, /CreateOS run details/);
   assert.match(readme, /Never present local preview behavior as a sandbox run/);
   assert.doesNotMatch(packageJson, /react-loading-skeleton/);
 });
