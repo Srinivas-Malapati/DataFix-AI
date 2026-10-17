@@ -50,3 +50,56 @@ test("CreateOS execution fails safely when server configuration is unavailable",
   assert.equal(response.status, 503);
   assert.deepEqual(await response.json(), { error: "CreateOS execution is not configured." });
 });
+
+async function withEnv(values, run) {
+  const previous = Object.fromEntries(Object.keys(values).map((key) => [key, process.env[key]]));
+  Object.assign(process.env, values);
+  try {
+    return await run();
+  } finally {
+    for (const [key, value] of Object.entries(previous)) {
+      if (value === undefined) delete process.env[key];
+      else process.env[key] = value;
+    }
+  }
+}
+
+const CONFIGURED = {
+  OPENAI_API_KEY: "test-openai-key",
+  CREATEOS_PROJECT_API_KEY: "test-createos-key",
+  CREATEOS_SANDBOX_BASE_URL: "http://127.0.0.1:9",
+};
+
+test("refuses to execute a script the server did not sign", async () => {
+  await withEnv(CONFIGURED, async () => {
+    const response = await post("/api/execute", {
+      fileName: "sales.csv",
+      csvText: "order_id,amount\n1001,$49.00\n",
+      pythonCode: "print('arbitrary code')",
+      scriptToken: `${Date.now() + 60_000}.forged`,
+    });
+    assert.equal(response.status, 403);
+    assert.match((await response.json()).error, /not issued by DataFix/);
+  });
+});
+
+test("rejects malformed execution requests before any sandbox work", async () => {
+  await withEnv(CONFIGURED, async () => {
+    const missingToken = await post("/api/execute", { csvText: "a,b\n1,2\n", pythonCode: "print(1)" });
+    assert.equal(missingToken.status, 400);
+
+    const brokenCsv = await post("/api/execute", { csvText: 'a,b\n1,"open', pythonCode: "print(1)", scriptToken: "1.x" });
+    assert.equal(brokenCsv.status, 400);
+    assert.match((await brokenCsv.json()).error, /unterminated/);
+  });
+});
+
+test("rejects malformed planning requests before calling the AI", async () => {
+  await withEnv(CONFIGURED, async () => {
+    const response = await post("/api/plan", { fileName: "x.csv", headers: [], sampleRows: [] });
+    assert.equal(response.status, 400);
+
+    const tooLongGoal = await post("/api/plan", { fileName: "x.csv", goal: "x".repeat(5_000), headers: ["a"], sampleRows: [["1"]] });
+    assert.equal(tooLongGoal.status, 400);
+  });
+});

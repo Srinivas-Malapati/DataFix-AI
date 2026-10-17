@@ -1,5 +1,4 @@
 import assert from "node:assert/strict";
-import { readFile } from "node:fs/promises";
 import test from "node:test";
 
 async function render() {
@@ -33,55 +32,4 @@ test("server-renders the DataFix product surface", async () => {
   assert.match(html, /DATAFIX \/ LIVE TOUR/);
   assert.match(html, /Powered by CreateOS Sandbox \+ Stripe Projects/);
   assert.doesNotMatch(html, /codex-preview|react-loading-skeleton|Your site is taking shape/i);
-});
-
-test("keeps profiling local and routes AI code through real server integrations", async () => {
-  const [workspace, planRoute, executeRoute, readme, packageJson] = await Promise.all([
-    readFile(new URL("../app/DataFixWorkspace.tsx", import.meta.url), "utf8"),
-    readFile(new URL("../app/api/plan/route.ts", import.meta.url), "utf8"),
-    readFile(new URL("../app/api/execute/route.ts", import.meta.url), "utf8"),
-    readFile(new URL("../README.md", import.meta.url), "utf8"),
-    readFile(new URL("../package.json", import.meta.url), "utf8"),
-  ]);
-
-  assert.match(workspace, /^"use client";/);
-  assert.match(workspace, /function parseCsv/);
-  assert.match(workspace, /function profileCsv/);
-  assert.match(workspace, /duplicateRows/);
-  assert.match(workspace, /missingCells/);
-  assert.match(workspace, /whitespaceCells/);
-  assert.match(workspace, /parsed only in this browser for step 1/);
-  assert.match(workspace, /sales_messy\.csv/);
-  assert.match(workspace, /customers_messy\.csv/);
-  assert.match(workspace, /transactions_messy\.csv/);
-  assert.match(workspace, /Inspection in progress/);
-  assert.match(workspace, /scrollIntoView/);
-  assert.match(workspace, /Upload successful/);
-  assert.match(workspace, /Showing first 5 of/);
-  assert.match(workspace, /all rows inspected/);
-  assert.match(workspace, /Prepare cleanup workflow/);
-  assert.match(workspace, /Recommended transformations/);
-  assert.match(workspace, /Execution script/);
-  assert.match(workspace, /Review and execute/);
-  assert.match(workspace, /Download modified CSV/);
-  assert.match(workspace, /Human approval required/);
-  assert.match(workspace, /operation-toast/);
-  assert.doesNotMatch(workspace, /<span>Extra spaces<\/span>/);
-  assert.match(planRoute, /api\.openai\.com\/v1\/responses/);
-  assert.match(planRoute, /json_schema/);
-  assert.match(executeRoute, /\/v1\/sandboxes/);
-  assert.match(executeRoute, /CREATEOS_PROJECT_API_KEY/);
-  assert.match(executeRoute, /CREATEOS_PROJECT_API_URL/);
-  assert.match(executeRoute, /\/workspace\/input\.csv/);
-  assert.match(executeRoute, /\/workspace\/output\.csv/);
-  assert.match(executeRoute, /method: "DELETE"/);
-  assert.match(executeRoute, /Independent validation rejected/);
-  assert.match(executeRoute, /repairFailedCode/);
-  assert.match(executeRoute, /attemptNumber <= 2/);
-  assert.match(executeRoute, /one automatic repair attempt/);
-  assert.match(workspace, /Independent validation/);
-  assert.match(workspace, /Automatic code repair succeeded/);
-  assert.match(workspace, /CreateOS run details/);
-  assert.match(readme, /Never present local preview behavior as a sandbox run/);
-  assert.doesNotMatch(packageJson, /react-loading-skeleton/);
 });

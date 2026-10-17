@@ -1,5 +1,5 @@
-import { DataFixWorkspace } from "./DataFixWorkspace";
-import { HowItWorksTour } from "./HowItWorksTour";
+import { DataFixWorkspace } from "./workspace/DataFixWorkspace.tsx";
+import { HowItWorksTour } from "./HowItWorksTour.tsx";
 
 export default function Home() {
   return (
