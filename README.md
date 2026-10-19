@@ -8,6 +8,49 @@ DataFix AI is an autonomous CSV repair agent. It inspects a dataset, writes Pyth
 - **Sample datasets:** https://datafix-ai-hackathon.candyzebra32.chatgpt.site/samples/
 - Built for the CreateOS × Stripe Projects hackathon.
 
+## Scope: what DataFix cleans
+
+DataFix fixes **formatting and consistency** problems in tabular data. It does not fix **meaning**: it won't guess a missing value or decide which of two conflicting records is right. When a fix would require a guess, it flags the value for human review instead.
+
+### What it fixes
+
+Some fixes are **guaranteed**: DataFix checks the output itself and won't release a file that fails them. The rest are **AI-planned**: the AI proposes them for each file, you approve them, and DataFix then checks the result.
+
+| Problem | Example | How it's handled |
+|---|---|---|
+| Leading and trailing spaces | `" Ada Lovelace "` → `"Ada Lovelace"` | **Guaranteed**; blocks the output if any remain |
+| Exact duplicate rows | the same order listed twice | AI-planned; flagged if any remain |
+| Inconsistent casing in categories | `PAID`, `paid`, `Paid` → one form | AI-planned |
+| Mixed number and currency formats | `$1,200.00`, `1200`, `"$49"` → one format | AI-planned |
+| Mixed date formats | `2026/10/05`, `10/02/2026` → `2026-10-05` | AI-planned; **ambiguous dates are flagged, not converted** |
+| Inconsistent email casing | `KJ@EXAMPLE.COM` → `kj@example.com` | AI-planned |
+| Inconsistent codes and labels | `card`, `CARD`, ` ach ` → `CARD`, `ACH` | AI-planned |
+| Missing values | empty `status` | **Kept blank and listed for review**. The AI is told never to fill them in, and DataFix flags the run if blanks disappear. |
+
+Every run also guarantees that columns aren't renamed, reordered, added or removed, that no rows are added, that every row has one value per column, and that the output is a valid CSV.
+
+### Where it works well
+
+- Exports from CRMs, billing and payment systems, spreadsheets, and sign-up forms: orders, customers, transactions, product catalogs.
+- Comma-separated, UTF-8 files with a single header row, where each column holds one kind of value.
+- Files up to about **5 MB** (around 50,000 rows × 8 columns, tested end to end).
+- Problems that show up in a sample of the file. The AI designs its plan from the column names and 12 representative rows, then the generated code processes every row.
+
+### Limitations and out of scope
+
+| Area | Limitation |
+|---|---|
+| **File format** | CSV only, comma-delimited, UTF-8. No Excel, JSON, or Parquet; no semicolon- or tab-delimited files. |
+| **Size** | The upload limit is 10 MB, but the server is only proven safe to about 5 MB. One file per run. |
+| **Structure** | No splitting, merging, renaming, or adding columns, and no reshaping (pivoting, multi-row headers). |
+| **Duplicates** | Only exact duplicates are reliably caught. Near-duplicates (`Jon Smith` vs `John Smith`, the same customer under two IDs) are out of scope. |
+| **Missing data** | Never inferred or filled in. This is by design. |
+| **Correctness of values** | DataFix checks structure, not truth. It can't tell that a price is wrong or that an email address doesn't exist, and it has no network access to look things up. |
+| **Rare patterns** | A format that only appears deep in a file (not in the 12 sample rows) may not be handled. |
+| **Multiple files** | No joins or cross-file consistency checks. |
+| **Throughput** | One file per approved run, with a 120-second script limit. The CreateOS free plan allows 10 runs per day. |
+| **Privacy** | Column names and 12 sample rows (cells cut to 200 characters) are sent to OpenAI. Don't use it on regulated data without reviewing that. |
+
 ## How it works
 
 ```text
